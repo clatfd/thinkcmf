@@ -1,0 +1,325 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"con",
+				"condition"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "application/Common/Conf/config.php",
+			"settings":
+			{
+				"buffer_size": 3307,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/Blog/Controller/IndexController.class.php",
+			"settings":
+			{
+				"buffer_size": 178,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "tpl_admin/simpleboot/Blog/Indexadmin/index.html",
+			"settings":
+			{
+				"buffer_size": 3,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "tpl_admin/simpleboot/Admin/Mailer/index.html",
+			"settings":
+			{
+				"buffer_size": 1868,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 272.0,
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Remove Package→删除程序包"
+			]
+		],
+		"width": 632.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/E/server/nginx/html/ThinkCMFX1.5.0/application/Blog/Controller/IndexadminController.class.php",
+		"/E/server/nginx/html/ThinkCMFX1.5.0/tpl/simplebootx/Blog/index.html",
+		"/E/server/nginx/html/ThinkCMFX1.5.0/tpl_admin/simpleboot/Blog/Indexadmin/index.html",
+		"/E/server/nginx/html/ThinkCMFX1.5.0/README.md",
+		"/E/server/nginx/html/ThinkCMFX1.5.0/application/Blog/nav.php",
+		"/E/server/nginx/html/ThinkCMFX1.5.0/application/Blog/Controller/IndexController.class.php",
+		"/E/server/nginx/html/ThinkCMFX1.5.0/application/Blog/Conf/conf.php",
+		"/E/server/nginx/html/ThinkCMFX1.5.0/application/Blog/Common/function.php",
+		"/E/server/nginx/html/H-wordlist/js/js.js",
+		"/E/server/nginx/html/H-wordlist/twigframe.html",
+		"/E/server/nginx/html/H-wordlist/curldict.php",
+		"/E/server/nginx/html/test.php",
+		"/E/C-INFO/APMServ5.2.6/APMServ5.2.6/www/htdocs/H-wordlist/output/js.js",
+		"/E/C-INFO/APMServ5.2.6/APMServ5.2.6/www/htdocs/H-wordlist/output/Listoutput.html",
+		"/E/C-INFO/APMServ5.2.6/APMServ5.2.6/www/htdocs/H-wordlist/output/Examoutput.html"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"example"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "application/Common/Conf/config.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3307,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								826,
+								826
+							]
+						],
+						"settings":
+						{
+							"encoding_helper_encoding": "UTF-8",
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1539.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "application/Blog/Controller/IndexController.class.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 178,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								178,
+								178
+							]
+						],
+						"settings":
+						{
+							"encoding_helper_encoding": "cp936",
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "tpl_admin/simpleboot/Blog/Indexadmin/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3,
+								3
+							]
+						],
+						"settings":
+						{
+							"encoding_helper_encoding": "cp936",
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "tpl_admin/simpleboot/Admin/Mailer/index.html",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 1868,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								289,
+								295
+							]
+						],
+						"settings":
+						{
+							"encoding_helper_encoding": "UTF-8",
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 57.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 35.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"project": "thinkcmfx.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 319.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

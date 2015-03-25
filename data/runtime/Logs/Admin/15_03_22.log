@@ -1,0 +1,21 @@
+[ 2015-03-22T23:26:54+08:00 ] 127.0.0.1 /thinkcmfx1.5.0/index.php?g=Admin&m=setting&a=site_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000750s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001524s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002849s ]
+SQL: SHOW COLUMNS FROM `sp_users` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `sp_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sp_options` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `sp_options` WHERE ( option_name='site_options' ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: UPDATE `sp_options` SET `option_id`='2',`option_name`='site_options',`option_value`='{\"site_name\":\"clatfd\",\"site_host\":\"http:\\/\\/localhost\\/ThinkCMFX1.5.0\\/\",\"site_root\":\"\\/\",\"site_tpl\":\"simplebootx\",\"mobile_tpl_enabled\":\"1\",\"site_adminstyle\":\"bluesky\",\"site_icp\":\"\",\"site_admin_email\":\"c.1994@163.com\",\"site_tongji\":\"\",\"site_copyright\":\"\",\"site_seo_title\":\"clatfd\",\"site_seo_keywords\":\"\",\"site_seo_description\":\"clatfd\",\"urlmode\":\"0\",\"html_suffix\":\"\",\"comment_time_interval\":60}' WHERE ( option_name='site_options' ) [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `sp_options` [ RunTime:0.0054s ]
+SQL: SELECT * FROM `sp_options` WHERE ( option_name='cmf_settings' ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [2] json_decode() expects parameter 1 to be string, array given E:\server\nginx\html\ThinkCMFX1.5.0\application\Common\Common\function.php 第 291 行.
+SQL: UPDATE `sp_options` SET `option_name`='cmf_settings',`option_value`='{\"banned_usernames\":\"\"}' WHERE ( option_name='cmf_settings' ) [ RunTime:0.0005s ]
+
+[ 2015-03-22T23:27:01+08:00 ] 127.0.0.1 /thinkcmfx1.5.0/index.php?g=Admin&m=route&a=index
+NOTIC: D方法实例化没找到模型类Common\Model\RouteModel
+
+[ 2015-03-22T23:27:03+08:00 ] 127.0.0.1 /thinkcmfx1.5.0/index.php?g=Admin&m=route&a=add
+NOTIC: D方法实例化没找到模型类Common\Model\RouteModel
+

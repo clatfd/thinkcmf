@@ -1,0 +1,32 @@
+[ 2015-03-25T10:29:54+08:00 ] 127.0.0.1 /ThinkCMFX1.5.0/index.php?g=Admin&m=public&a=dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000671s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001343s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002497s ]
+SQL: SHOW COLUMNS FROM `sp_users` [ RunTime:0.0861s ]
+SQL: SELECT * FROM `sp_users` WHERE `user_login` = 'admin' LIMIT 1   [ RunTime:0.0014s ]
+NOTIC: [8] Undefined index: role_id E:\server\nginx\html\ThinkCMFX1.5.0\application\Admin\Controller\PublicController.class.php 第 61 行.
+SQL: UPDATE `sp_users` SET `user_login`='admin',`user_pass`='c535018ee9464abd9e2fd63c861590626243a53370df89af',`user_nicename`='admin',`user_email`='c.1994@163.com',`user_url`='',`avatar`=NULL,`sex`='0',`birthday`=NULL,`signature`=NULL,`last_login_ip`='127.0.0.1',`last_login_time`='2015-03-25 10:29:54',`create_time`='2015-03-22 11:33:22',`user_activation_key`='',`user_status`='1',`score`='0',`user_type`='1' WHERE `id` = '1' [ RunTime:0.0014s ]
+
+[ 2015-03-25T14:07:12+08:00 ] 127.0.0.1 /ThinkCMFX1.5.0/index.php?g=Admin&m=slide&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000643s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001262s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002316s ]
+SQL: SHOW COLUMNS FROM `sp_users` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `sp_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sp_slide` [ RunTime:0.0044s ]
+SQL: SHOW COLUMNS FROM `sp_slide_cat` [ RunTime:0.0035s ]
+SQL: INSERT INTO `sp_slide` (`slide_pic`,`slide_cid`,`slide_name`,`slide_url`,`slide_des`,`slide_content`) VALUES ('','0','a','a','a','a') [ RunTime:0.0009s ]
+
+[ 2015-03-25T14:38:07+08:00 ] 127.0.0.1 /ThinkCMFX1.5.0/index.php?g=Admin&m=slide&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001125s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002139s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004421s ]
+SQL: SHOW COLUMNS FROM `sp_users` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `sp_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sp_slide` [ RunTime:0.0039s ]
+SQL: SHOW COLUMNS FROM `sp_slide_cat` [ RunTime:0.0037s ]
+SQL: INSERT INTO `sp_slide` (`slide_pic`,`slide_cid`,`slide_name`,`slide_url`,`slide_des`,`slide_content`) VALUES ('','0','啊','啊','按此','  ') [ RunTime:0.0004s ]
+

@@ -1,0 +1,90 @@
+[ 2015-03-23T17:09:19+08:00 ] 127.0.0.1 /thinkcmfx1.5.0/index.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000629s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000948s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002158s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000265s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000340s ]
+SQL: SHOW COLUMNS FROM `sp_nav` [ RunTime:0.0043s ]
+SQL: SHOW COLUMNS FROM `sp_nav_cat` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `sp_nav_cat` WHERE ( active=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sp_nav` WHERE ( cid=1 and status=1 ) ORDER BY `listorder` ASC  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined property: Tree::$str E:\server\nginx\html\ThinkCMFX1.5.0\simplewind\Lib\Util\Tree.class.php 第 301 行.
+SQL: SHOW COLUMNS FROM `sp_slide_cat` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `sp_slide_cat` INNER JOIN sp_slide as b on sp_slide_cat.cid =b.slide_cid  WHERE ( cat_idname='portal_index' and slide_status=1 ) ORDER BY listorder ASC  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `sp_term_relationships` [ RunTime:0.0039s ]
+SQL: SELECT `post_title`,`post_excerpt`,`tid`,`smeta` FROM sp_term_relationships a INNER JOIN sp_posts as b on a.object_id =b.id INNER JOIN sp_users as c on b.post_author = c.id  WHERE `status` = 1 AND `post_status` = 1 AND `term_id` IN ('2') ORDER BY listorder asc LIMIT 4   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sp_links` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `sp_links` WHERE ( link_status=1 ) ORDER BY listorder ASC  [ RunTime:0.0003s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.055248s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.055290s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000559s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000427s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001041s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000706s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000789s ]
+
+[ 2015-03-23T17:10:47+08:00 ] 127.0.0.1 /thinkcmfx1.5.0/index.php?title=w&deadline=w&description=e
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000808s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001195s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002528s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000244s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000297s ]
+SQL: SHOW COLUMNS FROM `sp_nav` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `sp_nav_cat` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `sp_nav_cat` WHERE ( active=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `sp_nav` WHERE ( cid=1 and status=1 ) ORDER BY `listorder` ASC  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined property: Tree::$str E:\server\nginx\html\ThinkCMFX1.5.0\simplewind\Lib\Util\Tree.class.php 第 301 行.
+SQL: SHOW COLUMNS FROM `sp_slide_cat` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `sp_slide_cat` INNER JOIN sp_slide as b on sp_slide_cat.cid =b.slide_cid  WHERE ( cat_idname='portal_index' and slide_status=1 ) ORDER BY listorder ASC  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sp_term_relationships` [ RunTime:0.0036s ]
+SQL: SELECT `post_title`,`post_excerpt`,`tid`,`smeta` FROM sp_term_relationships a INNER JOIN sp_posts as b on a.object_id =b.id INNER JOIN sp_users as c on b.post_author = c.id  WHERE `status` = 1 AND `post_status` = 1 AND `term_id` IN ('2') ORDER BY listorder asc LIMIT 4   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `sp_links` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `sp_links` WHERE ( link_status=1 ) ORDER BY listorder ASC  [ RunTime:0.0003s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.056129s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.056171s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000647s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000639s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001342s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000917s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000986s ]
+
+[ 2015-03-23T22:57:45+08:00 ] 127.0.0.1 /thinkcmfx1.5.0/index.php?title=&deadline=&description=
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000882s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001177s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002638s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000258s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000448s ]
+SQL: SHOW COLUMNS FROM `sp_nav` [ RunTime:0.0192s ]
+SQL: SHOW COLUMNS FROM `sp_nav_cat` [ RunTime:0.0057s ]
+SQL: SELECT * FROM `sp_nav_cat` WHERE ( active=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `sp_nav` WHERE ( cid=1 and status=1 ) ORDER BY `listorder` ASC  [ RunTime:0.0009s ]
+NOTIC: [8] Undefined property: Tree::$str E:\server\nginx\html\ThinkCMFX1.5.0\simplewind\Lib\Util\Tree.class.php 第 301 行.
+SQL: SHOW COLUMNS FROM `sp_slide_cat` [ RunTime:0.0345s ]
+SQL: SELECT * FROM `sp_slide_cat` INNER JOIN sp_slide as b on sp_slide_cat.cid =b.slide_cid  WHERE ( cat_idname='portal_index' and slide_status=1 ) ORDER BY listorder ASC  [ RunTime:0.0229s ]
+SQL: SHOW COLUMNS FROM `sp_term_relationships` [ RunTime:0.0133s ]
+SQL: SELECT `post_title`,`post_excerpt`,`tid`,`smeta` FROM sp_term_relationships a INNER JOIN sp_posts as b on a.object_id =b.id INNER JOIN sp_users as c on b.post_author = c.id  WHERE `status` = 1 AND `post_status` = 1 AND `term_id` IN ('2') ORDER BY listorder asc LIMIT 4   [ RunTime:0.0175s ]
+SQL: SHOW COLUMNS FROM `sp_links` [ RunTime:0.0237s ]
+SQL: SELECT * FROM `sp_links` WHERE ( link_status=1 ) ORDER BY listorder ASC  [ RunTime:0.0016s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.199738s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.199840s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002135s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.001839s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004186s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003327s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003558s ]
+

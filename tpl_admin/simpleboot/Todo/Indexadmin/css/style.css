@@ -1,0 +1,35 @@
+.ui-collapsible{
+	width: 33%;
+	display: inline-block;
+	vertical-align: top;
+}
+.ui-collapsible-content > .ui-listview:not(.ui-listview-inset) > li.ui-first-child.prio1,li.prio1{
+border-top: solid 5px #d9534f;
+}
+.ui-collapsible-content > .ui-listview:not(.ui-listview-inset) > li.ui-first-child.prio2,li.prio2{
+border-top: solid 5px #ec971f;
+}
+.ui-collapsible-content > .ui-listview:not(.ui-listview-inset) > li.ui-first-child.prio3,li.prio3{
+border-top: solid 5px #286090;
+}
+.ui-collapsible-content > .ui-listview:not(.ui-listview-inset) > li.ui-first-child.prio4,li.prio4{
+border-top: solid 5px #31b0d5;
+}
+.ui-collapsible-content > .ui-listview:not(.ui-listview-inset) > li.ui-first-child.prio5,li.prio5{
+border-top: solid 5px #666;
+}
+
+.ui-listview > li.ui-li-has-alt > .ui-btn + a.btn-return{
+	right: 2.5em;
+}
+/*.ui-listview > li.ui-li-has-alt > a.a-item-doing{
+	margin-right: 5em;
+}*/
+
+.dogroupname{
+	font-size: 1em;
+}
+.dotitle{
+	font-size: 1em;
+	font-weight: bolder;
+}
