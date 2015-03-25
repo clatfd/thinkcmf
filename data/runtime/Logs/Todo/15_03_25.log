@@ -1062,3 +1062,156 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002750s ]
 INFO: [ app_end ] --END-- [ RunTime:0.002892s ]
 
+[ 2015-03-25T19:35:40+08:00 ] 127.0.0.1 /ThinkCMFX1.5.0/index.php?g=Todo&m=Indexadmin&a=index&menuid=159
+NOTIC: D方法实例化没找到模型类Todo\Model\TodoModel
+
+[ 2015-03-25T19:35:44+08:00 ] 127.0.0.1 /ThinkCMFX1.5.0/index.php?g=Todo&m=Indexadmin&a=move
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000873s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001284s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002682s ]
+SQL: SHOW COLUMNS FROM `sp_users` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `sp_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: D方法实例化没找到模型类Todo\Model\TodoModel
+SQL: SHOW COLUMNS FROM `sp_todo` [ RunTime:0.0036s ]
+SQL: UPDATE `sp_todo` SET `state`='3',`priority`='5' WHERE `id` = 1 [ RunTime:0.0048s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000840s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000879s ]
+
+[ 2015-03-25T19:48:39+08:00 ] 127.0.0.1 /thinkcmfx1.5.0/index.php?g=todo&m=index&a=index
+NOTIC: D方法实例化没找到模型类Todo\Model\TodoModel
+ERR: 模板不存在:tpl/simplebootx/Todo/Index/index.html
+
+[ 2015-03-25T19:48:59+08:00 ] 127.0.0.1 /thinkcmfx1.5.0/index.php?g=todo&m=index&a=index
+NOTIC: D方法实例化没找到模型类Todo\Model\TodoModel
+
+[ 2015-03-25T19:49:38+08:00 ] 127.0.0.1 /thinkcmfx1.5.0/index.php?g=todo&m=index&a=index
+NOTIC: D方法实例化没找到模型类Todo\Model\TodoModel
+
+[ 2015-03-25T19:54:24+08:00 ] 127.0.0.1 /thinkcmfx1.5.0/index.php?g=todo&m=index&a=index
+NOTIC: D方法实例化没找到模型类Todo\Model\TodoModel
+
+[ 2015-03-25T20:06:21+08:00 ] 127.0.0.1 /thinkcmfx1.5.0/index.php?g=todo&m=index&a=index
+NOTIC: D方法实例化没找到模型类Todo\Model\TodoModel
+
+[ 2015-03-25T20:07:11+08:00 ] 127.0.0.1 /thinkcmfx1.5.0/index.php?g=todo&m=index&a=index
+NOTIC: D方法实例化没找到模型类Todo\Model\TodoModel
+
+[ 2015-03-25T20:07:50+08:00 ] 127.0.0.1 /thinkcmfx1.5.0/index.php?g=todo&m=index&a=index
+NOTIC: D方法实例化没找到模型类Todo\Model\TodoModel
+
+[ 2015-03-25T20:09:34+08:00 ] 127.0.0.1 /thinkcmfx1.5.0/index.php?g=todo&m=index&a=index
+NOTIC: D方法实例化没找到模型类Todo\Model\TodoModel
+
+[ 2015-03-25T20:10:15+08:00 ] 127.0.0.1 /thinkcmfx1.5.0/index.php?g=todo&m=index&a=index
+NOTIC: D方法实例化没找到模型类Todo\Model\TodoModel
+
+[ 2015-03-25T20:20:12+08:00 ] 127.0.0.1 /thinkcmfx1.5.0/index.php?g=todo&m=index&a=index
+NOTIC: D方法实例化没找到模型类Todo\Model\TodoModel
+
+[ 2015-03-25T20:20:12+08:00 ] 127.0.0.1 /thinkcmfx1.5.0/index.php?g=Todo&m=index&a=index
+NOTIC: D方法实例化没找到模型类Todo\Model\TodoModel
+
+[ 2015-03-25T20:20:12+08:00 ] 127.0.0.1 /thinkcmfx1.5.0/index.php?g=Todo&m=index&a=index
+NOTIC: D方法实例化没找到模型类Todo\Model\TodoModel
+
+[ 2015-03-25T20:20:24+08:00 ] 127.0.0.1 /thinkcmfx1.5.0/index.php?g=todo&m=index&a=index
+NOTIC: D方法实例化没找到模型类Todo\Model\TodoModel
+
+[ 2015-03-25T20:20:24+08:00 ] 127.0.0.1 /thinkcmfx1.5.0/index.php?g=Todo&m=index&a=content
+NOTIC: D方法实例化没找到模型类Todo\Model\TodoModel
+
+[ 2015-03-25T20:20:31+08:00 ] 127.0.0.1 /thinkcmfx1.5.0/index.php?g=todo&m=index&a=index
+NOTIC: D方法实例化没找到模型类Todo\Model\TodoModel
+
+[ 2015-03-25T20:20:32+08:00 ] 127.0.0.1 /thinkcmfx1.5.0/index.php?g=Todo&m=index&a=content
+NOTIC: D方法实例化没找到模型类Todo\Model\TodoModel
+
+[ 2015-03-25T20:20:50+08:00 ] 127.0.0.1 /thinkcmfx1.5.0/index.php?g=todo&m=index&a=index
+NOTIC: D方法实例化没找到模型类Todo\Model\TodoModel
+
+[ 2015-03-25T20:20:50+08:00 ] 127.0.0.1 /thinkcmfx1.5.0/index.php?g=Todo&m=Todo&a=content
+ERR: 无法加载控制器:Todo
+
+[ 2015-03-25T20:21:20+08:00 ] 127.0.0.1 /thinkcmfx1.5.0/index.php?g=todo&m=content&a=index
+ERR: 无法加载控制器:Content
+
+[ 2015-03-25T20:22:34+08:00 ] 127.0.0.1 /thinkcmfx1.5.0/index.php?g=todo&m=index&a=index
+NOTIC: D方法实例化没找到模型类Todo\Model\TodoModel
+
+[ 2015-03-25T20:22:54+08:00 ] 127.0.0.1 /thinkcmfx1.5.0/index.php?g=todo&m=index&a=index
+NOTIC: D方法实例化没找到模型类Todo\Model\TodoModel
+
+[ 2015-03-25T20:23:58+08:00 ] 127.0.0.1 /thinkcmfx1.5.0/index.php?g=todo&m=index&a=index
+NOTIC: D方法实例化没找到模型类Todo\Model\TodoModel
+
+[ 2015-03-25T20:23:58+08:00 ] 127.0.0.1 /thinkcmfx1.5.0/index.php?g=Todo&m=Todo&a=content
+ERR: 无法加载控制器:Todo
+
+[ 2015-03-25T20:46:16+08:00 ] 127.0.0.1 /thinkcmfx1.5.0/index.php?g=todo&m=index&a=index
+NOTIC: D方法实例化没找到模型类Todo\Model\TodoModel
+
+[ 2015-03-25T20:46:16+08:00 ] 127.0.0.1 /thinkcmfx1.5.0/index.php?g=Todo&m=admin&a=content
+ERR: 无法加载控制器:Admin
+
+[ 2015-03-25T20:47:14+08:00 ] 127.0.0.1 /thinkcmfx1.5.0/index.php?g=todo&m=admin&a=content
+ERR: 无法加载控制器:Admin
+
+[ 2015-03-25T20:47:34+08:00 ] 127.0.0.1 /thinkcmfx1.5.0/index.php?g=todo&m=index&a=index
+NOTIC: D方法实例化没找到模型类Todo\Model\TodoModel
+
+[ 2015-03-25T20:47:34+08:00 ] 127.0.0.1 /thinkcmfx1.5.0/index.php?g=Todo&m=admin&a=content
+ERR: 无法加载控制器:Admin
+
+[ 2015-03-25T20:47:58+08:00 ] 127.0.0.1 /thinkcmfx1.5.0/index.php?g=todo&m=index&a=index
+NOTIC: D方法实例化没找到模型类Todo\Model\TodoModel
+
+[ 2015-03-25T20:47:59+08:00 ] 127.0.0.1 /thinkcmfx1.5.0/index.php?g=Todo&m=index&a=content
+NOTIC: D方法实例化没找到模型类Todo\Model\TodoModel
+
+[ 2015-03-25T20:48:02+08:00 ] 127.0.0.1 /thinkcmfx1.5.0/index.php?g=Todo&m=admin&a=content
+ERR: 无法加载控制器:Admin
+
+[ 2015-03-25T20:48:10+08:00 ] 127.0.0.1 /thinkcmfx1.5.0/index.php?g=todo&m=index&a=index
+NOTIC: D方法实例化没找到模型类Todo\Model\TodoModel
+
+[ 2015-03-25T20:48:10+08:00 ] 127.0.0.1 /thinkcmfx1.5.0/index.php?g=Todo&m=index&a=content
+NOTIC: D方法实例化没找到模型类Todo\Model\TodoModel
+
+[ 2015-03-25T20:48:46+08:00 ] 127.0.0.1 /thinkcmfx1.5.0/index.php?g=Todo&m=index&a=content
+NOTIC: D方法实例化没找到模型类Todo\Model\TodoModel
+
+[ 2015-03-25T20:52:35+08:00 ] 127.0.0.1 /thinkcmfx1.5.0/index.php?g=Todo&m=index&a=content
+NOTIC: D方法实例化没找到模型类Todo\Model\TodoModel
+
+[ 2015-03-25T20:52:35+08:00 ] 127.0.0.1 /thinkcmfx1.5.0/index.php?g=Todo&m=index&a=content
+NOTIC: D方法实例化没找到模型类Todo\Model\TodoModel
+
+[ 2015-03-25T20:53:00+08:00 ] 127.0.0.1 /thinkcmfx1.5.0/index.php?g=Todo&m=index&a=content
+NOTIC: D方法实例化没找到模型类Todo\Model\TodoModel
+
+[ 2015-03-25T20:53:04+08:00 ] 127.0.0.1 /thinkcmfx1.5.0/index.php?g=todo&m=index&a=index
+NOTIC: D方法实例化没找到模型类Todo\Model\TodoModel
+
+[ 2015-03-25T20:53:04+08:00 ] 127.0.0.1 /thinkcmfx1.5.0/index.php?g=Todo&m=index&a=content
+NOTIC: D方法实例化没找到模型类Todo\Model\TodoModel
+
+[ 2015-03-25T20:55:29+08:00 ] 127.0.0.1 /thinkcmfx1.5.0/index.php?g=todo&m=index&a=index
+NOTIC: D方法实例化没找到模型类Todo\Model\TodoModel
+
+[ 2015-03-25T20:55:29+08:00 ] 127.0.0.1 /thinkcmfx1.5.0/index.php?g=Todo&m=index&a=content
+NOTIC: D方法实例化没找到模型类Todo\Model\TodoModel
+
+[ 2015-03-25T20:59:55+08:00 ] 127.0.0.1 /thinkcmfx1.5.0/index.php?g=todo&m=index&a=index
+NOTIC: D方法实例化没找到模型类Todo\Model\TodoModel
+
+[ 2015-03-25T20:59:55+08:00 ] 127.0.0.1 /thinkcmfx1.5.0/index.php?g=Todo&m=index&a=content
+NOTIC: D方法实例化没找到模型类Todo\Model\TodoModel
+
+[ 2015-03-25T21:03:11+08:00 ] 127.0.0.1 /thinkcmfx1.5.0/index.php?g=todo&m=index&a=index
+NOTIC: D方法实例化没找到模型类Todo\Model\TodoModel
+
+[ 2015-03-25T21:03:11+08:00 ] 127.0.0.1 /thinkcmfx1.5.0/index.php?g=Todo&m=index&a=content
+NOTIC: D方法实例化没找到模型类Todo\Model\TodoModel
+

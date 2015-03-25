@@ -14,13 +14,8 @@ class IndexadminController extends AdminbaseController{
 		$todos_src = $this->todo_obj
 		->where(array("show"=>1))
 		->order("listname, priority ASC")
-		//->limit($page->firstRow . ',' . $page->listRows)
 		->select();
 		
-		//$roles_src=$this->role_obj->select();
-		// $todos=array();
-		// $doings=array();
-		// $dones=array();
 		$tds=array();
 		foreach ($todos_src as $r){
 			$todid=$r['id'];
@@ -32,10 +27,7 @@ class IndexadminController extends AdminbaseController{
 			elseif($r['state']==3)
 				$tds["$listname"]['dones']["$todid"]=$r;
 		}
-		//$this->assign("page", $page->show('Admin'));
 		$this->assign("tds",$tds);
-		// $this->assign("doings",$doings);
-		// $this->assign("dones",$dones);
 		$this->display();
 	}
 
@@ -79,16 +71,7 @@ class IndexadminController extends AdminbaseController{
 		else
 			echo "no post";
 	}
-	// function addnewtodo(){
-	// 	$title=$_POST['title'];
-	// 	$listname=$_POST['listname'];
-	// 	$groupname=$_POST['groupname'];
-	// 	$deadline=$_POST['deadline'];
-	// 	$description=$_POST['description'];
-	// 	$priority=$_POST['priority'];
-	// 	$privacy=$_POST['privacy'];
+	
+	
 
-	// 	$data= array('status' => 1 , 'data' => $title );
-	// 	echo json_encode($data);
-	// }
 }
