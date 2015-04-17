@@ -16,7 +16,7 @@ return array (
 		'title' => '下拉列表:',
 		'type' => 'select',
 		'options' => array (//select 和radio,checkbox的子选项
-			'1' => 'ThinkCMFX',// 值=>显示
+			'1' => 'thinkcmfx',// 值=>显示
 			'2' => 'ThinkCMF',
 			'3' => '跟猫玩糗事',
 			'4' => '门户应用' 
@@ -38,7 +38,7 @@ return array (
 		'title' => '单选框',
 		'type' => 'radio',
 		'options' => array (
-			'1' => 'ThinkCMFX',
+			'1' => 'thinkcmfx',
 			'2' => 'ThinkCMF' 
 		),
 		'value' => '1',
@@ -48,7 +48,7 @@ return array (
 		'title' => '多行文本',
 		'type' => 'textarea',
 		'options' => array (
-			'1' => 'ThinkCMFX',
+			'1' => 'thinkcmfx',
 			'2' => 'ThinkCMF' 
 		),
 		'value' => '这里是你要填写的内容',

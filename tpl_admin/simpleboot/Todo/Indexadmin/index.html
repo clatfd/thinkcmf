@@ -7,21 +7,21 @@
 	<title>jQM Editable Listview Demo</title>
 	
 <!-- 引入奥森图标库,此文件可选择引入，用于支持字体图标，用法见http://www.thinkcmf.com/font-->
-<link href="/ThinkCMFX1.5.0/tpl/simplebootx/Public/simpleboot/font-awesome/4.2.0/css/font-awesome.min.css"  rel="stylesheet" type="text/css">
+<link href="/thinkcmfx1.5.0/tpl/simplebootx/Public/simpleboot/font-awesome/4.2.0/css/font-awesome.min.css"  rel="stylesheet" type="text/css">
 
-<link href="/ThinkCMFX1.5.0/statics/simpleboot/jquery-ui/css/ui-lightness/jquery-ui-1.10.4.min.css"  rel="stylesheet" type="text/css">
+<link href="/thinkcmfx1.5.0/statics/simpleboot/jquery-ui/css/ui-lightness/jquery-ui-1.10.4.min.css"  rel="stylesheet" type="text/css">
 
 <!-- 引入奥森图标ie7支持库,此文件可选择引入，用于支持IE7字体图标，用法见http://www.thinkcmf.com/font-->
 <!--[if IE 7]>
- <link rel="stylesheet" href="/ThinkCMFX1.5.0/tpl/simplebootx/Public/simpleboot/font-awesome/4.2.0/css/font-awesome-ie7.min.css">
+ <link rel="stylesheet" href="/thinkcmfx1.5.0/tpl/simplebootx/Public/simpleboot/font-awesome/4.2.0/css/font-awesome-ie7.min.css">
 <![endif]-->
 
 <!-- 引入自定义css库，用户可加入自己的css组件-->
-<link href="/ThinkCMFX1.5.0/tpl_admin/simpleboot/Todo/Indexadmin/css/style.css" rel="stylesheet">
+<link href="/thinkcmfx1.5.0/tpl_admin/simpleboot/Todo/Indexadmin/css/style.css" rel="stylesheet">
 
 	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.2/jquery.mobile.css" />
 
-	<link rel="stylesheet" href="/ThinkCMFX1.5.0/tpl_admin/simpleboot/Todo/Indexadmin/css/editable-listview.css">
+	<link rel="stylesheet" href="/thinkcmfx1.5.0/tpl_admin/simpleboot/Todo/Indexadmin/css/editable-listview.css">
 	
 </head>
 
@@ -42,7 +42,7 @@
                             <input type="hidden" name="listname" value="{$listname}">
                             <input type="hidden" name="state" value="1">
                             <input type="text" name="groupname" placeholder="groupname">
-                            <input type="text" name="deadline" placeholder="deadline">
+                            <input type="text" name="deadline" placeholder="deadline" style="position: relative;z-index: 999;">
                             <input type="text" name="description" placeholder="description">
                             <select name="priority" placeholder="priority">
                                 <option selected="selected" value="1">1</option>
@@ -125,28 +125,28 @@
     <script type="text/javascript">
 //全局变量,必须加入
 var GV = {
-    DIMAUB: "/ThinkCMFX1.5.0/",
+    DIMAUB: "/thinkcmfx1.5.0/",
     JS_ROOT: "statics/js/",
     TOKEN: ""
 };
 </script>
 <!-- 引入jquery-->
-<!-- <script src="/ThinkCMFX1.5.0/statics/js/jquery.js"></script> -->
+<!-- <script src="/thinkcmfx1.5.0/statics/js/jquery.js"></script> -->
 	<script src="http://code.jquery.com/jquery-2.1.1.js"></script>
 <!-- jquery-migrate-1.2.1.min.js -->
-    <script src="/ThinkCMFX1.5.0/statics/simpleboot/jquery-ui/js/jquery-ui-1.10.4.min.js"></script>
+    <script src="/thinkcmfx1.5.0/statics/simpleboot/jquery-ui/js/jquery-ui-1.10.4.min.js"></script>
 
 <!-- 引入wind库，用于js异步加载-->
-<!-- <script src="/ThinkCMFX1.5.0/statics/js/wind.js"></script> -->
+<!-- <script src="/thinkcmfx1.5.0/statics/js/wind.js"></script> -->
 
 <!-- 引入bootstrap库，包含bootstrap各种组件-->
-<!--    <script src="/ThinkCMFX1.5.0/tpl/simplebootx/Public/simpleboot/bootstrap/js/bootstrap.min.js"></script>
+<!--    <script src="/thinkcmfx1.5.0/tpl/simplebootx/Public/simpleboot/bootstrap/js/bootstrap.min.js"></script>
 -->
 <!-- 引入ThinkCMF前端库，包含ThinkCMF各种组件，方法，如评论，赞等-->
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.2/jquery.mobile.js"></script>
 <!--
-	<script src="/ThinkCMFX1.5.0/tpl_admin/simpleboot/Todo/Indexadmin/js/editable-listview.js"></script>
+	<script src="/thinkcmfx1.5.0/tpl_admin/simpleboot/Todo/Indexadmin/js/editable-listview.js"></script>
 -->
 
 <script>
@@ -189,26 +189,26 @@ $("form").change(function(){
 function addnewtodo(){
     targetform=$("button.addnewtodo-btn").parent().find("form");
     // par=targetform.serialize();
-    // groupname=targetform.find("input[name=groupname]").val();
-    // title=targetform.find("input[name=title]").val();
-    // deadline=targetform.find("input[name=deadline]").val();
-    // description=targetform.find("input[name=description]").val();
-    // priority=targetform.find("select[name=priority]").val();
-    // privacy=targetform.find("select[name=privacy]").val();
+    groupname=targetform.find("input[name=groupname]").val();
+    title=targetform.find("input[name=title]").val();
+    deadline=targetform.find("input[name=deadline]").val();
+    description=targetform.find("input[name=description]").val();
+    priority=targetform.find("select[name=priority]").val();
+    privacy=targetform.find("select[name=privacy]").val();
 
     $.ajax({      
         type: "POST",      
         url: "{:U('Indexadmin/addnewtodo')}",     
         data: targetform.serialize(),
-        success: function(r){
-            msg=JSON.parse(r); 
+        success: function(msg){
+            //msg=JSON.parse(r); 
             console.log(msg.status);
-            if(msg.status==1){
-                window.location.reload();
-                // id=msg.url.slice(msg.url.indexOf("id")+3);
-               // addtodoitem(targetform,id,groupname,title,deadline,description,priority);
-                // targetform.find("input[type=text], textarea").val("");
-                // targetform.parent().parent().parent().parent().find("button.editbtn").click();
+            if(msg.status){
+                //window.location.reload();
+                id=msg.data.id;
+                addtodoitem(targetform,id,groupname,title,deadline,description,priority);
+                targetform.find("input[type=text], textarea").val("");
+                targetform.parent().parent().parent().parent().find("button.editbtn").click();
             }
             else
                 alert(msg.info);
@@ -217,18 +217,18 @@ function addnewtodo(){
     
 }
 
-// function addtodoitem(targetform,id,groupname,title,deadline,description,priority){
-//     targetform.parent().parent().append('<li id="item'+id+'" class="prio'+priority+' ui-li-has-alt" data-item="1">\
-//                         <a class="ui-btn">\
-//                             <h3>\
-//                                 <span class="dogroupname">'+groupname+':</span><span class="dotitle">'+title+'</span>\
-//                             </h3>\
-//                             <p><em>Deadline:</em> <strong><span class="deadline">'+deadline+'</span></strong></p>\
-//                             <p><em>Description:</em> <strong><span class="description">'+description+'</span></strong></p>\
-//                         </a>\
-//                         <a class="ui-btn ui-btn-icon-notext ui-icon-arrow-r" onclick="movetodoing('+id+')"></a>
-//                     </li>');
-// }   
+function addtodoitem(targetform,id,groupname,title,deadline,description,priority){
+    targetform.parent().parent().prepend('<li id="item'+id+'" class="prio'+priority+' ui-li-has-alt" data-item="1">\
+                        <a class="ui-btn">\
+                            <h3>\
+                                <span class="dogroupname">'+groupname+':</span><span class="dotitle">'+title+'</span>\
+                            </h3>\
+                            <p><em>Deadline:</em> <strong><span class="deadline">'+deadline+'</span></strong></p>\
+                            <p><em>Description:</em> <strong><span class="description">'+description+'</span></strong></p>\
+                        </a>\
+                        <a class="ui-btn ui-btn-icon-notext ui-icon-arrow-r" onclick="movetodoing('+id+')"></a>\
+                    </li>');
+}   
 // function adddoingitem(item){
 //     targetform.parent().parent().append('<li id="item'+id+'" class="prio'+priority+'  ui-li-has-alt">\
 //                         <a class="ui-btn a-item-doing">\
@@ -242,6 +242,7 @@ function addnewtodo(){
 //                         <a class="ui-btn ui-btn-icon-notext ui-icon-check" onclick="movetodone('+id+')"></a>\
 //                     </li>');
 // }   
+
 function movetodoing(itemid){
     obj=$("#item"+itemid);
     targetlist=obj.parent().attr("list");
@@ -249,8 +250,7 @@ function movetodoing(itemid){
         type: "POST",      
         url: "{:U('Indexadmin/move')}",     
         data: {id:itemid, state:2},
-        success: function(r){
-            msg=JSON.parse(r); 
+        success: function(msg){
             if(msg.status==1){
                 obj.find("a.ui-icon-arrow-r").remove();
                 obj.append('<a class="btn-return ui-btn ui-btn-icon-notext ui-icon-forward" onclick="returntodo('+itemid+')"></a><a class="ui-btn ui-btn-icon-notext ui-icon-check" onclick="movetodone('+itemid+')"></a>');
@@ -268,8 +268,7 @@ function movetodone (itemid) {
         type: "POST",      
         url: "{:U('Indexadmin/move')}",     
         data: {id:itemid, state:3, priority:5},
-        success: function(r){
-            msg=JSON.parse(r); 
+        success: function(msg){
             if(msg.status==1){
                 obj.find("a.ui-icon-forward").remove();
                 obj.find("a.ui-icon-check").remove();
@@ -290,8 +289,7 @@ function returntodo (itemid) {
         type: "POST",      
         url: "{:U('Indexadmin/move')}",     
         data: {id:itemid, state:1},
-        success: function(r){
-            msg=JSON.parse(r); 
+        success: function(msg){
             if(msg.status==1){
                 obj.find("a.ui-icon-forward").remove();
                 obj.find("a.ui-icon-check").remove();
@@ -308,8 +306,7 @@ function movetoarchive(itemid){
         type: "POST",      
         url: "{:U('Indexadmin/move')}",     
         data: {id:itemid, show:0},
-        success: function(r){
-            msg=JSON.parse(r); 
+        success: function(msg){
             if(msg.status==1){
                 $("#item"+itemid).remove();
             }

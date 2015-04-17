@@ -2,11 +2,15 @@
 <style>
 .home_info li em {
 float: left;
-width: 100px;
+width: 150px;
 font-style: normal;
 }
 li {
 list-style: none;
+}
+li.notice_headline{
+  font-weight: bolder;
+  line-height: 25px;
 }
 
 </style>
@@ -15,18 +19,21 @@ list-style: none;
 <body>
 <div class="wrap">
   <div id="home_toptip"></div>
-  <h4>Notable Notice</h4>
+  
+  <h4 class="well">Notable Notice</h4>
   <div class="home_info">
     <ul id="notable_notices">
-      <li><img src="__TMPL__assets/images/loading.gif"  style="vertical-align: middle;"/><span style="display:inline-block;vertical-align: middle;">加载中...</span></li>
+      <li class="loadingpic"><img src="__TMPL__assets/images/loading.gif"  style="vertical-align: middle;"/><span style="display:inline-block;vertical-align: middle;">加载中...</span></li>
     </ul>
   </div>
+
   <h4 class="well">System Notice</h4>
   <div class="home_info">
     <ul id="thinkcmf_notices">
     	<li><img src="__TMPL__assets/images/loading.gif"  style="vertical-align: middle;"/><span style="display:inline-block;vertical-align: middle;">加载中...</span></li>
     </ul>
   </div>
+
   <h4 class="well">System Info</h4>
   <div class="home_info">
     <ul>
@@ -57,6 +64,66 @@ $.getJSON("http://www.thinkcmf.com/service/sms_jsonp.php?callback=?",function(da
 	}
 	
 });
+
+$.ajax({      
+        type: "GET",      
+        url: "/thinkcmfx1.5.0/index.php?g=Todo&m=Indexadmin&a=getapi",     //important notice
+        success: function(msg){
+            console.log(msg.data.src);
+            if(msg.status==1){
+              var tpl='<li><em class="title"></em><span class="content"></span></li>';
+              var $notable_notices=$("#notable_notices");
+              if($(".loadingpic").length)
+                $(".loadingpic").remove();
+              $notable_notices.append("<li class='notice_headline'><a href=\"/thinkcmfx1.5.0/index.php?g=Todo&m=Indexadmin&a=index&menuid=159\">Todo</a></li>");
+
+              if(msg.data.src){
+                $.each(msg.data.src,function(i,n){
+                  var $tpl=$(tpl);
+                  $(".title",$tpl).html("<strong>"+n.groupname+" : "+n.title+"</strong>");
+                  $(".content",$tpl).html(n.deadline);
+                  $notable_notices.append($tpl);
+                });
+              }
+              else{
+                $notable_notices.append("<li>^_^,No_deadline~~</li>");
+              }
+            }
+            else
+                alert(msg.info);
+        }  
+    });
+$.ajax({      
+        type: "GET",      
+        url: "/api/api.php?m=in&n=3",     //important notice
+        success: function(r){
+            msg=JSON.parse(r); 
+            //console.log(msg.status);
+            if(msg.status==1){
+              if($(".loadingpic").length)
+                $(".loadingpic").remove();
+              var tpl='<li><em class="title"></em><span class="content"></span></li>';
+              var $notable_notices=$("#notable_notices");
+              //console.log(msg.data.wordlist);
+              $notable_notices.append("<li class='notice_headline'><a href='/H-wordlist/' target='_blank'>Wordlist</a></li>");
+
+              //if(msg.data.length>0){
+                $.each(msg.data.wordlist,function(i,n){
+                  var $tpl=$(tpl);
+                  $(".title",$tpl).html(n.eng);
+                  $(".content",$tpl).html(n.chi);
+                  $notable_notices.append($tpl);
+                });
+              //}else{
+              //  $notable_notices.append("<li>^_^,没有通知~~</li>");
+              //}
+            }
+            else
+                alert(msg.info);
+        }  
+    });
+
+
 </script>
 </body>
 </html>

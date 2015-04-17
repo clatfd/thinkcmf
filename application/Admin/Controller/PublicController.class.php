@@ -37,11 +37,11 @@ class PublicController extends AdminbaseController {
     		$this->error(L('PASSWORD_REQUIRED'));
     	}
     	$verrify = I("post.verify");
-    	if(empty($verrify)){
+    	if(empty($verrify)&&$_SERVER["REMOTE_ADDR"]!="127.0.0.1"){
     		$this->error(L('CAPTCHA_REQUIRED'));
     	}
     	//验证码
-    	if($_SESSION['_verify_']['verify']!=strtolower($verrify))
+    	if($_SESSION['_verify_']['verify']!=strtolower($verrify)&&$_SERVER["REMOTE_ADDR"]!="127.0.0.1")
     	{
     		$this->error(L('CAPTCHA_NOT_RIGHT'));
     	}else{

@@ -10,10 +10,10 @@ border-top: solid 5px #d9534f;
 border-top: solid 5px #ec971f;
 }
 .ui-collapsible-content > .ui-listview:not(.ui-listview-inset) > li.ui-first-child.prio3,li.prio3{
-border-top: solid 5px #286090;
+border-top: solid 5px #31b0d5;
 }
 .ui-collapsible-content > .ui-listview:not(.ui-listview-inset) > li.ui-first-child.prio4,li.prio4{
-border-top: solid 5px #31b0d5;
+border-top: solid 5px #286090;
 }
 .ui-collapsible-content > .ui-listview:not(.ui-listview-inset) > li.ui-first-child.prio5,li.prio5{
 border-top: solid 5px #666;
