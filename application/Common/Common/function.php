@@ -424,6 +424,47 @@ function _sp_get_menu_datas($id){
 	F("site_nav",$navs);
 	return $navs;
 }
+function sp_get_submenu($id="main",$effected_id="mainmenu",$filetpl="<span class='file'>\$label</span>",$foldertpl="<span class='folder'>\$label</span>",$ul_class="" ,$li_class="" ,$style="filetree",$showlevel=6,$dropdown='hasChild'){
+	$navs=F("site_nav_".$id);
+	if(empty($navs)){
+		$navs=_sp_get_submenu_datas($id);
+	}
+	return $navs;
+	// import("Tree");
+	// $tree = new \Tree();
+	// $tree->init($navs);
+	// return $tree->get_treeview_menu(0,$effected_id, $filetpl, $foldertpl,  $showlevel,$ul_class,$li_class,  $style,  1, FALSE, $dropdown);
+}
+function _sp_get_submenu_datas($id){
+	$nav_obj= M("Nav");
+	$condition['label'] = $id;
+	$navsitem= $nav_obj->where($condition)->find();
+	$navsitemid=$navsitem['id'];
+	$navs= $nav_obj->where("parentid=$navsitemid and status=1")->order(array("listorder" => "ASC"))->select();
+	foreach ($navs as $key=>$nav){
+		$href=htmlspecialchars_decode($nav['href']);
+		$hrefold=$href;
+		
+		if(strpos($hrefold,"{")){//序列 化的数据
+			$href=unserialize(stripslashes($nav['href']));
+			$default_app=strtolower(C("DEFAULT_MODULE"));
+			$href=strtolower(leuu($href['action'],$href['param']));
+			$g=C("VAR_MODULE");
+			$href=preg_replace("/\/$default_app\//", "/",$href);
+			$href=preg_replace("/$g=$default_app&/", "",$href);
+		}else{
+			if($hrefold=="home"){
+				$href=__ROOT__."/";
+			}else{
+				$href=$hrefold;
+			}
+		}
+		$nav['href']=$href;
+		$navs[$key]=$nav;
+	}
+	F("site_nav",$navs);
+	return $navs;
+}
 function sp_get_menu_tree($id="main"){
 	$navs=F("site_nav_".$id);
 	if(empty($navs)){
@@ -563,6 +604,9 @@ function sp_send_email($address,$subject,$message){
 	$mail=new \PHPMailer();
 	// 设置PHPMailer使用SMTP服务器发送Email
 	$mail->IsSMTP();
+	//Set the SMTP port number - likely to be 25, 465 or 587
+	$mail->Port = 465;
+	
 	$mail->IsHTML(true);
 	// 设置邮件的字符编码，若不指定，则为'UTF-8'
 	$mail->CharSet='UTF-8';

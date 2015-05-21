@@ -10,6 +10,7 @@ if(file_exists("data/conf/config.php")){
     $runtime_config=array();
 }
 $configs= array(
+	
 		"LOAD_EXT_FILE"=>"extend",
 		'UPLOADPATH' => 'data/upload/',
 		//'SHOW_ERROR_MSG'        =>  true,    // 显示错误信息

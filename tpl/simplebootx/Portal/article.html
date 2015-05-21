@@ -69,11 +69,11 @@
         	
         	<div class="tc-box">
 	        	<div class="headtitle">
-	        		<h2>热门文章</h2>
+	        		<h2>推荐文章</h2>
 	        	</div>
 	        	<div class="ranking">
 	        		<php>
-						$hot_articles=sp_sql_posts("cid:$portal_index_lastnews;field:post_title,post_excerpt,tid,smeta;order:post_hits desc;limit:5;"); 
+						$hot_articles=sp_sql_posts("cid:$portal_hot_articles;field:post_title,post_excerpt,tid,smeta;order:post_hits desc;limit:5;"); 
 					</php>
 		        	<ul class="unstyled">
 		        		<foreach name="hot_articles" item="vo">

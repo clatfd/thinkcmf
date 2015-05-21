@@ -14,24 +14,24 @@
 	<div class="container tc-main">
 		<div class="row">
 			<div class="span6 offset3">
-				<h2 class="text-center">用户登录</h2>
+				<h2 class="text-center">User Login</h2>
 				<form class="form-horizontal J_ajaxForms" action="{:U('user/login/dologin')}" method="post">
 					<div class="control-group">
-						<label class="control-label" for="input_username">账号</label>
+						<label class="control-label" for="input_username">Account </label>
 						<div class="controls">
 							<input type="text" id="input_username" name="username" placeholder="请输入用户名或者邮箱" class="span3">
 						</div>
 					</div>
 
 					<div class="control-group">
-						<label class="control-label" for="input_password">密码</label>
+						<label class="control-label" for="input_password">Password </label>
 						<div class="controls">
 							<input type="password" id="input_password" name="password" placeholder="请输入密码" class="span3">
 						</div>
 					</div>
 
 					<div class="control-group">
-						<label class="control-label" for="input_verify">验证码</label>
+						<label class="control-label" for="input_verify">Verification code </label>
 						<div class="controls">
 							<input type="text" id="input_verify" name="verify"  placeholder="请输入验证码" class="span3">
 							{:sp_verifycode_img('code_len=4&font_size=15&width=100&height=35&charset=1234567890')}
@@ -40,15 +40,15 @@
 					<div class="control-group">
 						<label class="control-label" for="input_repassword"></label>
 						<div class="controls">
-							<label class="checkbox persistent"><input type="checkbox" name="terms" value="1">我同意
-								<a href="#">网站内容服务条款</a></label>
+							<label class="checkbox persistent"><input checked type="checkbox" name="terms" value="1">I agree to
+								<a href="index.php?g=portal&m=page&a=index&id=25">Terms and sentences of the website </a></label>
 						</div>
 					</div>
 
 					<div class="control-group">
 						<label class="control-label" for="input_repassword"></label>
 						<div class="controls">
-							<button class="btn btn-primary J_ajax_submit_btn" type="submit">确定</button>
+							<button class="btn btn-primary J_ajax_submit_btn" type="submit">Confirm</button>
 						</div>
 					</div>
 
@@ -56,8 +56,8 @@
 						<label class="control-label" for="input_repassword"></label>
 						<div class="controls">
 							<ul class="inline">
-								<li><a href="{:U('user/register/index')}">现在注册</a></li>
-								<li><a href="{:U('user/login/forgot_password')}">忘记密码</a></li>
+								<li><a href="{:U('user/register/index')}">Register Now!</a></li>
+								<li><a href="{:U('user/login/forgot_password')}">Forget Password</a></li>
 							</ul>
 						</div>
 					</div>

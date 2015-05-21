@@ -19,6 +19,23 @@
     <div class="row">
 		<div class="span9">
 			<div class="">
+			<ul>
+
+			<?php
+				$effected_id="";
+			  	$filetpl="<a href='\$href'><span class='file'>\$label</span></a>";
+			  	$foldertpl="<span class='folder'>\$label</span>";
+			  	$ul_class="sub-menu" ;//dropdown-menu
+			  	$li_class="menu-item" ;
+			  	$style="nav";
+			  	$showlevel=3;
+			  	$dropdown='dropdown';
+			  	$navs= sp_get_submenu($name,$effected_id,$filetpl,$foldertpl,$ul_class,$li_class,$style,$showlevel,$dropdown);
+				foreach ($navs as $key=>$nav){
+					echo "<li><a href=\"".$nav['href']."\">".$nav['label']."</a></li>";
+				}
+			?>
+			</ul>
 				<php>
 					$lists = sp_sql_posts_paged("cid:$cat_id;order:post_date DESC;",10);
 				</php>
@@ -40,7 +57,7 @@
 							</a>
 							</div>
 						</div>
-						<a class="btn btn-warning pull-right" href="{:leuu('article/index',array('id'=>$vo['tid']))}">See more</a>
+						<a class="btn btn-warning pull-right" href="{:leuu('article/index',array('id'=>$vo['tid']))}">查看更多</a>
 					</div>
 				</div>
 				</volist>

@@ -20,6 +20,22 @@ margin-left: 0px;
 	vertical-align: middle;
 	margin: 0 5px;
 }
+li.open>ul.dropdown-menu>li.open:hover>ul.dropdown-menu{
+display: block;
+}
+li.open>ul.dropdown-menu>li.open>ul.dropdown-menu{
+left: 160px;
+position: absolute;
+top: 0;
+display: none;
+}
+li.open>ul.dropdown-menu .caret{
+	transform:rotate(-90deg);
+	-ms-transform:rotate(-90deg); 	/* IE 9 */
+	-moz-transform:rotate(-90deg); 	/* Firefox */
+	-webkit-transform:rotate(-90deg); /* Safari 和 Chrome */
+	-o-transform:rotate(-90deg); 	/* Opera */
+}
 /*tc widget*/
 .tc-main{
 	margin-top: 20px;
@@ -433,7 +449,7 @@ background-color: #aaa;
 /*ThinkCMF Photos*/
 ul.tc-photos{margin: 0;}
 .tc-photos li {
-	display: inline;
+	display: inline-block;
 }
 .tc-photos li a{text-decoration: none;}
 .tc-photos li img {
@@ -448,7 +464,9 @@ ul.tc-photos{margin: 0;}
 	border: 1px solid #f90;
 	/* box-shadow: 0 0 0 1px #f90; */
 }
-
+.tc-photos p{
+	text-align: center;
+}
 /**/
 
 /*Blog Posts

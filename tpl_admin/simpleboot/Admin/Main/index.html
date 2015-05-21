@@ -65,11 +65,13 @@ $.getJSON("http://www.thinkcmf.com/service/sms_jsonp.php?callback=?",function(da
 	
 });
 
+
+
 $.ajax({      
         type: "GET",      
-        url: "/thinkcmfx1.5.0/index.php?g=Todo&m=Indexadmin&a=getapi",     //important notice
+        url: "/thinkcmfx1.5.0/index.php?g=Todo&m=Indexadmin&a=getapi",     //todo
         success: function(msg){
-            console.log(msg.data.src);
+            //console.log(msg.status);
             if(msg.status==1){
               var tpl='<li><em class="title"></em><span class="content"></span></li>';
               var $notable_notices=$("#notable_notices");
@@ -95,7 +97,7 @@ $.ajax({
     });
 $.ajax({      
         type: "GET",      
-        url: "/api/api.php?m=in&n=3",     //important notice
+        url: "/api/wd.php?m=in&n=3",     //wdlist
         success: function(r){
             msg=JSON.parse(r); 
             //console.log(msg.status);
@@ -122,7 +124,30 @@ $.ajax({
                 alert(msg.info);
         }  
     });
+$.ajax({      
+        type: "GET",      
+        url: "/api/api.php?get=bc",     //biochart
+        success: function(r){
+            msg=JSON.parse(r); 
+            //console.log(msg.status);
+            if(msg.status==1){
+              if($(".loadingpic").length)
+                $(".loadingpic").remove();
+              var tpl='<li><em class="title"></em><span class="content"></span></li>';
+              var $notable_notices=$("#notable_notices");
+              $notable_notices.append("<li class='notice_headline'>Biochart</li>");
 
+                $.each(msg.src,function(i,n){
+                  var $tpl=$(tpl);
+                  $(".title",$tpl).html(i);
+                  $(".content",$tpl).html(n);
+                  $notable_notices.append($tpl);
+                });
+            }
+            else
+                alert(msg.info);
+        }  
+    });
 
 </script>
 </body>
