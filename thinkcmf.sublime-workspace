@@ -1,0 +1,444 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"zx",
+				"zxbranking"
+			],
+			[
+				"op",
+				"opacity"
+			],
+			[
+				"schoo",
+				"schooltype"
+			],
+			[
+				"var",
+				"var_dump($checkpasswdInfo"
+			],
+			[
+				"erro",
+				"error_log"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "application/Portal/Common/function.php",
+			"settings":
+			{
+				"buffer_size": 15195,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "tpl/simplebootx/Portal/newest.html",
+			"settings":
+			{
+				"buffer_size": 6585,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "tpl_admin/simpleboot/Portal/AdminPost/add.html",
+			"settings":
+			{
+				"buffer_size": 9854,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "tpl/simplebootx/Portal/index.html",
+			"settings":
+			{
+				"buffer_size": 5930,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 375.0,
+		"selected_items":
+		[
+			[
+				"in",
+				"Package Control: Install Package→安装插件"
+			],
+			[
+				"i",
+				"Package Control: Install Package→安装插件"
+			]
+		],
+		"width": 594.0
+	},
+	"console":
+	{
+		"height": 146.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Portal/subpage.html",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Portal/page.html",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Portal/subindex.html",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Portal/timeline.html",
+		"/E/server/nginx/html/thinkcmfx/application/Portal/Controller/AdminPostController.class.php",
+		"/E/server/nginx/html/thinkcmfx/tpl_admin/simpleboot/Portal/AdminPage/index.html",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Portal/recommend.html",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Portal/newest.html",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/config.html",
+		"/E/server/nginx/html/thinkcmfx/tpl_admin/simpleboot/Admin/Main/index.html",
+		"/E/server/nginx/html/shupingnew/js/common.js",
+		"/E/server/nginx/html/curl.php",
+		"/E/server/nginx/html/shupingnew/applicant/printzjiang.html",
+		"/C/Users/cl/AppData/Local/Temp/Rar$DRa0.458/applicant/upload.html",
+		"/C/Users/cl/AppData/Local/Temp/Rar$DRa0.076/applicant/fillapplication.html",
+		"/E/server/nginx/html/shupingnew/applicant/fillapplication.html",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Portal/article.html",
+		"/E/server/nginx/html/shupingnew/applicant/upload.html",
+		"/E/server/nginx/html/shupingnew/applicant/uploadtran.html",
+		"/E/server/nginx/html/thinkcmfx/tpl_admin/simpleboot/Portal/AdminPost/add.html",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Portal/list_masonry.html",
+		"/E/server/nginx/html/thinkcmfx/tpl_admin/simpleboot/Todo/Indexadmin/index.html",
+		"/E/server/nginx/html/sora9/1/sora_auth/error.html",
+		"/E/server/nginx/html/sora9/1/sora_auth/index.php",
+		"/E/server/nginx/html/sora9/1/sora_auth/auth.php",
+		"/E/server/nginx/html/thinkcmfx/tpl_admin/simpleboot/Portal/AdminPage/add.html",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Todo/content.html",
+		"/E/server/nginx/html/ThinkCMFX 1.6.0/tpl/simplebootx/Portal/article.html",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Portal/list.html",
+		"/E/server/nginx/html/ThinkCMFX 1.6.0/tpl/simplebootx/Portal/list.html",
+		"/E/server/nginx/html/shupingnew/api/class/User.php",
+		"/E/server/nginx/html/thinkcmfx/db.php",
+		"/E/server/nginx/html/shupingnew/api/submitapplication.php",
+		"/E/server/nginx/html/shupingnew/api/getstep.php",
+		"/E/server/nginx/html/shupingnew/applicant/printjiang.html",
+		"/E/server/nginx/html/shupingnew/admin/firsttrial.html",
+		"/E/server/nginx/html/thinkcmfx/data/conf/db.php",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Todo/index.html",
+		"/C/Users/cl/Desktop/New Text Document.txt",
+		"/C/Users/cl/Downloads/使用前必看,.txt",
+		"/C/Users/cl/Downloads/获取说明;~~,.~~~~~~~~~~~~~~~~~~,~.txt",
+		"/E/server/nginx/html/shupingnew/applicant/basicinfo.html",
+		"/E/server/nginx/html/shupingnew/api/admingettrialinfo.php",
+		"/E/server/nginx/html/shupingnew/css/fillapplication.css",
+		"/C/Users/cl/Downloads/GPUDemoCode/GPUDemoCode/README.txt",
+		"/C/Users/cl/Downloads/GPUDemoCode/GPUDemoCode/whitebalance.m",
+		"/C/Users/cl/Downloads/C2G2FSnake/Stanard images/pr.m",
+		"/C/Users/cl/Downloads/C2G2FSnake/Stanard images/cutedge.m",
+		"/C/Users/cl/Downloads/GPUDemoCode/GPUDemoCode/runScript.m",
+		"/C/Users/cl/Downloads/read me.txt",
+		"/C/Users/cl/Downloads/GPUDemoCode/license.txt",
+		"/C/Users/cl/AppData/Local/Temp/Rar$DIa0.835/User.php",
+		"/E/server/php/php.ini",
+		"/E/server/nginx/html/shupingnew/login.html"
+	],
+	"find":
+	{
+		"height": 39.0
+	},
+	"find_in_files":
+	{
+		"height": 120.0,
+		"where_history":
+		[
+			"E:\\server\\nginx\\html\\thinkcmfx\\tpl_admin\\simpleboot",
+			"E:\\server\\nginx\\html\\thinkcmfx",
+			"E:\\server\\nginx\\html\\thinkcmfx\\tpl_admin\\simpleboot",
+			"E:\\server\\nginx\\html\\thinkcmfx",
+			"E:\\server\\nginx\\html\\thinkcmfx\\tpl_admin",
+			"E:\\server\\nginx\\html\\thinkcmfx"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"sp_sql_posts",
+			"cbp_tmicon cbp_tmicon-phone",
+			"user",
+			"所有页面",
+			"sp_sql_posts",
+			"sp_sql_posts_paged",
+			"AdminPost",
+			"action",
+			"发布时间",
+			"uploadtranbtn",
+			"sp_get_menu",
+			"logout",
+			"name=\"post[post_modified]\"",
+			"post_date:发布时间",
+			"post_date",
+			"$post_date",
+			"			box = elem.getBoundingClientRect();\n			box = elem.getBoundingClientRect();\njquery-2.1.1",
+			"jquery-2.1.1",
+			"thinkcmfx1.5.0",
+			"thinkcmfx.1.5.0",
+			"ajax-loader.gif",
+			"award",
+			"formwarning",
+			"jxjbtn",
+			"getApplyInfo",
+			"refreshstep",
+			"scholarship",
+			"dxspjxj",
+			"seniorf",
+			" \n",
+			"spjxj",
+			"seniorform",
+			"sen",
+			"scores",
+			"sc",
+			"curadd",
+			"otheruniversity",
+			"schoolty",
+			",",
+			"shanghai",
+			"error_log",
+			"fillinfo"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"\\n"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"folders":
+	[
+		{
+			"follow_symlinks": true,
+			"path": "E:\\server\\nginx\\html\\thinkcmfx"
+		}
+	],
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "application/Portal/Common/function.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 15195,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								786,
+								786
+							]
+						],
+						"settings":
+						{
+							"encoding_helper_encoding": "UTF-8",
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 207.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "tpl/simplebootx/Portal/newest.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6585,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								576,
+								576
+							]
+						],
+						"settings":
+						{
+							"encoding_helper_encoding": "UTF-8",
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 138.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "tpl_admin/simpleboot/Portal/AdminPost/add.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9854,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1761,
+								1770
+							]
+						],
+						"settings":
+						{
+							"encoding_helper_encoding": "UTF-8",
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 69.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "tpl/simplebootx/Portal/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5930,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3067,
+								3076
+							]
+						],
+						"settings":
+						{
+							"encoding_helper_encoding": "UTF-8",
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2001.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 30.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "",
+	"replace":
+	{
+		"height": 56.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 313.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

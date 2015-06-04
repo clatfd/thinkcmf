@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>{$site_name}</title>
+<meta name="keywords" content="{$site_seo_keywords}" />
+<meta name="description" content="{$site_seo_description}">
+<meta name="author" content="ThinkCMF">
+<tc_include file="Public:head" />
+</head>
+
+<body class="body-white">
+	<tc_include file="Public:nav" />
+
+	<div class="container tc-main">
+		<div class="row">
+			<div class="span6 offset3">
+				<h2 class="text-center">Create account</h2>
+				<form class="form-horizontal J_ajaxForm" action="{:U('user/register/doregister')}" method="post">
+					<div class="control-group">
+						<label class="control-label" for="input_username">Account</label>
+						<div class="controls">
+							<input type="text" id="input_username" name="username" placeholder="Enter Acoount" class="span3">
+						</div>
+					</div>
+
+					<div class="control-group">
+						<label class="control-label" for="input_email">Email</label>
+						<div class="controls">
+							<input type="text" id="input_email" name="email" placeholder="Enter Email" class="span3">
+						</div>
+					</div>
+
+					<div class="control-group">
+						<label class="control-label" for="input_password">Password</label>
+						<div class="controls">
+							<input type="password" id="input_password" name="password" placeholder="Enter Password" class="span3">
+						</div>
+					</div>
+
+					<div class="control-group">
+						<label class="control-label" for="input_repassword">Password again</label>
+						<div class="controls">
+							<input type="password" id="input_repassword" name="repassword" placeholder="Enter Password again" class="span3">
+						</div>
+					</div>
+
+					<div class="control-group">
+						<label class="control-label" for="input_verify">Verification Code</label>
+						<div class="controls">
+							<input type="text" id="input_verify" name="verify" placeholder="Enter Verification code" class="span3">
+							{:sp_verifycode_img('code_len=4&font_size=15&width=100&height=35&charset=1234567890')}
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="input_repassword"></label>
+						<div class="controls">
+							<label class="checkbox persistent"><input type="checkbox" name="terms" value="1">
+								I agree to<a href="index.php?g=portal&m=page&a=index&id=25">Terms and sentences of the website</a></label>
+						</div>
+					</div>
+
+					<div class="control-group">
+						<label class="control-label" for="input_repassword"></label>
+						<div class="controls">
+							<button class="btn btn-primary J_ajax_submit_btn" type="submit" data-wait="1500">Register Now!</button>
+						</div>
+					</div>
+
+					<div class="control-group">
+						<label class="control-label" for="input_repassword"></label>
+						<div class="controls">
+							<p>
+								Have an account? <a href="{:U('user/login/index')}">Log in Here</a>
+							</p>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<tc_include file="Public:footer" />
+
+	</div>
+	<!-- /container -->
+
+	<tc_include file="Public:scripts" />
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<title>Vertical Timeline</title>
+		<meta name="keywords" content="Vertical Timeline" />
+		<meta name="description" content="Vertical Timeline">
+		<tc_include file="Public:head" />
+		<style>
+			
+		</style>
+		<link rel="stylesheet" type="text/css" href="__TMPL__Public/simpleboot/VerticalTimeline/css/default.css" />
+		<link rel="stylesheet" type="text/css" href="__TMPL__Public/simpleboot/VerticalTimeline/css/component.css" />
+		<script src="__TMPL__Public/simpleboot/VerticalTimeline/js/modernizr.custom.js"></script>
+	</head>
+<body class="">
+<tc_include file="Public:nav" />
+<div class="container tc-main">
+	<div class="row">
+		<div class="tc-box first-box article-box">
+	    	<h2>Timeline</h2>
+	    	<hr>
+	    	<div id="article_content">
+	    		<div class="main">
+					<ul class="cbp_tmtimeline">
+						
+						<li>
+							<time class="cbp_tmtime" datetime=""><span>Sep</span> <span>2012</span></time>
+							<div class="cbp_tmicon" style="z-index: 999;"><i class="fa fa-arrow-up"></i></div>
+							<div class="cbp_tmlabel">
+								<h2>University</h2>
+								<p>University</p>
+							</div>
+						</li>
+						<li>
+							<time class="cbp_tmtime" datetime="2013-04-15 13:15"><span>Sep</span> <span>2009</span></time>
+							<div class="cbp_tmicon cbp_tmicon-phone"></div>
+							<div class="cbp_tmlabel">
+								<h2>Senior Middle School</h2>
+								<p>Senior Middle School</p>
+							</div>
+						</li>
+						<li>
+							<time class="cbp_tmtime" datetime=""><span>Sep</span> <span>2005</span></time>
+							<div class="cbp_tmicon cbp_tmicon-earth"></div>
+							<div class="cbp_tmlabel">
+								<h2>Junior Middle School</h2>
+								<p>Junior Middle School</p>
+							</div>
+						</li>
+						<li>
+							<time class="cbp_tmtime" datetime=""><span>Sep</span> <span>2000</span></time>
+							<div class="cbp_tmicon cbp_tmicon-screen"></div>
+							<div class="cbp_tmlabel">
+								<h2>Elementary School</h2>
+								<p>Elementary School</p>
+							</div>
+						</li>
+						<li>
+							<time class="cbp_tmtime" datetime=""><span>Apr 28</span> <span>1994</span></time>
+							<div class="cbp_tmicon cbp_tmicon-phone"></div>
+							<div class="cbp_tmlabel">
+								<h2>Born</h2>
+								<p>Born</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+	    	</div>
+	    	
+	    	{:Comments("posts",$id)}
+	    </div>
+	</div>
+              
+<tc_include file="Public:footer"/>
+</div>
+
+<tc_include file="Public:scripts"/>
+</body>
+</html>

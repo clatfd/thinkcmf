@@ -1,0 +1,19 @@
+<br><br><br>
+<!-- Footer
+      ================================================== -->
+      <hr>
+{:hook('footer')}
+      <div id="footer">
+        <div class="links">
+        <php>$links=sp_getlinks();</php>
+        <foreach name="links" item="vo">
+          <i class="fa fa-cloud" style="padding: 0px 10px;"></i><a href="{$vo.link_url}" target="{$vo.link_target}">{$vo.link_name}</a>
+        </foreach>
+        </div>
+        <p>
+        Powered by <a href="http://www.thinkcmf.com">ThinkCMF</a>
+        Code licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" rel="nofollow" target="_blank">Apache License v2.0</a>.<br/>
+        </p>
+      </div>
+      <div id="backtotop"><i class="fa fa-arrow-circle-up"></i></div>
+      {$site_tongji}
