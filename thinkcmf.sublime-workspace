@@ -4,6 +4,50 @@
 		"selected_items":
 		[
 			[
+				"va",
+				"var_export"
+			],
+			[
+				"_s",
+				"_SESSION"
+			],
+			[
+				"esl",
+				"else"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"text",
+				"text-decoration"
+			],
+			[
+				"js",
+				"json_encode"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"ac",
+				"action	Attr"
+			],
+			[
+				"fo",
+				"form	Tag"
+			],
+			[
+				"nodes",
+				"nodesdata"
+			],
+			[
+				"pos",
+				"position"
+			],
+			[
 				"zx",
 				"zxbranking"
 			],
@@ -28,35 +72,132 @@
 	"buffers":
 	[
 		{
-			"file": "application/Portal/Common/function.php",
+			"file": "tpl/simplebootx/Profile/relation.html",
 			"settings":
 			{
-				"buffer_size": 15195,
+				"buffer_size": 8581,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "tpl/simplebootx/Portal/newest.html",
+			"file": "application/Profile/Controller/IndexadminController.class.php",
 			"settings":
 			{
-				"buffer_size": 6585,
+				"buffer_size": 1437,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "tpl_admin/simpleboot/Portal/AdminPost/add.html",
+			"file": "application/Todo/Controller/IndexController.class.php",
 			"settings":
 			{
-				"buffer_size": 9854,
+				"buffer_size": 868,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "tpl/simplebootx/Portal/index.html",
+			"file": "application/Profile/Controller/IndexController.class.php",
 			"settings":
 			{
-				"buffer_size": 5930,
+				"buffer_size": 2922,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "tpl_admin/simpleboot/Profile/Indexadmin/viprecord.html",
+			"settings":
+			{
+				"buffer_size": 606,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/Portal/Controller/ArticleController.class.php",
+			"settings":
+			{
+				"buffer_size": 3564,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/Portal/Controller/ListController.class.php",
+			"settings":
+			{
+				"buffer_size": 1923,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "tpl_admin/simpleboot/Profile/Indexadmin/viplist.html",
+			"settings":
+			{
+				"buffer_size": 484,
+				"line_ending": "Windows",
+				"name": "viprecord.html"
+			}
+		},
+		{
+			"file": "simplewind/Core/Library/Think/Model.class.php",
+			"settings":
+			{
+				"buffer_size": 60975,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/Sensor/Controller/IndexadminController.class.php",
+			"settings":
+			{
+				"buffer_size": 715,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/Common/Model/CommonModel.class.php",
+			"settings":
+			{
+				"buffer_size": 1613,
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/Admin/Controller/PublicController.class.php",
+			"settings":
+			{
+				"buffer_size": 2800,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "tpl/simplebootx/Profile/css/user.css",
+			"settings":
+			{
+				"buffer_size": 1013,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "tpl/simplebootx/Profile/content.html",
+			"settings":
+			{
+				"buffer_size": 25720,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "tpl/simplebootx/Portal/subindex.html",
+			"settings":
+			{
+				"buffer_size": 7183,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "tpl/simplebootx/Portal/subpage.html",
+			"settings":
+			{
+				"buffer_size": 6276,
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -95,60 +236,134 @@
 	},
 	"file_history":
 	[
-		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Portal/subpage.html",
-		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Portal/page.html",
-		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Portal/subindex.html",
-		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Portal/timeline.html",
-		"/E/server/nginx/html/thinkcmfx/application/Portal/Controller/AdminPostController.class.php",
-		"/E/server/nginx/html/thinkcmfx/tpl_admin/simpleboot/Portal/AdminPage/index.html",
-		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Portal/recommend.html",
+		"/E/server/nginx/html/thinkcmfx/application/Common/Model/PostsModel.class.php",
+		"/C/Users/cl/Desktop/sp_profile.sql",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Profile/index.html",
+		"/E/server/nginx/html/thinkcmfx/application/Common/Controller/AdminbaseController.class.php",
+		"/E/Tiandao/Experience Archive.html",
+		"/E/Tiandao/cv.html",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Profile/content.html",
+		"/E/server/nginx/html/thinkcmfx/application/User/Controller/LoginController.class.php",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/success.html",
+		"/E/H-web/thinkcmf20150717.sql",
+		"/E/server/nginx/html/H-wordlist/twig.php",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Portal/list.html",
 		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Portal/newest.html",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Portal/subindex.html",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Portal/search.html",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Portal/article.html",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Portal/page.html",
+		"/E/server/nginx/html/H-wordlist/getip.php",
+		"/E/server/nginx/html/thinkcmfx/application/Common/Controller/HomeBaseController.class.php",
+		"/E/server/nginx/html/thinkcmfx/simplewind/Core/Mode/Lite/Controller.class.php",
+		"/E/server/nginx/html/thinkcmfx/application/Sensor/Controller/IndexController.class.php",
+		"/E/server/nginx/html/thinkcmfx/simplewind/Core/Lang/en-us.php",
+		"/E/server/nginx/html/thinkcmfx/application/Common/Common/function.php",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Sensor/postdata.html",
+		"/E/H-web/resume1.0.txt",
+		"/E/H-web/cv.html",
+		"/E/server/nginx/html/thinkcmfx/application/Portal/Controller/AdminPostController.class.php",
+		"/E/server/nginx/html/thinkcmfx/tpl_admin/simpleboot/Portal/AdminPost/index.html",
+		"/E/server/nginx/html/thinkcmfx/tpl_admin/simpleboot/Mailer/Indexadmin/index.html",
+		"/E/mailer/nginx/html/smtphtml.php",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Profile/css/style.css",
+		"/E/server/nginx/html/thinkcmfx/application/User/Controller/RegisterController.class.php",
+		"/E/server/nginx/html/thinkcmfx/application/Mailer/Controller/IndexadminController.class.php",
+		"/E/server/nginx/html/mail/examples/smtp_ym_163.php",
+		"/E/server/nginx/html/mail/class.smtp.php",
+		"/E/server/nginx/html/thinkcmfx/application/Mailer/Controller/IndexController.class.php",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Mailer/index.html",
+		"/E/server/nginx/html/thinkcmfx/tpl_admin/simpleboot/Mailer/index.html",
+		"/E/server/nginx/html/thinkcmfx/index.php",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Portal/index.html",
+		"/E/server/nginx/html/thinkcmfx/application/Common/Conf/config.php",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Portal/subpage.html",
+		"/E/server/nginx/html/thinkcmfx/application/Common/Lang/zh-cn.php",
+		"/E/H-Android/workspace/SensorPost/app/src/main/java/com/example/cl/sensorpost/MainActivity.java",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Portal/list_masonry_pj.html",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Portal/recommend.html",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Portal/list_masonry.html",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Public/scripts.html",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Todo/content.html",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Public/nav.html",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Portal/timeline.html",
+		"/C/Users/cl/Desktop/a.txt",
+		"/P/H-raspberry/pythonweb/web - Copy.py",
+		"/P/H-raspberry/pythonweb/static/rasp.html",
+		"/P/H-raspberry/pythonweb/web.py",
+		"/P/H-raspberry/code/camera.c",
+		"/P/H-raspberry/code/led.c",
+		"/P/H-raspberry/pythonweb/setup.py",
+		"/P/H-raspberry/pythonweb/hello.py",
+		"/P/H-raspberry/static/rasp.html",
+		"/P/H-raspberry/pythonweb/templates/index.html",
+		"/C/Users/cl/Desktop/RarReg.key",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Sensor/echart20.html",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Sensor/index20.html",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Public/footer.html",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/error.html",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/jump.html",
+		"/E/server/nginx/html/thinkcmfx/tpl_admin/simpleboot/Sensor/Indexadmin/index.html",
+		"/E/server/nginx/html/shupingnew/applicant/basicinfo.html",
+		"/E/server/nginx/html/thinkcmfx/application/Todo/Controller/IndexController.class.php",
+		"/E/server/nginx/html/thinkcmfx/simplewind/Core/Tpl/dispatch_jump.tpl",
+		"/E/server/nginx/html/lib/js/jquery.mobile-1.4.2.min.js",
+		"/E/server/nginx/html/thinkcmfx/tpl_admin/simpleboot/Todo/Indexadmin/js/jquery.mobile.css",
+		"/E/H-Android/workspace/SensorWd/app/src/main/java/clatfd/sensorwd/MainActivity.java",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Sensor/index.html",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Profile/ramindex.html",
 		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/config.html",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Profile/css/user.css",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Sensor/echart.html",
+		"/E/server/nginx/html/thinkcmfx/application/Portal/Common/function.php",
+		"/E/server/nginx/html/api/api.php",
+		"/E/server/nginx/html/thinkcmfx/tpl_admin/simpleboot/Portal/AdminPost/edit.html",
+		"/E/server/nginx/html/thinkcmfx/tpl_admin/simpleboot/Portal/AdminPage/edit.html",
+		"/E/server/nginx/html/thinkcmfx/application/Portal/Controller/AdminPageController.class.php",
+		"/E/server/nginx/html/test.php",
+		"/E/server/nginx/html/api/query.php",
+		"/E/server/nginx/html/thinkcmfx/application/Sensor/Controller/IndexadminController.class.php",
+		"/E/H-web/api.sql",
+		"/E/server/nginx/html/shupingnew/admin/query.html",
+		"/E/server/nginx/html/shupingnew/admin/firsttrial.html",
+		"/E/server/nginx/html/shupingnew/api/admingettrialinfo.php",
+		"/E/server/nginx/html/shupingnew/api/admingetapplications.php",
+		"/E/server/nginx/html/shupingnew/api/class/User.php",
+		"/E/server/nginx/html/shupingnew/api/adminqueryapps.php",
+		"/P/H-美赛/上交/pt.m",
+		"/E/server/nginx/html/H-wordlist/css/css.css",
+		"/E/server/nginx/html/thinkcmfx/application/Profile/Controller/IndexController.class.php",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Profile/customize/customize.js",
+		"/E/server/nginx/html/shupingnew/applicant/printzjiang.html",
+		"/E/server/nginx/html/shupingnew/applicant/fillapplication.html",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Sensor/echarts-2.2.3/README.md",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Sensor/echarts-2.2.3/build/dist/echarts.js",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Sensor/echarts.js",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Sensor/echarts-2.2.3/test/allchart/all.html",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Public/css/style.css",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Comment/comment.html",
+		"/E/server/nginx/html/thinkcmfx/application/Profile/Conf/conf.php",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/profile/index.html",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Todo/index.html",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/profile/customize/customize.js",
+		"/E/server/nginx/html/thinkcmfx/application/Profile/nav.php",
+		"/E/server/nginx/html/thinkcmfx/data/conf/config.php",
+		"/E/server/nginx/html/H-wordlist/Index.html",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Portal/list_masonry_intro.html",
+		"/E/server/nginx/html/thinkcmfx/tpl_admin/simpleboot/Portal/AdminPost/add.html",
+		"/E/server/nginx/html/thinkcmfx1.5.0/application/Common/Common/function.php",
+		"/E/server/nginx/html/thinkcmfx/tpl_admin/simpleboot/Portal/AdminPage/index.html",
 		"/E/server/nginx/html/thinkcmfx/tpl_admin/simpleboot/Admin/Main/index.html",
 		"/E/server/nginx/html/shupingnew/js/common.js",
 		"/E/server/nginx/html/curl.php",
-		"/E/server/nginx/html/shupingnew/applicant/printzjiang.html",
 		"/C/Users/cl/AppData/Local/Temp/Rar$DRa0.458/applicant/upload.html",
 		"/C/Users/cl/AppData/Local/Temp/Rar$DRa0.076/applicant/fillapplication.html",
-		"/E/server/nginx/html/shupingnew/applicant/fillapplication.html",
-		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Portal/article.html",
 		"/E/server/nginx/html/shupingnew/applicant/upload.html",
 		"/E/server/nginx/html/shupingnew/applicant/uploadtran.html",
-		"/E/server/nginx/html/thinkcmfx/tpl_admin/simpleboot/Portal/AdminPost/add.html",
-		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Portal/list_masonry.html",
 		"/E/server/nginx/html/thinkcmfx/tpl_admin/simpleboot/Todo/Indexadmin/index.html",
 		"/E/server/nginx/html/sora9/1/sora_auth/error.html",
 		"/E/server/nginx/html/sora9/1/sora_auth/index.php",
-		"/E/server/nginx/html/sora9/1/sora_auth/auth.php",
-		"/E/server/nginx/html/thinkcmfx/tpl_admin/simpleboot/Portal/AdminPage/add.html",
-		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Todo/content.html",
-		"/E/server/nginx/html/ThinkCMFX 1.6.0/tpl/simplebootx/Portal/article.html",
-		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Portal/list.html",
-		"/E/server/nginx/html/ThinkCMFX 1.6.0/tpl/simplebootx/Portal/list.html",
-		"/E/server/nginx/html/shupingnew/api/class/User.php",
-		"/E/server/nginx/html/thinkcmfx/db.php",
-		"/E/server/nginx/html/shupingnew/api/submitapplication.php",
-		"/E/server/nginx/html/shupingnew/api/getstep.php",
-		"/E/server/nginx/html/shupingnew/applicant/printjiang.html",
-		"/E/server/nginx/html/shupingnew/admin/firsttrial.html",
-		"/E/server/nginx/html/thinkcmfx/data/conf/db.php",
-		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Todo/index.html",
-		"/C/Users/cl/Desktop/New Text Document.txt",
-		"/C/Users/cl/Downloads/使用前必看,.txt",
-		"/C/Users/cl/Downloads/获取说明;~~,.~~~~~~~~~~~~~~~~~~,~.txt",
-		"/E/server/nginx/html/shupingnew/applicant/basicinfo.html",
-		"/E/server/nginx/html/shupingnew/api/admingettrialinfo.php",
-		"/E/server/nginx/html/shupingnew/css/fillapplication.css",
-		"/C/Users/cl/Downloads/GPUDemoCode/GPUDemoCode/README.txt",
-		"/C/Users/cl/Downloads/GPUDemoCode/GPUDemoCode/whitebalance.m",
-		"/C/Users/cl/Downloads/C2G2FSnake/Stanard images/pr.m",
-		"/C/Users/cl/Downloads/C2G2FSnake/Stanard images/cutedge.m",
-		"/C/Users/cl/Downloads/GPUDemoCode/GPUDemoCode/runScript.m",
-		"/C/Users/cl/Downloads/read me.txt",
-		"/C/Users/cl/Downloads/GPUDemoCode/license.txt",
-		"/C/Users/cl/AppData/Local/Temp/Rar$DIa0.835/User.php",
-		"/E/server/php/php.ini",
-		"/E/server/nginx/html/shupingnew/login.html"
+		"/E/server/nginx/html/sora9/1/sora_auth/auth.php"
 	],
 	"find":
 	{
@@ -159,6 +374,17 @@
 		"height": 120.0,
 		"where_history":
 		[
+			"E:\\server\\nginx\\html\\thinkcmfx",
+			"E:\\server\\nginx\\html\\thinkcmfx\\application",
+			"E:\\server\\nginx\\html\\thinkcmfx",
+			"E:\\server\\nginx\\html\\thinkcmfx\\tpl_admin\\simpleboot\\Admin",
+			"E:\\server\\nginx\\html\\thinkcmfx\\application",
+			"E:\\server\\nginx\\html\\thinkcmfx",
+			"E:\\server\\nginx\\html\\thinkcmfx\\tpl_admin\\simpleboot",
+			"E:\\server\\nginx\\html\\thinkcmfx\\tpl\\simplebootx\\Profile\\css",
+			"E:\\server\\nginx\\html\\thinkcmfx",
+			"E:\\server\\nginx\\html\\thinkcmfx\\tpl\\simplebootx\\profile",
+			"E:\\server\\nginx\\html\\thinkcmfx",
 			"E:\\server\\nginx\\html\\thinkcmfx\\tpl_admin\\simpleboot",
 			"E:\\server\\nginx\\html\\thinkcmfx",
 			"E:\\server\\nginx\\html\\thinkcmfx\\tpl_admin\\simpleboot",
@@ -172,6 +398,90 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"error",
+			"post_title",
+			"chen",
+			"chen ",
+			"chen",
+			"chenli",
+			"check_login",
+			"dispatchJump",
+			"function success",
+			"success",
+			"3",
+			"success",
+			"_DATA_TYPE_INVALID_",
+			"illegal data object",
+			"LOGIN_SUCCESS",
+			"$_SESSION['ADMIN_ID']",
+			"PHPSESS",
+			"biomedi",
+			"3600",
+			"last_login_time",
+			"后台",
+			"$_SESSION['ADMIN_ID']",
+			"have not logged",
+			"you have not",
+			"Have not logged in yet",
+			"you have not log",
+			"line-height: 20px;",
+			"{:U('",
+			"    \n",
+			"action",
+			"sp_send_email",
+			"_send_to_active",
+			"mail",
+			"点击获取",
+			"验证码错误",
+			"span",
+			"所有文章",
+			"所有文字",
+			"排序",
+			">.\n",
+			"页面自动",
+			"登录验证成功！",
+			"页面自动",
+			"您还没有登录！",
+			"你还没有",
+			"query.mobil",
+			"jquery.mobile.css Failed to load resource: the server responded with a status of 404 (Not Found)",
+			"HttpResponse",
+			"75",
+			"change",
+			"上一篇",
+			"RAM",
+			"27",
+			"varargin",
+			"\"first\" => \"首页\", \"last\" => \"尾页\", \"prev\" => \"上一页\", \"next\" => \"下一页\",",
+			"上一页",
+			";\n",
+			");\n",
+			"scrip",
+			"form",
+			"post_author",
+			"photos_alt",
+			"发布时间",
+			"no_such_application",
+			"no_such",
+			"id : 4, ",
+			"for",
+			"foreach",
+			"order",
+			"chart",
+			".info td",
+			"td",
+			"section-title",
+			"hasChild",
+			"select skin",
+			"select",
+			"skin",
+			"customize.css",
+			"./img",
+			"__TMPL__Public/simpleboot/profile/",
+			"public",
+			"评论",
+			"SP_MAIL_ADDRESS",
+			"c.1994@163.com",
 			"sp_sql_posts",
 			"cbp_tmicon cbp_tmicon-phone",
 			"user",
@@ -221,6 +531,14 @@
 		"regex": false,
 		"replace_history":
 		[
+			"line-height: 16px;",
+			"\"first\" => \"First\", \"last\" => \"Last\", \"prev\" => \"Prev\", \"next\" => \"Next\",",
+			"",
+			"tpl/simplebootx/Profile/img",
+			"tpl/simplebootx/Profile/",
+			"simplebootx/Profile/",
+			"simplebootx/profile/",
+			"simpleboot/profile/",
 			"\\n"
 		],
 		"reverse": false,
@@ -239,24 +557,55 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 4,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "application/Portal/Common/function.php",
+					"file": "tpl/simplebootx/Profile/relation.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 15195,
+						"buffer_size": 8581,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								786,
-								786
+								3155,
+								3155
+							]
+						],
+						"settings":
+						{
+							"encoding_helper_encoding": "UTF-8",
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 105.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "application/Profile/Controller/IndexadminController.class.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1437,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1248,
+								1248
 							]
 						],
 						"settings":
@@ -267,26 +616,391 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 207.0,
+						"translation.y": 736.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "tpl/simplebootx/Portal/newest.html",
-					"semi_transient": false,
+					"buffer": 2,
+					"file": "application/Todo/Controller/IndexController.class.php",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 6585,
+						"buffer_size": 868,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								576,
-								576
+								359,
+								408
+							]
+						],
+						"settings":
+						{
+							"encoding_helper_encoding": "cp936",
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "application/Profile/Controller/IndexController.class.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2922,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1464,
+								1464
+							]
+						],
+						"settings":
+						{
+							"encoding_helper_encoding": "UTF-8",
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 552.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "tpl_admin/simpleboot/Profile/Indexadmin/viprecord.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 606,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								338,
+								338
+							]
+						],
+						"settings":
+						{
+							"encoding_helper_encoding": "cp936",
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "application/Portal/Controller/ArticleController.class.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3564,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2944,
+								2944
+							]
+						],
+						"settings":
+						{
+							"encoding_helper_encoding": "cp936",
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 621.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "application/Portal/Controller/ListController.class.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1923,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1487,
+								1487
+							]
+						],
+						"settings":
+						{
+							"encoding_helper_encoding": "cp936",
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 345.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "tpl_admin/simpleboot/Profile/Indexadmin/viplist.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 484,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								484,
+								178
+							]
+						],
+						"settings":
+						{
+							"auto_name": "viprecord.html",
+							"encoding_helper_encoding": "UTF-8",
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "simplewind/Core/Library/Think/Model.class.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 60975,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								32058,
+								32064
+							]
+						],
+						"settings":
+						{
+							"encoding_helper_encoding": "UTF-8",
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 24363.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "application/Sensor/Controller/IndexadminController.class.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 715,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								384,
+								384
+							]
+						],
+						"settings":
+						{
+							"encoding_helper_encoding": "UTF-8",
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "application/Common/Model/CommonModel.class.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1613,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1412,
+								1412
+							]
+						],
+						"settings":
+						{
+							"encoding_helper_encoding": "UTF-8",
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 437.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "application/Admin/Controller/PublicController.class.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2800,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2323,
+								2329
+							]
+						],
+						"settings":
+						{
+							"encoding_helper_encoding": "UTF-8",
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 656.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "tpl/simplebootx/Profile/css/user.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1013,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								458,
+								458
+							]
+						],
+						"settings":
+						{
+							"encoding_helper_encoding": "UTF-8",
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 279.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "tpl/simplebootx/Profile/content.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 25720,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								966,
+								966
+							]
+						],
+						"settings":
+						{
+							"encoding_helper_encoding": "UTF-8",
+							"origin_encoding": "UTF-8 with BOM",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 759.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "tpl/simplebootx/Portal/subindex.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7183,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1281,
+								1281
 							]
 						],
 						"settings":
@@ -303,49 +1017,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "tpl_admin/simpleboot/Portal/AdminPost/add.html",
+					"buffer": 15,
+					"file": "tpl/simplebootx/Portal/subpage.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9854,
+						"buffer_size": 6276,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1761,
-								1770
-							]
-						],
-						"settings":
-						{
-							"encoding_helper_encoding": "UTF-8",
-							"origin_encoding": "UTF-8",
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 69.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "tpl/simplebootx/Portal/index.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5930,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3067,
-								3076
+								0,
+								0
 							]
 						],
 						"settings":
@@ -356,7 +1041,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 2001.0,
+						"translation.y": 2070.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -370,7 +1055,7 @@
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 39.0
 	},
 	"layout":
 	{
@@ -402,7 +1087,7 @@
 	"project": "",
 	"replace":
 	{
-		"height": 56.0
+		"height": 72.0
 	},
 	"save_all_on_build": true,
 	"select_file":

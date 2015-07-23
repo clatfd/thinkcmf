@@ -7,6 +7,13 @@
 		<tc_include file="Public:head" />
 		<style>
 			#article_content img{height:auto !important}
+			ul.subtopic>li{
+				font-family: 'Microsoft YaHei', Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+				font-size: 20px;
+				line-height: 35px;
+				color: rgb(255, 153, 0);
+				text-decoration: none;
+			}
 		</style>
 	</head>
 <body class="">
@@ -18,7 +25,7 @@
 			<div class="tc-box first-box article-box">
 		    	<h2>{$post_title}</h2>
 		    	<hr>
-		    	<ul>
+		    	<ul class="subtopic">
 				<?php
 					$effected_id="";
 				  	$filetpl="<a href='\$href'><span class='file'>\$label</span></a>";
@@ -124,7 +131,7 @@
 									</if>
 					            </a>
 				            </dt>
-				            <dd><a href="{:leuu('article/index',array('id'=>$vo['tid']))}">{:msubstr($vo['post_excerpt'],0,32)}</a></dd>
+				            <dd><a href="{:leuu('article/index',array('id'=>$vo['tid']))}">{:msubstr($vo['post_title'],0,32)}</a></dd>
 				        </dl>
 			        </foreach>
 		        </div>

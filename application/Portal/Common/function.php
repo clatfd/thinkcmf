@@ -117,7 +117,7 @@ function sp_posts($tag,$where=array(),$pagesize=20,$pagesetting=array(),$pagetpl
 	$page = new \Page($totalsize,$pagesize);
 	$page->setLinkWraper("li");
 	$page->__set("PageParam", $PageParam);
-	$pagesetting=!empty($pagesetting)?$pagesetting: array("listlong" => "9", "first" => "首页", "last" => "尾页", "prev" => "上一页", "next" => "下一页", "list" => "*", "disabledclass" => "");
+	$pagesetting=!empty($pagesetting)?$pagesetting: array("listlong" => "9", "first" => "First", "last" => "Last", "prev" => "Prev", "next" => "Next", "list" => "*", "disabledclass" => "");
 	$page->SetPager('default', $pagetpl,$pagesetting);
 	$posts=$rs->alias("a")->join($join)->join($join2)->field($field)->where($where)->order($order)->limit($page->firstRow . ',' . $page->listRows)->select();
 
@@ -211,7 +211,7 @@ function sp_sql_posts_paged($tag,$pagesize=20,$where=array(),$pagetpl='{first}{p
 	$page = new \Page($totalsize,$pagesize);
 	$page->setLinkWraper("li");
 	$page->__set("PageParam", $PageParam);
-	$page->SetPager('default', $pagetpl, array("listlong" => "9", "first" => "首页", "last" => "尾页", "prev" => "上一页", "next" => "下一页", "list" => "*", "disabledclass" => ""));
+	$page->SetPager('default', $pagetpl, array("listlong" => "9", "first" => "First", "last" => "Last", "prev" => "Prev", "next" => "Next", "list" => "*", "disabledclass" => ""));
 	$posts=$rs->alias("a")->join($join)->join($join2)->field($field)->where($where)->order($order)->limit($page->firstRow . ',' . $page->listRows)->select();
 
 	$content['posts']=$posts;
@@ -265,7 +265,7 @@ function sp_sql_posts_paged_bykeyword($keyword,$tag,$pagesize=20,$pagetpl='{firs
 	$page = new Page($totalsize,$pagesize);
 	$page->setLinkWraper("li");
 	$page->__set("PageParam", $PageParam);
-	$page->SetPager('default', $pagetpl, array("listlong" => "9", "first" => "首页", "last" => "尾页", "prev" => "上一页", "next" => "下一页", "list" => "*", "disabledclass" => ""));
+	$page->SetPager('default', $pagetpl, array("listlong" => "9", "first" => "First", "last" => "Last", "prev" => "Prev", "next" => "Next", "list" => "*", "disabledclass" => ""));
 	$posts=$rs->alias("a")->join($join)->join($join2)->field($field)->where($where)->order($order)->limit($page->firstRow . ',' . $page->listRows)->select();
 	$content['count']=$totalsize;
 	$content['posts']=$posts;

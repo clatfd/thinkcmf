@@ -1,5 +1,8 @@
 @CHARSET "UTF-8";
-body{padding-top: 70px;}
+body{
+	padding-top: 70px;
+ 	background:url('../images/project_papper.png');
+ }
 body.body-white{ background: #fff;}
 .navbar-fixed-top, .navbar-fixed-bottom {
 position: fixed;
@@ -19,6 +22,9 @@ margin-left: 0px;
 .navbar .nav .user .caret{
 	vertical-align: middle;
 	margin: 0 5px;
+}
+li.open>ul.dropdown-menu>li{
+	position: relative;
 }
 li.open>ul.dropdown-menu>li.open:hover>ul.dropdown-menu{
 display: block;

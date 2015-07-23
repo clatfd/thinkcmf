@@ -1,8 +1,8 @@
 <?php
 namespace Todo\Controller;
-use Common\Controller\HomeBaseController;
+use Common\Controller\MemberbaseController;
 
-class IndexController extends HomeBaseController{
+class IndexController extends MemberbaseController{
 	protected $todo_obj;
 	
 	function _initialize() {
@@ -15,7 +15,7 @@ class IndexController extends HomeBaseController{
 	}
 	function content(){
 	  $todos_src = $this->todo_obj
-		->where(array("show"=>1,'privacy'=>1))
+		->where(array("show"=>1,'privacy'=>array(array('elt',2))))
 		->order("listname, priority ASC")
 		->select();
 		

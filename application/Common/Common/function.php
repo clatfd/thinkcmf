@@ -338,7 +338,7 @@ function sp_set_cmf_setting($data){
  * 注，此函数仅生成img标签，应该配合在表单加入name=verify的input标签<br>
  * 如：&lt;input type="text" name="verify"/&gt;<br>
  */
-function sp_verifycode_img($imgparam='length=4&font_size=20&width=238&height=50&use_curve=1&use_noise=1',$imgattrs='style="cursor: pointer;" title="点击获取"'){
+function sp_verifycode_img($imgparam='length=4&font_size=20&width=238&height=50&use_curve=1&use_noise=1',$imgattrs='style="cursor: pointer;" title="Click to Change"'){
 	$src=U('Api/Checkcode/index',$imgparam);
 	$img=<<<hello
 <img class="verify_img" src="$src" onclick="this.src='$src&time='+Math.random();" $imgattrs/>
@@ -592,6 +592,8 @@ function sp_send_email($address,$subject,$message){
 	$mail=new \PHPMailer();
 	// 设置PHPMailer使用SMTP服务器发送Email
 	$mail->IsSMTP();
+	//Set the SMTP port number - likely to be 25, 465 or 587
+	$mail->Port = 465;
 	$mail->IsHTML(true);
 	// 设置邮件的字符编码，若不指定，则为'UTF-8'
 	$mail->CharSet='UTF-8';
@@ -770,7 +772,7 @@ function sp_content_page($content,$pagetpl='{first}{prev}{liststart}{list}{liste
 	$PageParam = C("VAR_PAGE");
 	$page = new \Page($totalsize,$pagesize);
 	$page->setLinkWraper("li");
-	$page->SetPager('default', $pagetpl, array("listlong" => "9", "first" => "首页", "last" => "尾页", "prev" => "上一页", "next" => "下一页", "list" => "*", "disabledclass" => ""));
+	$page->SetPager('default', $pagetpl, array("listlong" => "9", "first" => "First", "last" => "Last", "prev" => "Prev", "next" => "Next", "list" => "*", "disabledclass" => ""));
 	$content=$contents[$page->firstRow];
 	$data['content']=$content;
 	$data['page']=$page->show('default');

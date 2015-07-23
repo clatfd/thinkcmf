@@ -1,0 +1,16 @@
+<table border="1">
+<foreach name="viplist" item="vo">
+	<tr>
+    	<td>{$vo.id}</td>
+    	<td>{$vo.name}</td>
+    	<td>{$vo.vs}</td>
+	</tr>
+</foreach>
+</table>
+<hr/>
+Add new:<br/>
+<form id="sensorform" method="post" action="{:U('Indexadmin/addnewvip')}"> 
+	<input type="text" id="name" name="name" placeholder="name"> 
+	<input type="text" id="vs" name="vs" placeholder="visitor shortname"> 
+	<button class="btn btn-primary btn_submit J_ajax_submit_btn"type="submit">提交</button>
+</form> 

@@ -57,45 +57,58 @@ $home_slides=empty($home_slides)?$default_home_slides:$home_slides;
 <div class="container">
 	
 	<div>
-		<h1 class="text-center">陈力</h1>
-		<h3 class="text-center">ChenLi</h3>
+		<h1 class="text-center">陈力 复旦</h1>
+		<h3 class="text-center"><strong>C</strong>hen<strong>L</strong>i <strong>AT</strong> <strong>F</strong>u<strong>D</strong>an</h3>
+		<h4 class="text-center"><strong>clatfd.cn</strong></h4>
 	</div>
 	<div class="row">
 		<div class="span4">
-			 <h2 class="font-large nospace"><i class="fa fa-smile-o"></i><a href="index.php?g=portal&m=page&a=index&id=20"> Profile 了解</a></h2>
-             <p></p>
+			 <h2 class="font-large nospace"><i class="fa fa-smile-o"></i><a href="index.php?g=profile&m=index&a=index"> Profile 了解</a></h2>
+             <p>A brief <a href="index.php?g=profile&m=index&a=index">introduction</a> to ChenLi.</p>
+             <p>You may also interested in viewing my <a href="index.php?m=page&a=index&id=75">CV</a> Or <a href="index.php?m=page&a=index&id=74">Resume</a></p>
 		</div>
 		<div class="span4">
-			 <h2 class="font-large nospace"><i class="fa fa-calendar"></i><a href="index.php?g=todo&m=index&a=index"> What Todo 事务</a></h2>
-             <p></p>
+			 <h2 class="font-large nospace"><i class="fa fa-calendar"></i><a href="index.php?g=todo&m=index&a=index"> schedule 日程</a></h2>
+             <p>See what is on my <a href="index.php?m=page&a=index&id=21">calendar</a> Or <a href="index.php?g=todo&m=index&a=index">what to do</a> recently</p>
+             <p>Register and Login required</p>
 		</div>
 		<div class="span4">
 			  <h2 class="font-large nospace"><i class="fa fa-bar-chart"></i><a href="index.php?g=portal&m=page&a=index&id=15"> Statistic 数据统计</a></h2>
-              <p></p>
+              <p>Android based apps updating Statistics about <a href="index.php?g=sensor&m=index&a=index70">Body weight</a> and <a href="index.php?m=page&a=index&id=15">Sports activities</a></p>
+              <p>Chen Li <a href="index.php?g=profile&m=index&a=index#num">in numbers</a></p>
 		</div>
 	</div>
 	
 	<div class="row">
 		<div class="span4">
-			 <h2 class="font-large nospace"><i class="fa fa-heart"></i><a href="index.php?g=portal&m=page&a=index&id=14"> Hobbies 爱好</a></h2>
-             <p></p>
+			<h2 class="font-large nospace"><i class="fa fa-heart"></i><a href="index.php?g=portal&m=page&a=index&id=14"> Hobbies 爱好</a></h2>
+            <p><a href="index.php?m=list&a=index&id=20">TRAVEL</a>, 
+            <a href="index.php?m=list&a=index&id=17">MUSIC</a>,
+            <a href="index.php?m=page&a=index&id=76">READ</a>,
+			<a href="index.php?m=page&a=index&id=15">SPORTS</a>,
+			<a href="index.php?m=list&a=index&id=24">MOVIES</a>,
+			<a href="index.php?m=list&a=index&id=25">WEB</a></p>
 		</div>
 		<div class="span4">
 			 <h2 class="font-large nospace"><i class="fa fa-cogs"></i><a href="index.php?m=list&a=index&id=13"> Projects 项目</a></h2>
-             <p></p>
+             <p><a href="index.php?m=list&a=index&id=14">Software</a> and <a href="index.php?m=list&a=index&id=15">Hardware</a></p>
 		</div>
 		<div class="span4">
-			  <h2 class="font-large nospace"><i class="fa fa-cubes"></i><a href="index.php?m=list&a=index&id=16"> Research 实验室</a></h2>
-              <p></p>
+			  <h2 class="font-large nospace"><i class="fa fa-cubes"></i><a href="index.php?m=page&a=index&id=27"> Research 实验室</a></h2>
+              <p><a href="index.php?m=list&a=index&id=14">Imaging</p>
+              <p><a href="index.php?m=list&amp;a=index&amp;id=19">Biomedical</a></p>
+			  <p><a href="index.php?m=list&amp;a=index&amp;id=23">Others</a></p>
 		</div>
 	</div>
+
+	<hr/>
 	
 	<div>
 		<h1 class="text-center">最新发布</h1>
 		<h3 class="text-center"><a href="{:U('portal/page/index',array('id'=>63))}" >Recent Posts</a></h3>
 	</div>
 	<php>
-		$lastnews=sp_sql_posts("cid:$portal_last_post;field:post_title,post_excerpt,tid,smeta;order:post_date desc;limit:4;"); 
+		$lastnews=sp_sql_posts("cid:$portal_last_post;field:post_title,post_excerpt,tid,smeta;order:tid desc;limit:4;"); 
 	</php>
 	<div class="row">
 		<foreach name="lastnews" item="vo">
@@ -131,7 +144,7 @@ $home_slides=empty($home_slides)?$default_home_slides:$home_slides;
 		<h3 class="text-center"><a href="{:U('portal/page/index',array('id'=>62))}" >Recommended</a></h3>
 	</div>
 	<php>
-		$lastnews=sp_sql_posts("cid:$portal_hot_articles;field:post_title,post_excerpt,tid,smeta;order:tid desc;limit:4;",array('recommended'=>1)); 
+		$lastnews=sp_sql_posts("cid:$portal_hot_articles;field:post_title,post_excerpt,tid,smeta;order:post_date desc;limit:4;",array('recommended'=>1)); 
 	</php>
 	<div class="row">
 		<foreach name="lastnews" item="vo">

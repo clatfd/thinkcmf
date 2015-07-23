@@ -80,63 +80,10 @@
         	
         	<div class="tc-box">
 	        	<div class="headtitle">
-	        		<h2><a href="{:U('portal/page/index',array('id'=>63))}" >New Posts 最新发布</a></h2>
-	        	</div>
-	        	<div class="ranking">
-	        		<php>
-						$hot_articles=sp_sql_posts("cid:$portal_last_post;field:post_title,post_excerpt,tid,smeta;order:tid desc;limit:5;"); 
-					</php>
-		        	<ul class="unstyled">
-		        		<foreach name="hot_articles" item="vo">
-		        			<php>$top=$key<3?"top3":"";</php>
-							<li class="{$top}"><i>{$key+1}</i><a title="{$vo.post_title}" href="{:leuu('article/index',array('id'=>$vo['tid']))}">{$vo.post_title}</a></li>
-						</foreach>
-					</ul>
-				</div>
-			</div>
-			<div class="tc-box">
-	        	<div class="headtitle">
-	        		<h2>New comments 最新评论</h2>
-	        	</div>
-	        	<div class="comment-ranking">
-	        		<php>$last_comments=sp_get_comments("field:*;limit:0,5;order:createtime desc;");</php>
-	        		<foreach name="last_comments" item="vo">
-	                    <div class="comment-ranking-inner">
-	                        <i class="fa fa-comment"></i>
-	                        <a href="{:U('user/index/index',array('id'=>$vo['uid']))}">{$vo.full_name}:</a>
-	                        <span>{$vo.content}</span>
-	                        <a href="__ROOT__/{$vo.url}#comment{$vo.id}">See more</a>
-	                        <span class="comment-time">{:date('m月d日  H:i',strtotime($vo['createtime']))}</span>
-	                    </div>
-                    </foreach>
-                </div>
-			</div>
-			
-			<div class="tc-box">
-	        	<div class="headtitle">
-	        		<h2>New users 最新加入</h2>
-	        	</div>
-	        	<php>
-	        	$last_users=sp_get_users("field:id,user_nicename;limit:0,4;order:create_time desc;");
-	        	</php>
-	        	<ul class="list-unstyled tc-photos margin-bottom-30">
-	        		<foreach name="last_users" item="vo">
-                    <li>
-	                    <a href="{:U('user/index/index',array('id'=>$vo['id']))}">
-	                    <img alt="" src="{:U('user/public/avatar',array('id'=>$vo['id']))}">
-	                    </a>
-	                    <p>{$vo['user_nicename']}</p>
-                    </li>
-                    </foreach>
-                </ul>
-			</div>
-			
-			<div class="tc-box">
-	        	<div class="headtitle">
 	        		<h2><a href="{:U('portal/page/index',array('id'=>62))}" >Recommended 推荐文章</a></h2> 
 	        	</div>
 	        	<php>
-					$last_post=sp_sql_posts("cid:$portal_hot_articles;field:post_title,post_excerpt,tid,smeta;order:tid desc;limit:5;",array('recommended'=>1)); 
+					$last_post=sp_sql_posts("cid:$portal_hot_articles;field:post_title,post_excerpt,tid,smeta;order:post_date desc;limit:5;",array('recommended'=>1)); 
 				</php>
 	        	<div class="posts">
 	        		<foreach name="last_post" item="vo">
@@ -156,6 +103,61 @@
 			        </foreach>
 		        </div>
 			</div>
+			
+        	<div class="tc-box">
+	        	<div class="headtitle">
+	        		<h2><a href="{:U('portal/page/index',array('id'=>63))}" >New Posts 最新发布</a></h2>
+	        	</div>
+	        	<div class="ranking">
+	        		<php>
+						$hot_articles=sp_sql_posts("cid:$portal_last_post;field:post_title,post_excerpt,tid,smeta;order:tid desc;limit:5;"); 
+					</php>
+		        	<ul class="unstyled">
+		        		<foreach name="hot_articles" item="vo">
+		        			<php>$top=$key<3?"top3":"";</php>
+							<li class="{$top}"><i>{$key+1}</i><a title="{$vo.post_title}" href="{:leuu('article/index',array('id'=>$vo['tid']))}">{$vo.post_title}</a></li>
+						</foreach>
+					</ul>
+				</div>
+			</div>
+			<div class="tc-box">
+	        	<div class="headtitle">
+	        		<h2>New Comments 最新评论</h2>
+	        	</div>
+	        	<div class="comment-ranking">
+	        		<php>$last_comments=sp_get_comments("field:*;limit:0,5;order:createtime desc;");</php>
+	        		<foreach name="last_comments" item="vo">
+	                    <div class="comment-ranking-inner">
+	                        <i class="fa fa-comment"></i>
+	                        <a href="{:U('user/index/index',array('id'=>$vo['uid']))}">{$vo.full_name}:</a>
+	                        <span>{$vo.content}</span>
+	                        <a href="__ROOT__/{$vo.url}#comment{$vo.id}">See more</a>
+	                        <span class="comment-time">{:date('m月d日  H:i',strtotime($vo['createtime']))}</span>
+	                    </div>
+                    </foreach>
+                </div>
+			</div>
+			
+			<div class="tc-box">
+	        	<div class="headtitle">
+	        		<h2>New Users 最新加入</h2>
+	        	</div>
+	        	<php>
+	        	$last_users=sp_get_users("field:id,user_nicename;limit:0,4;order:create_time desc;");
+	        	</php>
+	        	<ul class="list-unstyled tc-photos margin-bottom-30">
+	        		<foreach name="last_users" item="vo">
+                    <li>
+	                    <a href="{:U('user/index/index',array('id'=>$vo['id']))}">
+	                    <img alt="" src="{:U('user/public/avatar',array('id'=>$vo['id']))}">
+	                    </a>
+	                    <p>{$vo['user_nicename']}</p>
+                    </li>
+                    </foreach>
+                </ul>
+			</div>
+			
+			
 			
 			<php>$ad=sp_getad("portal_list_right_aside");</php>
 			<if condition="!empty($ad)">

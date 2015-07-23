@@ -172,6 +172,8 @@ class AdminPageController extends AdminbaseController {
 			$page=I("post.post");
 			$page['smeta']=json_encode($_POST['smeta']);
 			$page['post_content']=htmlspecialchars_decode($page['post_content']);
+			$page['post_modified']=date("Y-m-d H:i:s",time());
+			
 			$result=$this->posts_model->save($page);
 			if ($result !== false) {
 				//

@@ -1,0 +1,113 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+	<title>Sensor</title>
+</head>
+
+<body style="text-align:center">
+
+    <div id="main" style="height:600px"></div>
+    Sensor:<select id="sensorno">
+      <option value ="75">Pushup</option>
+      <option value ="70">Body weight</option>
+      <option value ="20">Pull up</option>
+    </select>
+    &nbsp;
+    Limit to recent <input id="num" type="text" value="20" style="width: 30px;"/>items
+    <button onclick="query()">ok</button>
+
+ <script src="/thinkcmfx/statics/js/jquery.js"></script>
+ <script src="/thinkcmfx/tpl/simplebootx/Sensor/echarts-2.2.3/build/dist/echarts.js"></script>
+ <script type="text/javascript">
+        require.config({
+            paths: {
+                echarts: '/thinkcmfx/tpl/simplebootx/Sensor/echarts-2.2.3/build/dist'
+            }
+        });
+function query(){
+        var stime;var sdata;
+        num=$("#num").val();
+        sensorno=$("#sensorno").val();
+        $.getJSON("http://104.131.150.53/thinkcmfx/index.php?g=sensor&m=index&a=getdata&sensorno="+sensorno+"&num="+num+"&callback=?",
+            //$.getJSON("/clatfd/1/api/query.php?sn=75&num="+num+"&callback=?",
+                function (phpdata){
+
+                        stime=phpdata['time'];
+                        sdata=phpdata['data'];
+                           
+                     require(
+                        [
+                            'echarts',
+                            'echarts/chart/line',   // 按需加载所需图表，如需动态类型切换功能，别忘了同时加载相应图表
+                            'echarts/chart/bar'
+                        ],
+                        function (ec) {
+                            var myChart = ec.init(document.getElementById('main'));
+                            option = {
+                                title : {
+                                    text: 'Pushup',
+                                    subtext: 'sensor75'
+                                },
+                                tooltip : {
+                                    trigger: 'axis'
+                                },
+                                // legend: {
+                                //     data:['Pushup']
+                                // },
+                                toolbox: {
+                                    show : true,
+                                    feature : {
+                                        mark : {show: false},
+                                        dataView : {show: true, readOnly: false},
+                                        magicType : {show: true, type: ['line', 'bar']},
+                                        restore : {show: true},
+                                        saveAsImage : {show: true}
+                                    }
+                                },
+                                calculable : true,
+                                xAxis : [
+                                    {
+                                        type : 'category',
+                                        data : stime
+                                    }
+                                ],
+                                yAxis : [
+                                    {
+                                        type : 'value'
+                                    }
+                                ],
+                                series : [
+                                    {
+                                        name:'pushup',
+                                        type:'bar',
+                                        data: sdata,
+                                        markPoint : {
+                                            data : [
+                                                {type : 'max', name: 'Max'},
+                                                {type : 'min', name: 'Min'}
+                                            ]
+                                        },
+                                        markLine : {
+                                            data : [
+                                                {type : 'average', name: 'Average'}
+                                            ]
+                                        }
+                                    }
+                                ]
+                            };
+                                                
+                            myChart.setOption(option);
+                        }
+                    );  
+                }
+            );  
+
+}      
+query(); 
+    </script>
+<script>
+
+</script>
+
+</body>
+</html>

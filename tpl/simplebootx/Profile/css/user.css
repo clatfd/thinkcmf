@@ -1,0 +1,50 @@
+/*
+
+  Use this file to add any custom modifications.
+  Doing this will allow you to update this template easily.
+
+*/
+
+h2.section-title a{
+	color: white;
+}
+div.mask h2 a.view, div.mask h2 a.view:hover{
+	color: #fff !important;
+	text-decoration: none;
+	font-size: 1em;
+}
+div.echart.loading#main{
+	background:url('../img/RAM.jpg') no-repeat scroll 0px 0px;
+	background-position:center top;
+}
+
+.section-about-numbers .badge-content .badge-large {
+  font-size: 75px;
+  margin: 0;
+  color: #ef7c00;
+  display: block;
+}
+.section-about-numbers .badge-content .badge-small {
+  font-size: 20px;
+  color: #003d7c;
+  display: block;
+}
+.section-about-numbers .badge-content {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.col-md-3 {
+  float: left;
+  width: 25%;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333333;
+}

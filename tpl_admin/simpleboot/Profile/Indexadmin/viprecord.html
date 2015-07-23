@@ -1,0 +1,19 @@
+<table border="1">
+<foreach name="viprecord" item="vo">
+	<tr>
+    	<td>{$vo.id}</td>
+    	<td>{$vo.visitorname}</td>
+    	<td>{$vo.visittime}</td>
+    	<td>{$vo.type}</td>
+    	<td>{$vo.ip}</td>
+    	<td><a href="{:U('Indexadmin/delviprecord',array('id'=>$vo['id']))}">Del</a></td>
+	</tr>
+</foreach>
+</table>
+<hr/>
+Delete from ~ to :<br/>
+<form method="post" action="{:U('Indexadmin/delviprecords')}"> 
+	<input type="text" name="idlo" placeholder="idlo"> 
+	<input type="text" name="idup" placeholder="idup"> 
+	<button class="btn btn-primary btn_submit J_ajax_submit_btn" type="submit">提交</button>
+</form> 

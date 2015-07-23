@@ -1,1 +1,44 @@
-bbb
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+ <title>Post sensor data</title> 
+ <script type="text/javascript" src="/lib/js/jquery-1.11.1.min.js"></script>  
+</head>
+<body>
+<div class="tc-box first-box article-box"> 
+<h2>Post sensor data</h2> 
+<hr> 
+<div id="article_content">  
+  
+<form id="sensorform"> 
+	<select id="sensornosel"> 
+		<option value="70">Body Weight</option>
+		<option value="20">Pull Up</option> 
+		<option value="">Other</option> 
+	</select> 
+	<input type="text" id="sensorno" name="sensorno" value="70" placeholder="sensorno"> 
+	<input type="text" id="sensordata" name="sensordata" placeholder="sensordata"> 
+</form> 
+<button onclick="postdata()">Submit</button> 
+
+<script type="text/javascript">	
+$("#sensornosel").change(
+	function(){
+		$("#sensorno").val($(this).val())
+	}
+)
+function postdata(){
+		$.ajax({
+			type: "POST",
+			url:'/thinkcmfx/index.php?g=sensor&m=indexadmin&a=postdata',
+	        data:$('#sensorform').serialize(),
+	        success: function(data) {
+				console.log(data);
+				}
+			});
+		}
+</script>   
+</div>    
+</div>
+</body>
+</html>

@@ -79,7 +79,7 @@
 			</div>
 			<div class="tc-box">
 	        	<div class="headtitle">
-	        		<h2>New comments 最新评论</h2>
+	        		<h2>New Comments 最新评论</h2>
 	        	</div>
 	        	<div class="comment-ranking">
 	        		<php>$last_comments=sp_get_comments("field:*;limit:0,5;order:createtime desc;");</php>
@@ -97,10 +97,10 @@
 			
 			<div class="tc-box">
 	        	<div class="headtitle">
-	        		<h2>New users 最新加入</h2>
+	        		<h2>New Users 最新加入</h2>
 	        	</div>
 	        	<php>
-	        	$last_users=sp_get_users("field:id,user_nicename;limit:0,4;order:create_time desc;");
+	        	$last_users=sp_get_users("field:id,user_nicename;limit:0,3;order:create_time desc;");
 	        	</php>
 	        	<ul class="list-unstyled tc-photos margin-bottom-30">
 	        		<foreach name="last_users" item="vo">
@@ -134,7 +134,7 @@
 									</if>
 					            </a>
 				            </dt>
-				            <dd><a href="{:leuu('article/index',array('id'=>$vo['tid']))}">{:msubstr($vo['post_excerpt'],0,32)}</a></dd>
+				            <dd><a href="{:leuu('article/index',array('id'=>$vo['tid']))}">{:msubstr($vo['post_title'],0,32)}</a></dd>
 				        </dl>
 			        </foreach>
 		        </div>

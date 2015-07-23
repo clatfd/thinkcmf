@@ -1,0 +1,182 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+	<title>RAM</title>
+    <link rel="stylesheet" type="text/css" href="/thinkcmfx/tpl/simplebootx/Profile/css/user.css">
+</head>
+
+<body style="text-align:center;background-color:white">
+    <div id="main" class="echart loading" style="height:600px;"></div>
+</body>
+    
+ <script src="/thinkcmfx/statics/js/jquery.js"></script>
+ <script src="/lib/js/echarts-2.2.3/echarts.js"></script>
+ <script type="text/javascript">
+ 
+    var nodesdata=Array();
+    var linkdata=Array();
+
+    nodesraw=  [
+                {id : 0, category:0, name: 'Chen Li', value : 30, target : null, weight : null, url : "index.php?g=profile&m=index&a=index"},
+                {id : 1, category:1, name: 'Coding and Maths', value : 25, target : [0], weight : 15},
+                {id : 2, category:1, name: 'Image processing',value : 25, target : [0], weight : 15},
+                {id : 3, category:1, name: 'Medicine',value : 25, target : [0], weight : 15},
+                {id : 4, category:1, name: 'Electronics',value : 25, target : [0], weight : 15},
+                {id : 5, category:3, name: 'complex network',value : 15, target : [1], weight : 10, url : "index.php?g=&m=article&a=index&id=77"},
+                {id : 6, category:3, name: 'CEM-Lab tongue contour',value : 15, target : [1,2,3], weight : 10, url : "index.php?g=&m=article&a=index&id=75"},
+                {id : 7, category:3, name: 'data-mining on vertigo',value : 15, target : [1,3], weight : 10, url : "index.php?g=&m=article&a=index&id=73"},
+                {id : 8, category:3, name: 'android tongue diagnosis',value : 15, target : [1,2,3], weight : 10, url : "index.php?g=&m=article&a=index&id=74"},
+                {id : 9, category:2, name: 'Windows app',value : 15, target : [1], weight : 10, url : "index.php?g=&m=article&a=index&id=42"},
+                {id : 10, category:2, name: 'led location car',value : 15, target : [1,2,4], weight : 10, url : "index.php?g=&m=article&a=index&id=77"},
+                {id : 11, category:2, name: 'Mathematical Contest in Modeling',value : 15, target : [1], weight : 10, url : "index.php?g=&m=article&a=index&id=41"},
+                {id : 12, category:2, name: 'Change light bulb robot',value : 15, target : [4], weight : 10, url : "index.php?g=&m=article&a=index&id=54"},
+                {id : 13, category:2, name: 'Infrared remote controller',value : 15, target : [4], weight : 10, url : "index.php?g=&m=article&a=index&id=43"},
+                {id : 14, category:2, name: 'Pointo',value : 15, target : [1], weight : 10, url : "index.php?g=&m=article&a=index&id=61"},
+                {id : 15, category:2, name: 'Tile production Line',value : 15, target : [1,2], weight : 10, url : "index.php?g=&m=article&a=index&id=17"},
+                {id : 16, category:2, name: 'DSP and EMCV',value : 15, target : [1,2,4], weight : 10, url : "index.php?g=&m=article&a=index&id=92"},
+                {id : 17, category:2, name: 'STC contest Wifi module',value : 15, target : [4], weight : 10, url : "index.php?g=&m=article&a=index&id=105"},
+                {id : 18, category:2, name: 'Remote control experiment',value : 15, target : [1,4], weight : 10, url : "index.php?g=&m=article&a=index&id=107"},
+            ],
+    nodesraw=nodesraw.sort(function(a,b){return a.id>b.id?1:-1});
+    for(x in nodesraw){
+        nodesdata.push(nodesraw[x]);
+        if(nodesraw[x].target!=undefined&&nodesraw[x].weight!=undefined){
+            for(var i=0;i<nodesraw[x].target.length;i++)
+                linkdata.push({'source':nodesraw[x].id,'target':nodesraw[x].target[i],'weight':nodesraw[x].weight});
+        }
+    }
+
+    require.config({
+        paths: {
+            echarts: '/lib/js/echarts-2.2.3'
+        }
+    });
+                           
+    require(
+        [
+            'echarts',
+            'echarts/chart/force',   // 按需加载所需图表，如需动态类型切换功能，别忘了同时加载相应图表
+            'echarts/chart/chord'
+        ],
+        function (ec) {
+            var myChart = ec.init(document.getElementById('main'));
+            option = {
+                      
+                title : {
+                    text: 'Research Ability Map',
+                    subtext: 'Click on nodes to view detailed page',
+                    x:'right',
+                    y:'bottom'
+                },
+                tooltip : {
+                    trigger: 'item',
+                    formatter: '{a} : {b}'
+                },
+                toolbox: {
+                    show : true,
+                    feature : {
+                        restore : {show: true},
+                        magicType: {show: true, type: ['force', 'chord']},
+                        saveAsImage : {show: true}
+                    }
+                },
+                legend: {
+                    x: 'left',
+                    data:['ChenLi','Ability','Project','Paper']
+                },
+                series : [
+                    {
+                        type:'force',
+                        ribbonType: false,
+                        name : "ChenLi",
+                        categories : [
+                            {
+                                name: 'ChenLi',
+                                itemStyle: {
+                                    normal: {
+                                        color : '#ff7f50'
+                                    }
+                                }
+                            },
+                            {
+                                name: 'Ability',
+                                itemStyle: {
+                                    normal: {
+                                        color : '#2fa2db'
+                                    }
+                                }
+                            },
+                            {
+                                name: 'Project',
+                                itemStyle: {
+                                    normal: {
+                                        color : '#b6a2de'
+                                    }
+                                }
+                            },
+                            {
+                                name:'Paper',
+                                itemStyle: {
+                                    normal: {
+                                        color : '#9acd32'
+                                    }
+                                }
+                            }
+                        ],
+                        itemStyle: {
+                            normal: {
+                                label: {
+                                    show: true,
+                                    textStyle: {
+                                        color: '#800080'
+                                    }
+                                },
+                                nodeStyle : {
+                                    brushType : 'both',
+                                    strokeColor : 'rgba(255,215,0,0.4)',
+                                    lineWidth : 8
+                                }
+                            },
+                            emphasis: {
+                                label: {
+                                    show: false
+                                    // textStyle: null      // 默认使用全局文本样式，详见TEXTSTYLE
+                                },
+                                nodeStyle : {
+                                    r: 30
+                                },
+                                linkStyle : {}
+                            }
+                        },
+                        minRadius : 15,
+                        maxRadius : 35,
+                        density : 0.1,
+                        attractiveness: 1,
+                        nodes : nodesdata,
+                        links : linkdata,
+                        markPoint : {
+                            symbol: 'emptyCircle',
+                            data : [
+                                // {name : 'Click nodes to see detail', value : 100, x:'5%', y:'50%', symbolSize:32},
+                            ]
+                        }
+                    }
+                ]
+            };
+            myChart.setOption(option);
+            myChart.on(ecConfig.EVENT.CLICK, eConsole); 
+            $("#main").removeClass("loading")
+        }
+    );
+
+
+    var ecConfig = require('echarts/config');
+    function eConsole(param) {
+        //console.log(param);
+        if(nodesraw[param.dataIndex].url!=undefined)
+            window.open(nodesraw[param.dataIndex].url);
+    }
+    
+</script>
+
+</html>

@@ -29,7 +29,7 @@ class LoginController extends HomeBaseController {
 	function doforgot_password(){
 		if(IS_POST){
 			if(!sp_check_verify_code()){
-				$this->error("验证码错误！");
+				$this->error("验证码错误CAPTCHA_NOT_RIGHT！");
 			}else{
 				$users_model=M("Users");
 				$rules = array(
@@ -96,7 +96,7 @@ hello;
 	function dopassword_reset(){
 		if(IS_POST){
 			if(!sp_check_verify_code()){
-				$this->error("验证码错误！");
+				$this->error("验证码错误CAPTCHA_NOT_RIGHT！");
 			}else{
 				$users_model=M("Users");
 				$rules = array(
@@ -129,7 +129,7 @@ hello;
     function dologin(){
 
     	if(!sp_check_verify_code()){
-    		$this->error("验证码错误！");
+    		$this->error("验证码错误CAPTCHA_NOT_RIGHT！");
     	}
     	
     	$users_model=M("Users");
@@ -250,12 +250,12 @@ hello;
     				//$ucenter_old_user_login_msg="老用户请在跳转后，再次登陆";
     			}
     				
-    			$this->success("登录验证成功！", $redirect);
+    			$this->success("Login success", $redirect,1);
     		}else{
-    			$this->error("密码错误！");
+    			$this->error("Wrong password");
     		}
     	}else{
-    		$this->error("用户名不存在！");
+    		$this->error("No such user!");
     	}
     	 
     }

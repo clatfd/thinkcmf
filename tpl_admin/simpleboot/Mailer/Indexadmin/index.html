@@ -1,0 +1,29 @@
+<admintpl file="header"/>
+</head>
+<body>
+<div class="wrap">
+  <form id="form1" name="form1" method="post" action="{:U('Mailer/indexadmin/sent')}">
+    <p>
+      <label for="subject">邮件主题</label>
+      <input type="text" name="subject" id="subject" value="" />
+    </p>
+
+    <div>
+      <label for="list">收件人列表</label>
+      <br/>
+      <textarea name="list" id="list" cols="45" rows="5"></textarea>
+    </div>
+    
+    <div>
+      <label for="content">邮件内容</label>
+      <br/>
+      <textarea name="content" id="content" cols="45" rows="5"></textarea>
+    </div>
+    <p>
+      <input type="submit" name="submit" id="submit" value="发送" />
+    </p>
+  </form>
+</div>
+<script src="__ROOT__/statics/js/common.js"></script>
+</body>
+</html>

@@ -111,6 +111,8 @@ class AdminPostController extends AdminbaseController {
 			$article=I("post.post");
 			$article['smeta']=json_encode($_POST['smeta']);
 			$article['post_content']=htmlspecialchars_decode($article['post_content']);
+			$article['post_modified']=date("Y-m-d H:i:s",time());
+			
 			$result=$this->posts_model->save($article);
 			if ($result!==false) {
 				$this->success("保存成功！");
@@ -191,7 +193,7 @@ class AdminPostController extends AdminbaseController {
 		->join(C ( 'DB_PREFIX' )."posts b ON a.object_id = b.id")
 		->where($where)
 		->limit($page->firstRow . ',' . $page->listRows)
-		->order("a.listorder ASC,b.post_modified DESC")->select();
+		->order("a.listorder ASC,b.post_date DESC")->select();
 		$users_obj = M("Users");
 		$users_data=$users_obj->field("id,user_login")->where("user_status=1")->select();
 		$users=array();

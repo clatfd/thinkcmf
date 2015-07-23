@@ -39,7 +39,7 @@ class HomeBaseController extends AppframeController {
 	
 	protected function check_login(){
 		if(!isset($_SESSION["user"])){
-			$this->error('您还没有登录！',__ROOT__."/");
+			$this->error('Register and Login required!',__ROOT__."/index.php?g=user&m=login&a=index");
 		}
 		
 	}
@@ -47,7 +47,7 @@ class HomeBaseController extends AppframeController {
 	protected function  check_user(){
 		
 		if($_SESSION["user"]['user_status']==2){
-			$this->error('您还没有激活账号，请激活后再使用！',U("user/login/active"));
+			$this->error('Have not activated account.您还没有激活账号，请激活后再使用！',U("user/login/active"));
 		}
 		
 		if($_SESSION["user"]['user_status']==0){

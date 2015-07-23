@@ -23,8 +23,13 @@ var GV = {
 			},function(){
 				$(this).removeClass("open");
 			});
-			
-			$("li.hasChild,li.dropdown").click(function(){document.location=$(this).find("a").attr("href")})
+			//document.location=
+			$("ul.nav>li.dropdown").click(function(evt){
+				// console.log($(evt.target).attr("class"));
+				if($(evt.target).parent().parent().attr("class")=="nav")
+					document.location=$(this).children("a").attr("href");
+			});
+			$("ul.nav>li.dropdown>ul.dropdown-menu>li.hasChild").click(function(){document.location=$(this).children("a").attr("href")})
 			$("li.hasChild").hover(function(){
 				$(this).addClass("open");
 				//$(this).find("ul").css("display","block");

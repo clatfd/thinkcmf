@@ -1,5 +1,5 @@
 <br>
-<h3>评论</h3>
+<h3>Comment 评论</h3>
 <div class="comment-area" id="comments">
 
 	<hr>
@@ -11,7 +11,7 @@
 	  </div>
 	  
 	  <div class="control-group">
-	   		<button type="submit" class="btn pull-right btn-primary J_ajax_submit_btn"><i class="fa fa-comment-o"></i> 发表评论</button>
+	   		<button type="submit" class="btn pull-right btn-primary J_ajax_submit_btn"><i class="fa fa-comment-o"></i> Submit 发表</button>
 	  </div>
 	  
 	  <input type="hidden" name="post_table" value="{$post_table}"/>
@@ -36,9 +36,9 @@
 	<script class="comment-reply-box-tpl" type="text/html">
 		<div class="comment-reply-submit">
                     <div class="comment-reply-box">
-                        <input type="text" class="textbox" placeholder="回复">
+                        <input type="text" class="textbox" placeholder="Reply 回复">
                     </div>
-                    <button class="btn pull-right" onclick="comment_submit(this);">回复</button>
+                    <button class="btn pull-right" onclick="comment_submit(this);">Reply 回复</button>
                 </div>
 	</script>
 	
@@ -61,7 +61,7 @@
 					    <img class="media-object avatar" src="{:U('user/public/avatar',array('id'=>$voo['uid']))}" class="headicon"/>
 					  </a>
 					  <div class="comment-body">
-					    <div class="comment-content"><a href="{:U('user/index/index',array('id'=>$voo['uid']))}">{$voo.full_name}</a>:<span>回复 <a href="{:U('user/index/index',array('id'=>$voo['to_uid']))}">{$parent_comments[$voo['parentid']]['full_name']}</a> {$voo.content}</span></div>
+					    <div class="comment-content"><a href="{:U('user/index/index',array('id'=>$voo['uid']))}">{$voo.full_name}</a>:<span>Reply 回复 <a href="{:U('user/index/index',array('id'=>$voo['to_uid']))}">{$parent_comments[$voo['parentid']]['full_name']}</a> {$voo.content}</span></div>
 					    <div><span class="time">{:date('m月d日  H:i',strtotime($voo['createtime']))}</span> <a onclick="comment_reply(this);" href="javascript:;"><i class="fa fa-comment"></i></a></div>
 					  </div>
 					  <div class="clearfix"></div>

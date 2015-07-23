@@ -8,19 +8,19 @@
 </head>
 <body>
 <tc_include file="Public:nav" />
-<div class="container">
+<div class="container tc-main" style="background-color:white">
 	
-	
+  <div class="tc-box first-box article-box">
     <div class="pg-opt pin">
         <div class="container">
             <h2>Recommend</h2>
         </div>
     </div>
     
-    <div class="container">
+    <div style="width:100%">
         <div>
              <php>
-					$lists = sp_sql_posts_paged("cid:$portal_hot_articles;order:tid desc;",10,array('recommended'=>1));
+					$lists = sp_sql_posts_paged("cid:$portal_hot_articles;order:post_date desc;",20,array('recommended'=>1));
              	</php>
              <div id="container">
              	<div class="grid-sizer"></div>
@@ -49,7 +49,7 @@
                         	<a href="{:leuu('article/index',array('id'=>$vo['tid']))}">{$vo.post_excerpt|msubstr=0,256}</a>
                         </div>
                         <div class="footer">
-                        	<div class="pull-left"><span class="meta">{$vo.post_date}</span></div>
+                        	<div class="pull-left"><span class="meta">{$vo.post_date|substr=0,10}</span></div>
                         	<div class="pull-right">
 	                        	<a href="javascript:;"><i class="fa fa-eye"></i><span>{$vo.post_hits}</span></a>
 								<a href="{:U('article/do_like',array('id'=>$vo['object_id']))}" class="J_count_btn"><i class="fa fa-thumbs-up"></i><span class="count">{$vo.post_like}</span></a>
@@ -71,6 +71,7 @@
         </div>
     </div>
     
+   </div> 
     
     <tc_include file="Public:footer" />
 </div>
