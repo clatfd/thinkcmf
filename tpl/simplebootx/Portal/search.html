@@ -15,8 +15,8 @@
 						<php>
 							$result=sp_sql_posts_paged_bykeyword($keyword,"",20);
 						</php>
-						<h3>'{$keyword}' 搜索结果 </h3>
-						<p>{$result['count']}条结果</p>
+						<h3>'{$keyword}' Search results </h3>
+						<p>{$result['count']} items</p>
 					</div>
 					
 					<volist name="result['posts']" id="vo">

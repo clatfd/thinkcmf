@@ -2,31 +2,54 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
 	<title>Sensor</title>
+    
 </head>
 
 <body style="text-align:center">
-    <div style="width: 95%;margin:auto">
+    <div id="canvasdiv" style="width: 95%;margin:auto">
         <canvas id="canvas" height="450" width="800"></canvas>
     </div>
-    Limit to recent <input id="num" type="text" maxlength="2" size="2" value="15"/>items
+    
+    Limit to recent <input id="num" type="text" maxlength="3" size="3" value="15"/>items
     <button onclick="query()">ok</button>
-
+    <br/>
+    Sensor:<select id="sensorno">
+      <option value ="75" <if condition="$sn==75">selected</if>>Pushup</option>
+      <option value ="70" <if condition="$sn==70">selected</if> >Body weight</option>
+      <option value ="20" <if condition="$sn==20">selected</if> >Pull up</option>
+      
+    </select>
+    <!-- &nbsp; -->
+<script>
+    var canvas = document.getElementById("canvas");
+    var context = canvas.getContext("2d");
+    context.font = "50px Courier New";
+    context.fillStyle = "blue";
+    context.fillText("Loading", 250, 150);
+</script>
 <script src="__ROOT__/statics/js/jquery.js"></script>
 <script src="/thinkcmfx1.5.0/tpl/simplebootx/Sensor/Chart.min.js"></script>
 <script>
-var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
-
 function query(){
     var canvas = document.getElementById("canvas");
     var context = canvas.getContext("2d");
-    context.clearRect(0, 0, canvas.width, canvas.height);
+    context.font = "50px Courier New";
+    context.fillStyle = "blue";
+    context.fillText("Loading", 250, 150);
+
+    //context.clearRect(0, 0, canvas.width, canvas.height);
         var phpdata;
+        var sensorno={$sn};
         $(function() {
             var num=$("#num").val();
-            $.getJSON("http://104.131.150.53/api/query.php?sn=75&num="+num+"&callback=?",
+            $.getJSON("http://104.131.150.53/thinkcmfx/index.php?g=sensor&m=index&a=getdata&sensorno="+sensorno+"&num="+num+"&callback=?",
+            //$.getJSON("http://104.131.150.53/api/query.php?sn=75&num="+num+"&callback=?",
             //$.getJSON("/clatfd/1/api/query.php?sn=75&num="+num+"&callback=?",
 				function (phpdata){
-
+                    $("#canvas").remove();
+                    $("#canvasdiv").append('<canvas id="canvas" height="450" width="800"></canvas>');
+                    var canvas = document.getElementById("canvas");
+                    var context = canvas.getContext("2d");
                     //phpdata=JSON.parse(r);
                     //data[0].values.push(phpdata);
                     var barChartData = {
@@ -44,7 +67,7 @@ function query(){
                     }
 
                     var ctx = document.getElementById("canvas").getContext("2d");
-                    window.myBar = new Chart(ctx).Bar(barChartData, {
+                    window.myBar = new Chart(ctx).{$type}(barChartData, {
                         responsive : true
                     });
                 }
@@ -53,6 +76,9 @@ function query(){
 
 }   
 query();
+$("#sensorno").change(function(){
+    parent.location.href="index.php?g=sensor&m=index&a=index&sn="+$(this).val();
+})
 </script>
 
 </body>

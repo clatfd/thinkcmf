@@ -1,2 +1,12 @@
 [23-Jul-2015 18:30:42 PRC] 
 [23-Jul-2015 18:40:18 PRC] Chen Li
+[18-Aug-2015 09:02:05 PRC] PHP Parse error:  syntax error, unexpected '">Sensor Push Up</a></h2>' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ';' in E:\server\nginx\html\thinkcmfx\data\runtime\Cache\Sensor\972764c6bbb26962e6e3cdd936d48362.php on line 98
+[18-Aug-2015 09:02:29 PRC] PHP Parse error:  syntax error, unexpected ';' in E:\server\nginx\html\thinkcmfx\data\runtime\Cache\Sensor\972764c6bbb26962e6e3cdd936d48362.php on line 102
+[18-Aug-2015 09:05:08 PRC] PHP Parse error:  syntax error, unexpected '{' in E:\server\nginx\html\thinkcmfx\data\runtime\Cache\Sensor\972764c6bbb26962e6e3cdd936d48362.php on line 97
+[18-Aug-2015 09:17:09 PRC] PHP Parse error:  syntax error, unexpected '$sensordata' (T_VARIABLE), expecting function (T_FUNCTION) in E:\server\nginx\html\thinkcmfx\application\Sensor\Controller\IndexController.class.php on line 7
+[18-Aug-2015 09:17:40 PRC] PHP Parse error:  syntax error, unexpected '$sensordata' (T_VARIABLE), expecting function (T_FUNCTION) in E:\server\nginx\html\thinkcmfx\application\Sensor\Controller\IndexController.class.php on line 6
+[22-Aug-2015 18:09:33 PRC] PHP Fatal error:  Using $this when not in object context in E:\server\nginx\html\thinkcmfx\application\Portal\Common\function.php on line 487
+[22-Aug-2015 18:14:47 PRC] PHP Fatal error:  Only variables can be passed by reference in E:\server\nginx\html\thinkcmfx\application\Portal\Common\function.php on line 496
+[22-Aug-2015 18:20:44 PRC] PHP Parse error:  syntax error, unexpected ''"><a href="#tagcloud">'' (T_CONSTANT_ENCAPSED_STRING) in E:\server\nginx\html\thinkcmfx\application\Portal\Common\function.php on line 503
+[22-Aug-2015 18:30:59 PRC] PHP Parse error:  syntax error, unexpected ';' in E:\server\nginx\html\thinkcmfx\application\Portal\Common\function.php on line 487
+[22-Aug-2015 18:49:18 PRC] PHP Fatal error:  Call to a member function alias() on a non-object in E:\server\nginx\html\thinkcmfx\application\Portal\Controller\AdminPostController.class.php on line 481

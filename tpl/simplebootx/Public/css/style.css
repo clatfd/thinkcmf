@@ -470,7 +470,7 @@ ul.tc-photos{margin: 0;}
 	border: 1px solid #f90;
 	/* box-shadow: 0 0 0 1px #f90; */
 }
-.tc-photos p{
+.tc-photos, .tc-photos p{
 	text-align: center;
 }
 /**/

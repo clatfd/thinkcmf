@@ -36,16 +36,17 @@ class IndexController extends HomeBaseController{
 					$vipname=$vipsrc[0]['name'];
 				else
 					$vipname="";
+				$_SESSION['vip']=$vipname;
 			}
 			elseif(isset($_SESSION["user"]))
-				$vipname=$_SESSION["user"];
+				$vipname=$_SESSION["user"]["user_nicename"];
 			elseif(isset($_SESSION["vip"]))
 				$vipname=$_SESSION["vip"];
 			else
 				$vipname="";
-			$_SESSION['vip']=$vipname;
 			$insert_data=array('visitorname'=>$vipname,'visittime'=>date("Y-m-d H:i:s",time()),'type'=>'cv','ip'=>$_SERVER["REMOTE_ADDR"]);
 			$result=$this->posts_model->add($insert_data);
+			//$send_result=sp_send_email('c.1994@163.com', $vipname.' read cv', '@'.date("Y-m-d H:i:s",time()));
 			if ($result!==false) {
 				$this->success("Welcome ".$vipname."!",U('portal/page/index',array('id'=>110)),1);
 			}
@@ -58,13 +59,23 @@ class IndexController extends HomeBaseController{
 	}
 
 	function resume(){
-		if(isset($_SESSION['vip'])||isset($_SESSION["user"])){
-			if(isset($_SESSION['vip']))
-				$pfname= $_SESSION['vip'];
+		if(I("get.vs")||isset($_SESSION['vip'])||isset($_SESSION["user"])){
+			if(I("get.vs")){
+				$vs= I("get.vs");
+				$vipsrc = $this->viplist_model->where(array("vs"=>$vs))->select();
+				if(sizeof($vipsrc))
+					$vipname=$vipsrc[0]['name'];
+				else
+					$vipname="";
+				$_SESSION['vip']=$vipname;
+			}
 			elseif(isset($_SESSION["user"]))
-				$pfname= $_SESSION['user'];
-			$pfname= $_SESSION['vip'];
-			$insert_data=array('visitorname'=>$pfname,'visittime'=>date("Y-m-d H:i:s",time()),'type'=>'resume','ip'=>$_SERVER["REMOTE_ADDR"]);
+				$vipname=$_SESSION["user"]["user_nicename"];
+			elseif(isset($_SESSION["vip"]))
+				$vipname=$_SESSION["vip"];
+			else
+				$vipname="";
+			$insert_data=array('visitorname'=>$vipname,'visittime'=>date("Y-m-d H:i:s",time()),'type'=>'resume','ip'=>$_SERVER["REMOTE_ADDR"]);
 			$result=$this->posts_model->add($insert_data);
 			if ($result!==false) {
 				header("location:index.php?m=page&a=index&id=74");
@@ -78,12 +89,23 @@ class IndexController extends HomeBaseController{
 	}
 
 	function archive(){
-		if(isset($_SESSION['vip'])||isset($_SESSION["user"])){
-			if(isset($_SESSION['vip']))
-				$pfname= $_SESSION['vip'];
+		if(I("get.vs")||isset($_SESSION['vip'])||isset($_SESSION["user"])){
+			if(I("get.vs")){
+				$vs= I("get.vs");
+				$vipsrc = $this->viplist_model->where(array("vs"=>$vs))->select();
+				if(sizeof($vipsrc))
+					$vipname=$vipsrc[0]['name'];
+				else
+					$vipname="";
+				$_SESSION['vip']=$vipname;
+			}
 			elseif(isset($_SESSION["user"]))
-				$pfname= $_SESSION['user'];
-			$insert_data=array('visitorname'=>$pfname,'visittime'=>date("Y-m-d H:i:s",time()),'type'=>'archive','ip'=>$_SERVER["REMOTE_ADDR"]);
+				$vipname=$_SESSION["user"]["user_nicename"];
+			elseif(isset($_SESSION["vip"]))
+				$vipname=$_SESSION["vip"];
+			else
+				$vipname="";
+			$insert_data=array('visitorname'=>$vipname,'visittime'=>date("Y-m-d H:i:s",time()),'type'=>'archive','ip'=>$_SERVER["REMOTE_ADDR"]);
 			$result=$this->posts_model->add($insert_data);
 			if ($result!==false) {
 				header("location:index.php?m=page&a=index&id=75");
@@ -95,6 +117,37 @@ class IndexController extends HomeBaseController{
 		else
 			$this->error("Register and login required",U('user/register/index'));
 	}
+
+	function trans(){
+		if(I("get.vs")||isset($_SESSION['vip'])||isset($_SESSION["user"])){
+			if(I("get.vs")){
+				$vs= I("get.vs");
+				$vipsrc = $this->viplist_model->where(array("vs"=>$vs))->select();
+				if(sizeof($vipsrc))
+					$vipname=$vipsrc[0]['name'];
+				else
+					$vipname="";
+				$_SESSION['vip']=$vipname;
+			}
+			elseif(isset($_SESSION["user"]))
+				$vipname=$_SESSION["user"]["user_nicename"];
+			elseif(isset($_SESSION["vip"]))
+				$vipname=$_SESSION["vip"];
+			else
+				$vipname="";
+			$insert_data=array('visitorname'=>$vipname,'visittime'=>date("Y-m-d H:i:s",time()),'type'=>'transcription','ip'=>$_SERVER["REMOTE_ADDR"]);
+			$result=$this->posts_model->add($insert_data);
+			if ($result!==false) {
+				header("location:index.php?m=page&a=index&id=113");
+			}
+			else {
+				$this->error("添加访问数据失败！");
+			}
+		}
+		else
+			$this->error("Register and login required",U('user/register/index'));
+	}
+
 	function toindex(){
 		if(I("get.vs")){
 			$vs= I("get.vs");

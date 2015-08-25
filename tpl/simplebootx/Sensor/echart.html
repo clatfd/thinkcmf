@@ -2,11 +2,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
 	<title>Sensor</title>
+    <style type="text/css">
+    .loading{
+        background:url('/thinkcmfx/tpl/simplebootx/Sensor/Pushup.png') no-repeat scroll 0px 0px;
+        background-position:center top;
+    }
+    </style>
 </head>
 
 <body style="text-align:center">
 
-    <div id="main" style="height:600px"></div>
+    <div id="main" class="loading" style="height:600px"></div>
     Sensor:<select id="sensorno">
       <option value ="75">Pushup</option>
       <option value ="70">Body weight</option>
@@ -97,6 +103,7 @@ function query(){
                             };
                                                 
                             myChart.setOption(option);
+                            $(".loading").removeClass("loading");
                         }
                     );  
                 }

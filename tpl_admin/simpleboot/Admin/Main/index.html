@@ -149,7 +149,26 @@ $.ajax({
                 alert(msg.info);
         }  
     });
+$.ajax({      
+        type: "GET",      
+        url: "/api/curldotaplayers.php",     //dota
+        success: function(r){
+            msg=JSON.parse(r); 
+            //console.log(msg.status);
+              if($(".loadingpic").length)
+                $(".loadingpic").remove();
+              var tpl='<li><em class="title"></em><span class="content"></span></li>';
+              var $notable_notices=$("#notable_notices");
+              $notable_notices.append("<li class='notice_headline'><a href='/api/dota.html' target='_blank'>Dota</a></li>");
 
+                $.each(msg,function(i,n){
+                  var $tpl=$(tpl);
+                  $(".title",$tpl).html(n.personaname);
+                  $(".content",$tpl).html(n.personastate+":"+n.lastlogoff);
+                  $notable_notices.append($tpl);
+                });
+        }  
+    });
 </script>
 </body>
 </html>

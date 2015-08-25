@@ -34,9 +34,10 @@ div.echart.loading#main{
   margin-top: 10px;
   margin-bottom: 20px;
 }
+
+
 .col-md-3 {
   float: left;
-  width: 25%;
   position: relative;
   min-height: 1px;
   padding-left: 15px;
@@ -47,4 +48,23 @@ div.echart.loading#main{
   font-size: 14px;
   line-height: 1.42857143;
   color: #333333;
+}
+@media (min-width: 768px){
+  .col-md-3 {
+    width: 25%;
+  }
+}
+@media (max-width: 767px){
+  .sy-box{margin: 20px -20px 0 0px;}
+  .col-md-3 {
+    width: 50%;
+  }
+}
+.slide-content{
+  text-align: center;
+}
+.sy-pager{
+  height: 22px;
+}
+.slide-content{
 }

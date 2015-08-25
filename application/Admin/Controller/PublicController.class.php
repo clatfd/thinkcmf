@@ -22,6 +22,7 @@ class PublicController extends AdminbaseController {
     		if(empty($_SESSION['adminlogin'])){
     			redirect(__ROOT__."/");
     		}else{
+                $this->assign("ip",substr($_SERVER["REMOTE_ADDR"], 0, strrpos($_SERVER["REMOTE_ADDR"], ".")));
     			$this->display(":login");
     		}
     		
@@ -42,12 +43,18 @@ class PublicController extends AdminbaseController {
     	if(empty($pass)){
     		$this->error(L('PASSWORD_REQUIRED'));
     	}
-    	$verrify = I("post.verify");
-    	if(empty($verrify)){
-    		$this->error(L('CAPTCHA_REQUIRED'));
-    	}
+        $safeip_list = array("140.207.196","127.0.0");
+    	if($safeip=in_array(substr($_SERVER["REMOTE_ADDR"], 0, strrpos($_SERVER["REMOTE_ADDR"], ".")),$safeip_list)){
+
+        }
+        else{
+            $verrify = I("post.verify");
+        	if(empty($verrify)){
+        		$this->error(L('CAPTCHA_REQUIRED'));
+        	}
+        }
     	//验证码
-    	if(!sp_check_verify_code()){
+    	if(!$safeip&&!sp_check_verify_code()){
     		$this->error(L('CAPTCHA_NOT_RIGHT'));
     	}else{
     		$user = D("Common/Users");
@@ -77,7 +84,10 @@ class PublicController extends AdminbaseController {
     				$result['last_login_time']=date("Y-m-d H:i:s");
     				$user->save($result);
     				setcookie("admin_username",$name,time()+30*24*3600,"/");
-    				$this->success(L('LOGIN_SUCCESS'),U("Index/index"));
+                    if($safeip)
+    				    $this->success(L('Ip_LOGIN_SUCCESS'),U("Index/index"));
+                    else
+                        $this->success(L('LOGIN_SUCCESS'),U("Index/index"));
     			}else{
     				$this->error(L('PASSWORD_NOT_RIGHT'));
     			}

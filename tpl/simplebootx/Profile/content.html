@@ -36,7 +36,8 @@
   <!-- modify this file to add any changes. This will make update process much easier -->
   <link rel="stylesheet" href="tpl/simplebootx/Profile/css/user.css">
 
-  <script src="tpl/simplebootx/Profile/js/libs/modernizr-2.0.6.min.js"></script>
+  <link href="__TMPL__Public/css/slippry/slippry.css" rel="stylesheet">
+
 
 </head>
 
@@ -73,65 +74,72 @@
 	<!-- <div class="copyrights"> <a href="#"  title="#">#</a></div> -->
     <!-- information block -->
 
-    
+
     <div class="row row-info">
       <article class="markup">
         <h2 class="section-title"><a href="#">About Me</a></h2>
+        <div class="clearfix"></div>
         
-        <p>
-            Life is interesting, with so many things engrossing and breathtaking.
-        </p>
-        <p>
-            Travel, to the highest mountain, to the deepest ocean, to the end of the world.
-        </p>
-        <p>
-            Find the beauty, the truth and the eternal wisdom of life and nature.
-        </p>
-        <p>
-            Roads are for trek, difficulties are under feet,
-        </p>
-        <p>
-            I have <em>determination</em>.
-        </p>
-        <p>
-            <br/>
-        </p>
-        <p>
-            Life is vicissitudinous, with so many trials and tribulations.
-        </p>
-        <p>
-            Strive, with all the time, with all the energy, with all the heart.
-        </p>
-        <p>
-            Struggle for justice, for peace and unprecedented prosperity of all mankind.
-        </p>
-        <p>
-            Faith is steadfast, battle is arduous,
-        </p>
-        <p>
-            I have <em>perseverance</em>.
-        </p>
-        <p>
-            <br/>
-        </p>
-        <p>
-            Life is elusive, with so many uncertain and unknown.
-        </p>
-        <p>
-            Cherish, moments of laughter, moments of grief, and moments of gratitude.
-        </p>
-        <p>
-            Be Energetic towards every people and every thing every day,
-        </p>
-        <p>
-            Time is limited, dream is unlimited,
-        </p>
-        <p>
-            I have <em>motivation</em>.
-        </p>
-        <p>
-            <br/>
-        </p>
+        <ul id="homeslider" class="unstyled">
+          <li>
+            <div class="slide-content">
+              <p>
+                Life is interesting, with so many things engrossing and breathtaking.
+              </p>
+              <p>
+                  Travel, to the highest mountain, to the deepest ocean, to the end of the world.
+              </p>
+              <p>
+                  Find the beauty, the truth and the eternal wisdom of life and nature.
+              </p>
+              <p>
+                  Roads are for trek, difficulties are under feet,
+              </p>
+              <p>
+                  I have <em>determination</em>.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="slide-content">
+              <p>
+                  Life is vicissitudinous, with so many trials and tribulations.
+              </p>
+              <p>
+                  Strive, with all the time, with all the energy, with all the heart.
+              </p>
+              <p>
+                  Struggle for justice, for peace and unprecedented prosperity of all mankind.
+              </p>
+              <p>
+                  Faith is steadfast, battle is arduous,
+              </p>
+              <p>
+                  I have <em>perseverance</em>.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="slide-content">
+              <p>
+                  Life is elusive, with so many uncertain and unknown.
+              </p>
+              <p>
+                  Cherish, moments of laughter, moments of grief, and moments of gratitude.
+              </p>
+              <p>
+                  Be Energetic towards every people and every thing every day,
+              </p>
+              <p>
+                  Time is limited, dream is unlimited,
+              </p>
+              <p>
+                  I have <em>motivation</em>.
+              </p>
+            </div>
+          </li>
+        </ul>
+
         <p>
             Care for world and people,&nbsp;
         </p>
@@ -166,7 +174,7 @@
             </div>
           </div>
           <div class="col-md-3 col-sm-6 col-xs-6 col-item">
-            <div class="badge-content"><span class="badge-large">318</span><span class="badge-small">GRE</span>
+            <div class="badge-content"><span class="badge-large">318</span><span class="badge-small">GRE<br>Quantitative Reasoning：170</span>
             </div>
           </div>
           <div class="col-md-3 col-sm-6 col-xs-6 col-item">
@@ -276,7 +284,7 @@
 
     
     <!-- experience block -->
-    <!-- 
+     
     <div class="row row-experience">
       <article>
         <h2 class="section-title"><a href="index.php?m=page&a=index&id=27">Research Experience</a></h2>
@@ -300,7 +308,7 @@
             </div>
             <p class="reference">
               Experience with me:<br />
-              <a href="index.php?m=list&a=index&id=19" target="_blank">Three paper about Biomedical Image processing</a><br/>
+              <a href="index.php?m=list&a=index&id=19" target="_blank">Four papers about Biomedical and Image processing</a><br/>
               <a href="index.php?g=&m=article&a=index&id=46" target="_blank">LED position car</a>
                etc.
             </p>
@@ -374,7 +382,7 @@
 
       </article>
     </div>
-  
+  <!--
     <div class="row row-education">
       <article>
 
@@ -477,7 +485,7 @@
     </div> -->
     
     <div class="row row-fml">
-      <article class="markup">
+      <article name="fml" id="fml">
         <h2 class="section-title">Family Background</h2>
         <p>
           I am fortunate to have grown up in a well-educated family. My grandfather and parents all have received good tertiary education, which is not so common in China.
@@ -518,7 +526,7 @@
         <p><a href="index.php?g=profile&m=index&a=resume" target="_blank">View <em>Resume</em></a></p>
         <p><a href="index.php?g=profile&m=index&a=ram" target="_blank">View <em>Research Ability Map</em></a></p>
         <p><a href="index.php?m=page&a=index&id=64" target="_blank">View <em>Education Timeline</em></a></p>
-        <p><a href="/sim" target="_blank">Boring? Chat With <em>Sim(Auto-reply robot)</em></a></p>
+        <p><a href="/sim" target="_blank">Feel bored? Chat With <em>Sim(Auto-reply robot)</em></a></p>
       </article>
     </div>
 
@@ -636,8 +644,11 @@
 
   <div id="resize">Resize</div>
 
+<tc_include file="Public:scripts"/>
+
+  <script src="tpl/simplebootx/Profile/js/libs/modernizr-2.0.6.min.js"></script>
+
   <!-- jQuery 1.6.2 -->
-  <script src="tpl/simplebootx/Profile/js/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="tpl/simplebootx/Profile/js/libs/jquery-1.6.2.min.js"><\/script>')</script>
 
   <!-- jQuery Fancybox plugin === http://www.cssmoban.com/ -->
@@ -647,7 +658,21 @@
   <script defer src="tpl/simplebootx/Profile/js/script.js"></script>
 
   <script defer src="tpl/simplebootx/Profile/customize/customize.js"></script>
+  <script src="__TMPL__Public/js/slippry.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#homeslider").slippry({
+    transition: 'fade',
+    useCSS: true,
+    captions: false,
+    speed: 1000,
+    pause: 5000,
+    auto: true,
+    preload: 'visible'
+  });
 
+});
+</script>
 
 </body>
 </html>

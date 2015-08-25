@@ -4,8 +4,11 @@
 		<title>{$site_seo_title} {$site_name}</title>
 		<meta name="keywords" content="{$site_seo_keywords}" />
 		<meta name="description" content="{$site_seo_description}">
+		<meta property="qc:admins" content="4211024641464636" />
+		<meta property="wb:webmaster" content="f9c930345b6e34b5" />
 		<tc_include file="Public:head" />
 		<link href="__TMPL__Public/css/slippry/slippry.css" rel="stylesheet">
+		<link href="__TMPL__Public/css/tagcloud.css" rel="stylesheet">
 		<style>
 			.caption-wraper{position: absolute;left:50%;bottom:2em;}
 			.caption-wraper .caption{
@@ -65,7 +68,7 @@ $home_slides=empty($home_slides)?$default_home_slides:$home_slides;
 		<div class="span4">
 			 <h2 class="font-large nospace"><i class="fa fa-smile-o"></i><a href="index.php?g=profile&m=index&a=index"> Profile 了解</a></h2>
              <p>A brief <a href="index.php?g=profile&m=index&a=index">introduction</a> to ChenLi.</p>
-             <p>You may also interested in viewing my <a href="index.php?m=page&a=index&id=75">CV</a> Or <a href="index.php?m=page&a=index&id=74">Resume</a></p>
+             <p>You may also interested in viewing my <a href="index.php?g=profile&m=index&a=cv">CV</a>, <a href="index.php?g=profile&m=index&a=archive">Experience Archive</a> Or <a href="index.php?g=profile&m=index&a=resume">Resume</a></p>
 		</div>
 		<div class="span4">
 			 <h2 class="font-large nospace"><i class="fa fa-calendar"></i><a href="index.php?g=todo&m=index&a=index"> schedule 日程</a></h2>
@@ -101,8 +104,20 @@ $home_slides=empty($home_slides)?$default_home_slides:$home_slides;
 		</div>
 	</div>
 
-	<hr/>
-	
+<hr/>
+
+	<div>
+		<h1 class="text-center">标签云</h1>
+		<h3 class="text-center"><a href="{:U('portal/page/index',array('id'=>122))}" >Tag Cloud</a></h3>
+	</div>
+	<php>
+		echo sp_get_tagcloud(50); 
+	</php>
+	<div class="row">
+		<a href="{:U('portal/page/index',array('id'=>122))}"><button class="btn btn-info" style="float:right;margin:5px;">More</button></a>
+	</div>
+<hr/>
+
 	<div>
 		<h1 class="text-center">最新发布</h1>
 		<h3 class="text-center"><a href="{:U('portal/page/index',array('id'=>63))}" >Recent Posts</a></h3>

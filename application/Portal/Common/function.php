@@ -241,9 +241,15 @@ function sp_sql_posts_paged_bykeyword($keyword,$tag,$pagesize=20,$pagetpl='{firs
 
 
 	//根据参数生成查询条件
+	$whereor['post_title'] = array('like','%' . $keyword . '%');
+	$whereor['post_keywords'] = array('like','%' . $keyword . '%');
+	$whereor['post_excerpt'] = array('like','%' . $keyword . '%');
+	$whereor['_logic'] = 'or';
+	$where['_complex'] = $whereor;
+
 	$where['status'] = array('eq',1);
 	$where['post_status'] = array('eq',1);
-	$where['post_title'] = array('like','%' . $keyword . '%');
+	
 	
 	if (isset($tag['cid'])) {
 		$where['term_id'] = array('in',$tag['cid']);
@@ -472,4 +478,49 @@ function sp_admin_get_tpl_file_list(){
 		}
 	}
 	return $tpl_files;
+}
+
+
+/**
+* get tagcloud
+*/
+function sp_get_tagcloud($limit){
+	$posts_model= D("Common/Posts");
+	$terms_model = D("Common/Terms");
+	$term_relationships_model = D("Common/TermRelationships");
+
+	$keywordlist=array();
+	//$post=$posts_model->field('post_keywords')->select();
+
+	$posts=$term_relationships_model
+		->alias("a")
+		->join(C ( 'DB_PREFIX' )."posts b ON a.object_id = b.id")
+		->where("a.status=1")
+		->field('post_keywords')
+		->select();
+
+	foreach ($posts as  $value) {
+		$keywordlist=array_merge($keywordlist,explode(",",str_replace(", ",",",trim($value['post_keywords']))));
+	}
+	//var_dump($keywordlist);
+	//$this->assign("post",$post);
+	$keywordfreq=array_count_values($keywordlist);    //统计数组元素出现的次数
+	arsort($keywordfreq);    
+	if($limit)
+		$keywordfreq=array_slice($keywordfreq,0,$limit);
+	ksort($keywordfreq);    //sort according to key name
+	//return var_dump($keywordfreq);
+
+	$id=1;
+	$data='<div id="htmltagcloud">';
+	foreach ($keywordfreq as $key=>$value) {
+		if($value>10)
+			$value=10;
+		elseif($value>1)
+			$value-=2;
+	    $data.= '<span id="'.$id.'" class="wrd tagcloud'.$value.'"><a href="index.php?g=portal&m=search&a=index&keyword='.$key.'">'.$key.'</a></span>';
+	    $id++;
+	}
+	$data.='</div><div id="credit">Style from <a href="http://tagcrowd.com">TagCrowd.com</a></div><!-- end tag cloud : Style from TagCrowd.com : please keep this notice -->';
+	return $data;
 }

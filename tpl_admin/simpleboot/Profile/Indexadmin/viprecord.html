@@ -5,7 +5,8 @@
     	<td>{$vo.visitorname}</td>
     	<td>{$vo.visittime}</td>
     	<td>{$vo.type}</td>
-    	<td>{$vo.ip}</td>
+        <td>{$vo.ip}</td>
+    	<td class="searchip" id="ip{$vo.id}">&nbsp;&nbsp;&nbsp;&nbsp;</td>
     	<td><a href="{:U('Indexadmin/delviprecord',array('id'=>$vo['id']))}">Del</a></td>
 	</tr>
 </foreach>
@@ -17,3 +18,24 @@ Delete from ~ to :<br/>
 	<input type="text" name="idup" placeholder="idup"> 
 	<button class="btn btn-primary btn_submit J_ajax_submit_btn" type="submit">提交</button>
 </form> 
+
+<script src="__ROOT__/statics/js/jquery.js"></script>
+
+<script type="text/javascript">
+    $(".searchip").click(function(){
+        ip=$(this).prev().text();
+        trid=$(this).attr("id");
+        $.ajax({      
+            type: "GET",      
+            url: "/api/curlip.php?ip="+ip,     //biochart
+            success: function(r){
+                data=JSON.parse(r);
+                if(data.result){
+                    console.log($(this));
+                    $("#"+trid).html(data.loc);
+                }
+            }  
+        });
+
+    })
+</script>

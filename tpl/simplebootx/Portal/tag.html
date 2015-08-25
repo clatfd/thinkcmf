@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<title>Tag Cloud</title>
+		<meta name="keywords" content="{$post_keywords}" />
+		<meta name="description" content="{$post_excerpt}">
+		<tc_include file="Public:head" />
+		<link href="__TMPL__Public/css/tagcloud.css" rel="stylesheet">
+		
+	</head>
+<body class="">
+<tc_include file="Public:nav" />
+<div class="container tc-main">
+	<div class="row">
+		<div class="tc-box first-box article-box">
+	    	<h2>{$post_title}</h2>
+	    	<hr>
+	    	<div id="article_content">
+			<php>
+				echo sp_get_tagcloud(); 
+			</php>
+			<a href="{:U('portal/AdminPost/keywords')}">Raw data</a>
+	    	</div>
+	    	
+	    	{:Comments("posts",$id)}
+	    </div>
+	</div>
+              
+<tc_include file="Public:footer"/>
+</div>
+
+<tc_include file="Public:scripts"/>
+</body>
+</html>

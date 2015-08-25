@@ -475,4 +475,31 @@ class AdminPostController extends AdminbaseController {
 		}
 	}
 	
+	//print freq of keywords
+	function keywords(){
+		$keywordlist=array();
+		$posts=$this->term_relationships_model
+		->alias("a")
+		->join(C ( 'DB_PREFIX' )."posts b ON a.object_id = b.id")
+		->where("a.status=1")
+		->field('post_keywords')
+		->select();
+		//$post=$this->posts_model->field('post_keywords')->select();
+		//var_dump($posts);
+		foreach ($posts as  $value) {
+			$keywordlist=array_merge($keywordlist,explode(",",str_replace(", ",",",trim($value['post_keywords']))));
+		}
+		var_dump($keywordlist);
+		echo "<hr/>";
+		//$this->assign("post",$post);
+		$keywordfreq=array_count_values($keywordlist);    //统计数组元素出现的次数
+		arsort($keywordfreq);    
+		//$keywordfreq=array_slice($keywordfreq,0,50);
+		//var_dump($keywordfreq);
+
+		foreach ($keywordfreq as $key=>$value) {
+		    echo $key.":".$value."<br>";
+		}
+	}
+
 }

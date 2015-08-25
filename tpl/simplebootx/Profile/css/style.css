@@ -137,7 +137,7 @@ textarea:focus,
   margin: 0 auto;
   overflow: hidden;
   position: relative;
-  padding: 3.125em 0;
+  padding: 2.125em 0;
   zoom: 1;
 }
 
@@ -354,7 +354,7 @@ textarea:focus,
 
 .section-title,
 .portfolio h2 {
-  margin: 0 0 2.2em;
+  margin: 0 0 1em;
   padding: 9px 18px 8px;
   font-family: arial, sans-serif;
   text-transform: uppercase;
