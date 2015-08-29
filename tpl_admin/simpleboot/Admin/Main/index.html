@@ -70,7 +70,7 @@ $.getJSON("http://www.thinkcmf.com/service/sms_jsonp.php?callback=?",function(da
 
 $.ajax({      
         type: "GET",      
-        url: "/thinkcmfx1.5.0/index.php?g=Todo&m=Indexadmin&a=getapi",     //todo
+        url: "index.php?g=Todo&m=Indexadmin&a=getapi",     //todo
         success: function(msg){
             //console.log(msg.status);
             if(msg.status==1){
@@ -78,7 +78,7 @@ $.ajax({
               var $notable_notices=$("#notable_notices");
               if($(".loadingpic").length)
                 $(".loadingpic").remove();
-              $notable_notices.append("<li class='notice_headline'><a href=\"/thinkcmfx1.5.0/index.php?g=Todo&m=Indexadmin&a=index&menuid=159\">Todo</a></li>");
+              $notable_notices.append("<li class='notice_headline'><a href=\"index.php?g=Todo&m=Indexadmin&a=index&menuid=159\">Todo</a></li>");
 
               if(msg.data.src){
                 $.each(msg.data.src,function(i,n){

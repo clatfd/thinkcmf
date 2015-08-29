@@ -103,7 +103,23 @@
 			"file": "tpl/simplebootx/Profile/relation.html",
 			"settings":
 			{
-				"buffer_size": 8744,
+				"buffer_size": 8905,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "tpl_admin/simpleboot/Admin/Main/index.html",
+			"settings":
+			{
+				"buffer_size": 5651,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/Todo/Controller/IndexadminController.class.php",
+			"settings":
+			{
+				"buffer_size": 2088,
 				"line_ending": "Windows"
 			}
 		},
@@ -135,7 +151,7 @@
 			"file": "/E/H-web/cv.html",
 			"settings":
 			{
-				"buffer_size": 26611,
+				"buffer_size": 27771,
 				"line_ending": "Windows"
 			}
 		},
@@ -143,15 +159,7 @@
 			"file": "/E/H-web/archive.html",
 			"settings":
 			{
-				"buffer_size": 33955,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "tpl/simplebootx/Portal/index.html",
-			"settings":
-			{
-				"buffer_size": 8070,
+				"buffer_size": 33913,
 				"line_ending": "Windows"
 			}
 		},
@@ -573,7 +581,7 @@
 	"groups":
 	[
 		{
-			"selected": 5,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -582,15 +590,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8744,
+						"buffer_size": 8905,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3367,
-								3367
+								3529,
+								3529
 							]
 						],
 						"settings":
@@ -602,13 +610,74 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 322.0,
+						"translation.y": 414.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
+					"file": "tpl_admin/simpleboot/Admin/Main/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5651,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2186,
+								2186
+							]
+						],
+						"settings":
+						{
+							"encoding_helper_encoding": "UTF-8",
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3565.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "application/Todo/Controller/IndexadminController.class.php",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 2088,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"encoding_helper_encoding": "UTF-8",
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1311.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
 					"file": "application/Profile/Controller/IndexadminController.class.php",
 					"semi_transient": false,
 					"settings":
@@ -638,7 +707,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 4,
 					"file": "application/Portal/Controller/AdminPostController.class.php",
 					"semi_transient": false,
 					"settings":
@@ -668,7 +737,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 5,
 					"file": "tpl/simplebootx/Portal/tag.html",
 					"semi_transient": false,
 					"settings":
@@ -698,12 +767,12 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 6,
 					"file": "/E/H-web/cv.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 26611,
+						"buffer_size": 27771,
 						"regions":
 						{
 						},
@@ -711,7 +780,7 @@
 						[
 							[
 								0,
-								26611
+								0
 							]
 						],
 						"settings":
@@ -729,12 +798,12 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 7,
 					"file": "/E/H-web/archive.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 33955,
+						"buffer_size": 33913,
 						"regions":
 						{
 						},
@@ -742,7 +811,7 @@
 						[
 							[
 								0,
-								33955
+								0
 							]
 						],
 						"settings":
@@ -760,37 +829,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 6,
-					"file": "tpl/simplebootx/Portal/index.html",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 8070,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4670,
-								4712
-							]
-						],
-						"settings":
-						{
-							"encoding_helper_encoding": "UTF-8",
-							"origin_encoding": "UTF-8",
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 2386.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 7,
+					"buffer": 8,
 					"file": "tpl_admin/simpleboot/Profile/Indexadmin/viprecord.html",
 					"semi_transient": false,
 					"settings":
@@ -821,7 +860,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 9,
 					"file": "tpl/simplebootx/Profile/css/user.css",
 					"semi_transient": false,
 					"settings":
@@ -852,7 +891,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 10,
 					"file": "application/Admin/Controller/PublicController.class.php",
 					"semi_transient": false,
 					"settings":
@@ -883,7 +922,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 10,
+					"buffer": 11,
 					"file": "application/Portal/Common/function.php",
 					"semi_transient": false,
 					"settings":
@@ -913,7 +952,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 11,
+					"buffer": 12,
 					"file": "tpl/simplebootx/Public/css/tagcloud.css",
 					"semi_transient": false,
 					"settings":
