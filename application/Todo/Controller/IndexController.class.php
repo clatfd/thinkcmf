@@ -1,8 +1,8 @@
 <?php
 namespace Todo\Controller;
-use Common\Controller\MemberbaseController;
+use Common\Controller\HomeBaseController;
 
-class IndexController extends MemberbaseController{
+class IndexController extends HomeBaseController{
 	protected $todo_obj;
 	
 	function _initialize() {

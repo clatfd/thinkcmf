@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Highcharts Example</title>
+
+        <script type="text/javascript" src="/lib/js/jquery-1.11.1.min.js"></script>
+        <style type="text/css">
+        </style>
+       
+    </head>
+<body>
+
+<body style="text-align:center">
+    <div id="container" style="height: 650px; min-width: 310px; width:95%; max-width: 1000px;margin:0 auto"></div>
+    Limit to recent <input id="num" type="text" maxlength="3" size="3" value="15"/>items
+    <button onclick="query()">ok</button>
+    <br/>
+    Sensor:<select id="sensorno">
+      <option value ="75" <if condition="$sn==75">selected</if>>Pushup</option>
+      <option value ="70" <if condition="$sn==70">selected</if> >Body weight</option>
+      <option value ="20" <if condition="$sn==20">selected</if> >Pull up</option>
+      <option value ="mi_slp" <if condition="$sn eq 'mi_slp'">selected</if>>Sleep duration</option>
+      <option value ="mi_stp" <if condition="$sn eq 'mi_stp'">selected</if> >Steps</option>
+      <option value ="mi_sw" <if condition="$sn eq 'mi_sw'">selected</if> >Sleep Wake</option>
+    </select>
+
+<script src="/lib/highchart/highcharts.js"></script>
+<script src="/lib/highchart/highcharts-more.js"></script>
+<script src="/lib/highchart/modules/exporting.js"></script>
+<script type="text/javascript">
+function query(){
+    var sensorno="{$sn}";
+    var num=$("#num").val();
+    $.getJSON("http://104.131.150.53/thinkcmfx/index.php?g=sensor&m=index&a=getdata&sensorno="+sensorno+"&num="+num+"&callback=?",
+    // $.getJSON("http://127.0.0.1/thinkcmfx/index.php?g=sensor&m=index&a=getdata&sensorno="+sensorno+"&num="+num+"&callback=?",
+    //$.getJSON("http://104.131.150.53/api/query.php?sn=75&num="+num+"&callback=?",
+    //$.getJSON("/clatfd/1/api/query.php?sn=75&num="+num+"&callback=?",
+        function (phpdata){
+            $('#container').highcharts({
+
+                chart: {
+                    type: 'bubble',
+                    zoomType: 'xy'
+                },
+
+                title: {
+                    text: 'Sleep Wake time'
+                },
+                subtitle: {
+                    text: 'circle size:deep sleep time<br/>Local time'
+                },
+                xAxis: {
+                    labels: {
+                        formatter: function () {
+                            return new Date(this.value*1000).toTimeString().slice(0,5);
+                        }
+                    },
+                    title: {
+                        enabled: true,
+                        text: 'Sleep at',
+                    }
+                },
+                yAxis: {
+                    labels: {
+                        formatter: function () {
+                            return new Date(this.value*1000).toTimeString().slice(0,5);
+                        }
+                    },
+                    title: {
+                        enabled: true,
+                        text: 'Wake at',
+                    }
+                },
+                tooltip: {
+                    formatter: function () {
+                        var s = '<b>' + this.point.date + '</b><br/>'+'Sleep at:' + new Date(this.point.x*1000).toTimeString().slice(0,5)+ '<br/>Wake at: ' +new Date(this.point.y*1000).toTimeString().slice(0,5)+ '<br/>Deep sleep:'+ this.point.z+' Hours';
+                        return s;
+                    },
+                    shared: false
+                },
+                series:[{
+                    name:"sleep/wake",
+                    data:phpdata.data
+                    
+                }]
+                
+            });
+        }
+    )
+}
+query();
+$("#sensorno").change(function(){
+    parent.location.href="index.php?g=sensor&m=index&a=index&sn="+$(this).val();
+})
+</script>
+</body>
+</html>

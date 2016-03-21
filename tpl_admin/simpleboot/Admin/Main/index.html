@@ -169,6 +169,48 @@ $.ajax({
                 });
         }  
     });
+$.ajax({      
+        type: "GET",      
+        url: "index.php?g=profile&m=index&a=getSensorDataForAdmin",     //mi sensor
+        success: function(r){
+            msg=JSON.parse(r); 
+            //console.log(msg.status);
+              if($(".loadingpic").length)
+                $(".loadingpic").remove();
+              var tpl='<li><em class="title"></em><span class="content"></span></li>';
+              var $notable_notices=$("#notable_notices");
+              $notable_notices.append("<li class='notice_headline'><a href='index.php?g=sensor&m=index&a=index&sn=mi_slp' target='_blank'>Mi Data</a></li>");
+
+                $.each(msg,function(i,n){
+                  var $tpl=$(tpl);
+                  $(".title",$tpl).html(i);
+                  $(".content",$tpl).html(n);
+                  $notable_notices.append($tpl);
+                });
+        }  
+    });
+$.ajax({      
+        type: "GET",      
+        url: "/api/curlwd.php",     //weather data
+        success: function(r){
+            msg=JSON.parse(r); 
+            //console.log(msg.status);
+              if($(".loadingpic").length)
+                $(".loadingpic").remove();
+              var tpl='<li><em class="title"></em><span class="content"></span></li>';
+              var $notable_notices=$("#notable_notices");
+              $notable_notices.append("<li class='notice_headline' id='weathernoticehead'><a href='http://www.heweather.com/' target='_blank'>Weather Data</a></li>");
+
+                $.each(msg,function(i,n){
+                  var $tpl=$(tpl);
+                  $(".title",$tpl).html(i);
+                  $(".content",$tpl).html(n);
+                  if(i=="qlty"&&n.indexOf("污染")>=0)
+                    $("#weathernoticehead").css("background-color","#FFEAEA");
+                  $notable_notices.append($tpl);
+                });
+        }  
+    });
 </script>
 </body>
 </html>

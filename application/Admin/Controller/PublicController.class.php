@@ -22,7 +22,11 @@ class PublicController extends AdminbaseController {
     		if(empty($_SESSION['adminlogin'])){
     			redirect(__ROOT__."/");
     		}else{
-                $this->assign("ip",substr($_SERVER["REMOTE_ADDR"], 0, strrpos($_SERVER["REMOTE_ADDR"], ".")));
+                $this->assign("ip",$_SERVER["REMOTE_ADDR"]);
+                if($this->_checksafeip($_SERVER["REMOTE_ADDR"]))
+                    $this->assign("submitbtn","IP Login");
+                else
+                    $this->assign("submitbtn","Login");
     			$this->display(":login");
     		}
     		
@@ -33,7 +37,14 @@ class PublicController extends AdminbaseController {
     	session('ADMIN_ID',null); 
     	$this->redirect("public/login");
     }
-    
+    public function _checksafeip($ip){
+        $safeip_list = array("140.207.196","127.0.0");
+        if(in_array(substr($ip, 0, strrpos($ip, ".")),$safeip_list))
+            return true;
+        else
+            return false;
+
+    }
     public function dologin(){
     	$name = I("post.username");
     	if(empty($name)){
@@ -43,18 +54,15 @@ class PublicController extends AdminbaseController {
     	if(empty($pass)){
     		$this->error(L('PASSWORD_REQUIRED'));
     	}
-        $safeip_list = array("140.207.196","127.0.0");
-    	if($safeip=in_array(substr($_SERVER["REMOTE_ADDR"], 0, strrpos($_SERVER["REMOTE_ADDR"], ".")),$safeip_list)){
-
-        }
-        else{
+        $issafeip=$this->_checksafeip($_SERVER["REMOTE_ADDR"]);
+    	if(!$issafeip){
             $verrify = I("post.verify");
         	if(empty($verrify)){
         		$this->error(L('CAPTCHA_REQUIRED'));
         	}
         }
     	//验证码
-    	if(!$safeip&&!sp_check_verify_code()){
+    	if(!$issafeip&&!sp_check_verify_code()){
     		$this->error(L('CAPTCHA_NOT_RIGHT'));
     	}else{
     		$user = D("Common/Users");

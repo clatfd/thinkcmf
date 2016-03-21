@@ -10,3 +10,144 @@
 [22-Aug-2015 18:20:44 PRC] PHP Parse error:  syntax error, unexpected ''"><a href="#tagcloud">'' (T_CONSTANT_ENCAPSED_STRING) in E:\server\nginx\html\thinkcmfx\application\Portal\Common\function.php on line 503
 [22-Aug-2015 18:30:59 PRC] PHP Parse error:  syntax error, unexpected ';' in E:\server\nginx\html\thinkcmfx\application\Portal\Common\function.php on line 487
 [22-Aug-2015 18:49:18 PRC] PHP Fatal error:  Call to a member function alias() on a non-object in E:\server\nginx\html\thinkcmfx\application\Portal\Controller\AdminPostController.class.php on line 481
+[29-Aug-2015 23:56:39 PRC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in E:\server\nginx\html\thinkcmfx\application\Profile\Controller\IndexController.class.php on line 21
+[30-Aug-2015 13:34:43 PRC] PHP Parse error:  syntax error, unexpected 'var_dump' (T_STRING) in E:\server\nginx\html\thinkcmfx\application\Wordlist\Controller\MemberController.class.php on line 26
+[30-Aug-2015 13:41:26 PRC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in E:\server\nginx\html\thinkcmfx\application\Wordlist\Controller\MemberController.class.php on line 29
+[30-Aug-2015 13:41:44 PRC] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in E:\server\nginx\html\thinkcmfx\application\Wordlist\Controller\MemberController.class.php on line 29
+[30-Aug-2015 14:10:32 PRC] PHP Parse error:  syntax error, unexpected 'in' (T_STRING) in E:\server\nginx\html\thinkcmfx\data\runtime\Cache\Wordlist\c129c4b68651daf796ba684a6990edf5.php on line 193
+[30-Aug-2015 14:15:02 PRC] PHP Parse error:  syntax error, unexpected 'eq2' (T_STRING) in E:\server\nginx\html\thinkcmfx\data\runtime\Cache\Wordlist\c129c4b68651daf796ba684a6990edf5.php on line 209
+[30-Aug-2015 14:45:51 PRC] PHP Fatal error:  Call to undefined function mod() in E:\server\nginx\html\thinkcmfx\data\runtime\Cache\Wordlist\c129c4b68651daf796ba684a6990edf5.php on line 211
+[30-Aug-2015 14:46:56 PRC] PHP Fatal error:  Call to undefined function mod() in E:\server\nginx\html\thinkcmfx\data\runtime\Cache\Wordlist\c129c4b68651daf796ba684a6990edf5.php on line 211
+[30-Aug-2015 14:46:58 PRC] PHP Fatal error:  Call to undefined function mod() in E:\server\nginx\html\thinkcmfx\data\runtime\Cache\Wordlist\c129c4b68651daf796ba684a6990edf5.php on line 211
+[30-Aug-2015 14:53:24 PRC] PHP Parse error:  syntax error, unexpected '=', expecting ')' in E:\server\nginx\html\thinkcmfx\application\Wordlist\Controller\MemberController.class.php on line 31
+[30-Aug-2015 14:53:30 PRC] PHP Parse error:  syntax error, unexpected '(' in E:\server\nginx\html\thinkcmfx\application\Wordlist\Controller\MemberController.class.php on line 60
+[30-Aug-2015 15:55:31 PRC] PHP Fatal error:  Call to a member function setField() on a non-object in E:\server\nginx\html\thinkcmfx\application\Wordlist\Controller\MemberController.class.php on line 96
+[30-Aug-2015 17:56:24 PRC] PHP Parse error:  syntax error, unexpected '{' in E:\server\nginx\html\thinkcmfx\application\Wordlist\Controller\MemberController.class.php on line 28
+[31-Aug-2015 11:40:22 PRC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\server\nginx\html\thinkcmfx\simplewind\Core\Library\Think\Think.class.php on line 243
+[02-Sep-2015 17:16:31 PRC] PHP Fatal error:  Cannot use isset() on the result of a function call (you can use "null !== func()" instead) in E:\server\nginx\html\thinkcmfx\application\Sensor\Controller\IndexController.class.php on line 81
+[02-Sep-2015 17:32:29 PRC] PHP Parse error:  syntax error, unexpected '}' in E:\server\nginx\html\thinkcmfx\application\Sensor\Controller\IndexController.class.php on line 99
+[03-Sep-2015 12:56:06 PRC] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in E:\server\nginx\html\thinkcmfx\application\Sensor\Controller\IndexController.class.php on line 131
+[03-Sep-2015 13:09:50 PRC] PHP Parse error:  syntax error, unexpected ';' in E:\server\nginx\html\thinkcmfx\application\Sensor\Controller\IndexController.class.php on line 90
+[03-Sep-2015 13:13:14 PRC] PHP Parse error:  syntax error, unexpected ';' in E:\server\nginx\html\thinkcmfx\application\Sensor\Controller\IndexController.class.php on line 90
+[03-Sep-2015 16:51:07 PRC] PHP Parse error:  syntax error, unexpected 'T11' (T_STRING) in E:\server\nginx\html\thinkcmfx\application\Sensor\Controller\IndexController.class.php on line 111
+[03-Sep-2015 16:51:13 PRC] PHP Parse error:  syntax error, unexpected 'T11' (T_STRING) in E:\server\nginx\html\thinkcmfx\application\Sensor\Controller\IndexController.class.php on line 111
+[03-Sep-2015 16:51:56 PRC] PHP Parse error:  syntax error, unexpected 'T11' (T_STRING) in E:\server\nginx\html\thinkcmfx\application\Sensor\Controller\IndexController.class.php on line 111
+[11-Sep-2015 19:31:52 PRC] PHP Fatal error:  Call to undefined function Wordlist\Controller\_query() in E:\server\nginx\html\thinkcmfx\application\Wordlist\Controller\MemberController.class.php on line 70
+[11-Sep-2015 19:33:28 PRC] PHP Parse error:  syntax error, unexpected '}' in E:\server\nginx\html\thinkcmfx\application\Wordlist\Controller\MemberController.class.php on line 250
+[11-Sep-2015 19:33:33 PRC] PHP Fatal error:  Call to undefined function Wordlist\Controller\_query() in E:\server\nginx\html\thinkcmfx\application\Wordlist\Controller\MemberController.class.php on line 206
+[11-Sep-2015 19:33:46 PRC] PHP Fatal error:  Call to undefined function Wordlist\Controller\_query() in E:\server\nginx\html\thinkcmfx\application\Wordlist\Controller\MemberController.class.php on line 206
+[12-Sep-2015 14:14:06 PRC] PHP Parse error:  syntax error, unexpected '}' in E:\server\nginx\html\thinkcmfx\application\Calendar\Controller\IndexController.class.php on line 32
+[13-Sep-2015 10:47:55 PRC] PHP Parse error:  syntax error, unexpected ')' in E:\server\nginx\html\thinkcmfx\application\Calendar\Controller\IndexadminController.class.php on line 34
+[13-Sep-2015 11:21:15 PRC] PHP Parse error:  syntax error, unexpected '$result' (T_VARIABLE) in E:\server\nginx\html\thinkcmfx\application\Calendar\Controller\IndexadminController.class.php on line 19
+[13-Sep-2015 13:33:32 PRC] PHP Parse error:  syntax error, unexpected 'elseif' (T_ELSEIF) in E:\server\nginx\html\thinkcmfx\application\Calendar\Controller\IndexController.class.php on line 37
+[13-Sep-2015 13:33:37 PRC] PHP Parse error:  syntax error, unexpected 'elseif' (T_ELSEIF) in E:\server\nginx\html\thinkcmfx\application\Calendar\Controller\IndexController.class.php on line 37
+[13-Sep-2015 17:42:21 PRC] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in E:\server\nginx\html\thinkcmfx\application\Calendar\Controller\IndexController.class.php on line 73
+[17-Sep-2015 23:57:04 PRC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting function (T_FUNCTION) in E:\server\nginx\html\thinkcmfx\application\Sensor\Controller\IndexController.class.php on line 78
+[19-Oct-2015 20:19:00 PRC] PHP Fatal error:  Namespace declaration statement has to be the very first statement in the script in E:\server\nginx\html\thinkcmfx\application\User\Controller\WechatController.class.php on line 7
+[19-Oct-2015 20:19:12 PRC] PHP Parse error:  syntax error, unexpected '?' in E:\server\nginx\html\thinkcmfx\application\User\Controller\wx.php on line 63
+[19-Oct-2015 20:19:57 PRC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 32 bytes) in E:\server\nginx\html\thinkcmfx\simplewind\Core\Common\functions.php on line 30
+[19-Oct-2015 20:20:53 PRC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 64 bytes) in E:\server\nginx\html\thinkcmfx\simplewind\Core\Library\Think\View.class.php on line 38
+[19-Oct-2015 20:21:22 PRC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 64 bytes) in E:\server\nginx\html\thinkcmfx\simplewind\Core\Library\Think\View.class.php on line 38
+[02-Nov-2015 18:11:40 PRC] PHP Parse error:  syntax error, unexpected '[' in E:\server\nginx\html\thinkcmfx\data\runtime\Cache\Profile\798ff301109eb497b7bec4f324065134.php on line 38
+[02-Nov-2015 18:11:50 PRC] PHP Parse error:  syntax error, unexpected '[' in E:\server\nginx\html\thinkcmfx\data\runtime\Cache\Profile\798ff301109eb497b7bec4f324065134.php on line 38
+[02-Nov-2015 18:11:51 PRC] PHP Parse error:  syntax error, unexpected '[' in E:\server\nginx\html\thinkcmfx\data\runtime\Cache\Profile\798ff301109eb497b7bec4f324065134.php on line 38
+[02-Nov-2015 18:11:53 PRC] PHP Parse error:  syntax error, unexpected '[' in E:\server\nginx\html\thinkcmfx\data\runtime\Cache\Profile\798ff301109eb497b7bec4f324065134.php on line 38
+[26-Nov-2015 15:55:42 PRC] PHP Parse error:  syntax error, unexpected '{' in E:\server\nginx\html\thinkcmfx\data\runtime\Cache\Profile\0feb8cd4e8fd416e7028d229b458270d.php on line 99
+[26-Nov-2015 16:11:59 PRC] PHP Parse error:  syntax error, unexpected '~' in E:\server\nginx\html\thinkcmfx\data\runtime\Cache\Profile\798ff301109eb497b7bec4f324065134.php on line 42
+[26-Nov-2015 16:12:47 PRC] PHP Fatal error:  Cannot use isset() on the result of an expression (you can use "null !== expression" instead) in E:\server\nginx\html\thinkcmfx\data\runtime\Cache\Profile\798ff301109eb497b7bec4f324065134.php on line 42
+[26-Nov-2015 16:12:53 PRC] PHP Fatal error:  Cannot use isset() on the result of an expression (you can use "null !== expression" instead) in E:\server\nginx\html\thinkcmfx\data\runtime\Cache\Profile\798ff301109eb497b7bec4f324065134.php on line 42
+[26-Nov-2015 16:13:02 PRC] PHP Fatal error:  Cannot use isset() on the result of an expression (you can use "null !== expression" instead) in E:\server\nginx\html\thinkcmfx\data\runtime\Cache\Profile\798ff301109eb497b7bec4f324065134.php on line 42
+[26-Nov-2015 16:15:08 PRC] PHP Parse error:  syntax error, unexpected '[' in E:\server\nginx\html\thinkcmfx\data\runtime\Cache\Profile\798ff301109eb497b7bec4f324065134.php on line 42
+[27-Nov-2015 19:34:24 PRC] PHP Fatal error:  Call to undefined function Profile\Controller\_getSensorData() in E:\server\nginx\html\thinkcmfx\application\Profile\Controller\IndexController.class.php on line 82
+[27-Nov-2015 20:10:00 PRC] PHP Parse error:  syntax error, unexpected '$this' (T_VARIABLE) in E:\server\nginx\html\thinkcmfx\application\Profile\Controller\IndexController.class.php on line 100
+[24-Dec-2015 21:30:40 PRC] PHP Fatal error:  Class 'Profile\Controller\Object' not found in E:\server\nginx\html\thinkcmfx\application\Profile\Controller\IndexController.class.php on line 36
+[24-Dec-2015 21:31:10 PRC] PHP Fatal error:  Call to undefined function Profile\Controller\Object() in E:\server\nginx\html\thinkcmfx\application\Profile\Controller\IndexController.class.php on line 36
+[24-Dec-2015 21:31:26 PRC] PHP Fatal error:  Class 'Object' not found in E:\server\nginx\html\thinkcmfx\application\Profile\Controller\IndexController.class.php on line 36
+[24-Dec-2015 21:31:54 PRC] PHP Fatal error:  Class 'Obj' not found in E:\server\nginx\html\thinkcmfx\application\Profile\Controller\IndexController.class.php on line 36
+[24-Dec-2015 21:31:59 PRC] PHP Fatal error:  Call to undefined function Profile\Controller\Obj() in E:\server\nginx\html\thinkcmfx\application\Profile\Controller\IndexController.class.php on line 36
+[24-Dec-2015 21:33:46 PRC] PHP Fatal error:  Call to a member function where() on a non-object in E:\server\nginx\html\thinkcmfx\application\Profile\Controller\IndexController.class.php on line 39
+[24-Dec-2015 21:34:10 PRC] PHP Fatal error:  Call to a member function order() on a non-object in E:\server\nginx\html\thinkcmfx\application\Profile\Controller\IndexController.class.php on line 44
+[24-Dec-2015 21:34:40 PRC] PHP Fatal error:  Call to undefined method stdClass::_formatRef() in E:\server\nginx\html\thinkcmfx\application\Profile\Controller\IndexController.class.php on line 101
+[28-Dec-2015 23:48:47 PRC] PHP Parse error:  syntax error, unexpected '}' in E:\server\nginx\html\thinkcmfx\application\Wordlist\Controller\MemberController.class.php on line 283
+[29-Dec-2015 00:05:47 PRC] PHP Fatal error:  Cannot use object of type Think\Model as array in E:\server\nginx\html\thinkcmfx\application\Wordlist\Controller\MemberController.class.php on line 266
+[29-Dec-2015 00:08:19 PRC] PHP Fatal error:  Cannot use object of type Think\Model as array in E:\server\nginx\html\thinkcmfx\simplewind\Core\Library\Think\Model.class.php on line 272
+[29-Dec-2015 00:09:06 PRC] PHP Fatal error:  Cannot use object of type Think\Model as array in E:\server\nginx\html\thinkcmfx\application\Wordlist\Controller\MemberController.class.php on line 266
+[29-Dec-2015 00:14:23 PRC] PHP Fatal error:  Cannot use object of type Think\Model as array in E:\server\nginx\html\thinkcmfx\application\Wordlist\Controller\MemberController.class.php on line 266
+[29-Dec-2015 00:14:41 PRC] PHP Fatal error:  Cannot use object of type Think\Model as array in E:\server\nginx\html\thinkcmfx\application\Wordlist\Controller\MemberController.class.php on line 268
+[29-Dec-2015 10:25:56 PRC] PHP Fatal error:  Cannot use object of type Think\Model as array in E:\server\nginx\html\thinkcmfx\application\Wordlist\Controller\MemberController.class.php on line 268
+[29-Dec-2015 10:28:05 PRC] PHP Fatal error:  Cannot use object of type Think\Model as array in E:\server\nginx\html\thinkcmfx\simplewind\Core\Library\Think\Model.class.php on line 272
+[29-Dec-2015 10:28:39 PRC] PHP Fatal error:  Cannot use object of type Think\Model as array in E:\server\nginx\html\thinkcmfx\simplewind\Core\Library\Think\Model.class.php on line 272
+[29-Dec-2015 10:28:53 PRC] PHP Fatal error:  Cannot use object of type Think\Model as array in E:\server\nginx\html\thinkcmfx\simplewind\Core\Library\Think\Model.class.php on line 272
+[29-Dec-2015 10:29:54 PRC] PHP Fatal error:  Undefined constant 'stdobj' in E:\server\nginx\html\thinkcmfx\application\Wordlist\Controller\MemberController.class.php on line 265
+[29-Dec-2015 10:30:09 PRC] PHP Fatal error:  Cannot use object of type stdClass as array in E:\server\nginx\html\thinkcmfx\simplewind\Core\Library\Think\Model.class.php on line 420
+[29-Dec-2015 16:05:51 PRC] PHP Fatal error:  Cannot redeclare class Common\Model\WdremarkModel in E:\server\nginx\html\thinkcmfx\application\Wordlist\Model\WdremarkModel.class.php on line 17
+[29-Dec-2015 16:06:51 PRC] PHP Fatal error:  Cannot redeclare class Common\Model\WdremarkModel in E:\server\nginx\html\thinkcmfx\application\Wordlist\Model\WdremarkModel.class.php on line 17
+[29-Dec-2015 16:17:07 PRC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE) in E:\server\nginx\html\thinkcmfx\application\Wordlist\Controller\MemberController.class.php on line 287
+[29-Dec-2015 17:56:41 PRC] PHP Fatal error:  Cannot use object of type Think\Model as array in E:\server\nginx\html\thinkcmfx\application\Wordlist\Controller\MemberController.class.php on line 267
+[29-Dec-2015 17:57:06 PRC] PHP Fatal error:  Cannot use object of type Think\Model as array in E:\server\nginx\html\thinkcmfx\application\Wordlist\Controller\MemberController.class.php on line 267
+[29-Dec-2015 17:57:13 PRC] PHP Fatal error:  Cannot use object of type Think\Model as array in E:\server\nginx\html\thinkcmfx\application\Wordlist\Controller\MemberController.class.php on line 267
+[29-Dec-2015 18:20:18 PRC] PHP Fatal error:  Cannot use object of type Wordlist\Model\WdremarkModel as array in E:\server\nginx\html\thinkcmfx\application\Wordlist\Controller\MemberController.class.php on line 265
+[29-Dec-2015 18:23:34 PRC] PHP Parse error:  syntax error, unexpected 'if' (T_IF), expecting function (T_FUNCTION) in E:\server\nginx\html\thinkcmfx\application\Wordlist\Controller\MemberController.class.php on line 275
+[29-Dec-2015 18:34:08 PRC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in E:\server\nginx\html\thinkcmfx\application\Wordlist\Controller\MemberController.class.php on line 267
+[29-Dec-2015 18:34:13 PRC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in E:\server\nginx\html\thinkcmfx\application\Wordlist\Controller\MemberController.class.php on line 267
+[29-Dec-2015 19:43:23 PRC] PHP Fatal error:  Call to a member function where() on a non-object in E:\server\nginx\html\thinkcmfx\application\Wordlist\Controller\MemberController.class.php on line 263
+[29-Dec-2015 19:44:04 PRC] PHP Fatal error:  Call to a member function where() on a non-object in E:\server\nginx\html\thinkcmfx\application\Wordlist\Controller\MemberController.class.php on line 263
+[29-Dec-2015 19:44:23 PRC] PHP Fatal error:  Call to a member function where() on a non-object in E:\server\nginx\html\thinkcmfx\application\Wordlist\Controller\MemberController.class.php on line 263
+[29-Dec-2015 20:09:43 PRC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\server\nginx\html\thinkcmfx\application\Wordlist\Controller\MemberController.class.php on line 68
+[31-Dec-2015 16:16:11 PRC] PHP Fatal error:  Cannot use object of type stdClass as array in E:\server\nginx\html\thinkcmfx\application\Movie\Controller\IndexController.class.php on line 25
+[31-Dec-2015 16:16:15 PRC] PHP Fatal error:  Cannot use object of type stdClass as array in E:\server\nginx\html\thinkcmfx\application\Movie\Controller\IndexController.class.php on line 25
+[31-Dec-2015 16:16:24 PRC] PHP Fatal error:  Cannot use object of type stdClass as array in E:\server\nginx\html\thinkcmfx\application\Movie\Controller\IndexController.class.php on line 25
+[31-Dec-2015 16:16:28 PRC] PHP Fatal error:  Cannot use object of type stdClass as array in E:\server\nginx\html\thinkcmfx\application\Movie\Controller\IndexController.class.php on line 25
+[02-Jan-2016 23:21:38 PRC] PHP Parse error:  syntax error, unexpected ')', expecting ',' or ';' in E:\server\nginx\html\thinkcmfx\data\runtime\Cache\Profile\f1cfd223f58ef8ae7376d4649b0dae60.php on line 99
+[02-Jan-2016 23:41:35 PRC] PHP Parse error:  syntax error, unexpected ')', expecting ';' in E:\server\nginx\html\thinkcmfx\application\Profile\Controller\YearController.class.php on line 27
+[03-Jan-2016 20:46:25 PRC] PHP Parse error:  syntax error, unexpected ';' in E:\server\nginx\html\thinkcmfx\application\Profile\Controller\YearController.class.php on line 34
+[03-Jan-2016 20:46:39 PRC] PHP Parse error:  syntax error, unexpected '；' (T_STRING) in E:\server\nginx\html\thinkcmfx\application\Profile\Controller\YearController.class.php on line 39
+[03-Jan-2016 21:09:46 PRC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO), expecting ',' or ';' in E:\server\nginx\html\thinkcmfx\application\Profile\Controller\YearController.class.php on line 39
+[04-Jan-2016 12:53:18 PRC] PHP Parse error:  syntax error, unexpected '$this' (T_VARIABLE) in E:\server\nginx\html\thinkcmfx\application\Profile\Controller\YearController.class.php on line 53
+[07-Jan-2016 13:53:45 PRC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE) in E:\server\nginx\html\thinkcmfx\application\Travel\Controller\IndexController.class.php on line 35
+[07-Jan-2016 13:54:02 PRC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE) in E:\server\nginx\html\thinkcmfx\application\Travel\Controller\IndexController.class.php on line 35
+[07-Jan-2016 13:54:04 PRC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE) in E:\server\nginx\html\thinkcmfx\application\Travel\Controller\IndexController.class.php on line 35
+[29-Jan-2016 16:56:11 PRC] PHP Parse error:  syntax error, unexpected '<' in E:\server\nginx\html\thinkcmfx\data\runtime\Cache\Movie\4d3dd270540455ec9ef15acdf43e015f.php on line 109
+[01-Feb-2016 12:49:13 PRC] PHP Fatal error:  Call to undefined function Travel\Controller\getExif() in E:\server\nginx\html\thinkcmfx\application\Travel\Controller\IndexadminController.class.php on line 16
+[01-Feb-2016 13:00:48 PRC] PHP Parse error:  syntax error, unexpected 'var_dump' (T_STRING) in E:\server\nginx\html\thinkcmfx\application\Travel\Controller\IndexadminController.class.php on line 22
+[01-Feb-2016 13:06:08 PRC] PHP Fatal error:  Call to undefined function Travel\Controller\double() in E:\server\nginx\html\thinkcmfx\application\Travel\Controller\IndexadminController.class.php on line 21
+[01-Feb-2016 13:07:44 PRC] PHP Parse error:  syntax error, unexpected end of file in E:\server\nginx\html\thinkcmfx\application\Travel\Controller\IndexadminController.class.php(22) : eval()'d code on line 1
+[01-Feb-2016 13:08:05 PRC] PHP Parse error:  syntax error, unexpected end of file in E:\server\nginx\html\thinkcmfx\application\Travel\Controller\IndexadminController.class.php(22) : eval()'d code on line 1
+[01-Feb-2016 13:11:10 PRC] PHP Parse error:  syntax error, unexpected end of file in E:\server\nginx\html\thinkcmfx\application\Travel\Controller\IndexadminController.class.php(22) : eval()'d code on line 1
+[01-Feb-2016 13:11:52 PRC] PHP Parse error:  syntax error, unexpected end of file in E:\server\nginx\html\thinkcmfx\application\Travel\Controller\IndexadminController.class.php(24) : eval()'d code on line 1
+[01-Feb-2016 13:13:58 PRC] PHP Parse error:  syntax error, unexpected end of file in E:\server\nginx\html\thinkcmfx\application\Travel\Controller\IndexadminController.class.php(24) : eval()'d code on line 1
+[01-Feb-2016 13:13:59 PRC] PHP Parse error:  syntax error, unexpected end of file in E:\server\nginx\html\thinkcmfx\application\Travel\Controller\IndexadminController.class.php(24) : eval()'d code on line 1
+[01-Feb-2016 13:14:14 PRC] PHP Parse error:  syntax error, unexpected '' (T_ENCAPSED_AND_WHITESPACE), expecting identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in E:\server\nginx\html\thinkcmfx\application\Travel\Controller\IndexadminController.class.php on line 24
+[01-Feb-2016 13:14:26 PRC] PHP Parse error:  syntax error, unexpected '' (T_ENCAPSED_AND_WHITESPACE), expecting identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in E:\server\nginx\html\thinkcmfx\application\Travel\Controller\IndexadminController.class.php on line 24
+[01-Feb-2016 13:14:28 PRC] PHP Parse error:  syntax error, unexpected '' (T_ENCAPSED_AND_WHITESPACE), expecting identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in E:\server\nginx\html\thinkcmfx\application\Travel\Controller\IndexadminController.class.php on line 24
+[01-Feb-2016 13:14:49 PRC] PHP Parse error:  syntax error, unexpected end of file in E:\server\nginx\html\thinkcmfx\application\Travel\Controller\IndexadminController.class.php(24) : eval()'d code on line 1
+[01-Feb-2016 13:15:53 PRC] PHP Parse error:  syntax error, unexpected end of file in E:\server\nginx\html\thinkcmfx\application\Travel\Controller\IndexadminController.class.php(24) : eval()'d code on line 1
+[01-Feb-2016 13:15:56 PRC] PHP Parse error:  syntax error, unexpected end of file in E:\server\nginx\html\thinkcmfx\application\Travel\Controller\IndexadminController.class.php(24) : eval()'d code on line 1
+[01-Feb-2016 13:15:57 PRC] PHP Parse error:  syntax error, unexpected end of file in E:\server\nginx\html\thinkcmfx\application\Travel\Controller\IndexadminController.class.php(24) : eval()'d code on line 1
+[01-Feb-2016 16:57:09 PRC] PHP Parse error:  syntax error, unexpected '' (T_ENCAPSED_AND_WHITESPACE), expecting identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in E:\server\nginx\html\thinkcmfx\application\Travel\Controller\IndexadminController.class.php on line 23
+[01-Feb-2016 16:59:50 PRC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in E:\server\nginx\html\thinkcmfx\application\Travel\Controller\IndexadminController.class.php on line 40
+[01-Feb-2016 17:06:50 PRC] PHP Fatal error:  Call to a member function add() on a non-object in E:\server\nginx\html\thinkcmfx\application\Travel\Controller\IndexadminController.class.php on line 52
+[01-Feb-2016 17:10:34 PRC] PHP Fatal error:  Cannot use object of type Think\Model as array in E:\server\nginx\html\thinkcmfx\application\Travel\Controller\IndexadminController.class.php on line 18
+[01-Feb-2016 17:11:46 PRC] PHP Fatal error:  Cannot use object of type Think\Model as array in E:\server\nginx\html\thinkcmfx\application\Travel\Controller\IndexadminController.class.php on line 18
+[01-Feb-2016 17:12:08 PRC] PHP Parse error:  syntax error, unexpected '*' in E:\server\nginx\html\thinkcmfx\application\Travel\Controller\IndexadminController.class.php on line 17
+[01-Feb-2016 17:13:59 PRC] PHP Fatal error:  Cannot use object of type Think\Model as array in E:\server\nginx\html\thinkcmfx\application\Travel\Controller\IndexadminController.class.php on line 18
+[01-Feb-2016 17:14:42 PRC] PHP Fatal error:  Cannot use object of type Think\Model as array in E:\server\nginx\html\thinkcmfx\application\Travel\Controller\IndexadminController.class.php on line 53
+[01-Feb-2016 19:40:28 PRC] PHP Parse error:  syntax error, unexpected ')', expecting ',' or ';' in E:\server\nginx\html\thinkcmfx\data\runtime\Cache\Travel\c4ad217c5b846b911e4e0f8093121921.php on line 71
+[01-Feb-2016 19:40:57 PRC] PHP Parse error:  syntax error, unexpected ')', expecting ',' or ';' in E:\server\nginx\html\thinkcmfx\data\runtime\Cache\Travel\c4ad217c5b846b911e4e0f8093121921.php on line 71
+[01-Feb-2016 19:40:58 PRC] PHP Parse error:  syntax error, unexpected ')', expecting ',' or ';' in E:\server\nginx\html\thinkcmfx\data\runtime\Cache\Travel\c4ad217c5b846b911e4e0f8093121921.php on line 71
+[01-Feb-2016 19:40:58 PRC] PHP Parse error:  syntax error, unexpected ')', expecting ',' or ';' in E:\server\nginx\html\thinkcmfx\data\runtime\Cache\Travel\c4ad217c5b846b911e4e0f8093121921.php on line 71
+[01-Feb-2016 19:41:29 PRC] PHP Parse error:  syntax error, unexpected ')', expecting ',' or ';' in E:\server\nginx\html\thinkcmfx\data\runtime\Cache\Travel\c4ad217c5b846b911e4e0f8093121921.php on line 71
+[01-Feb-2016 19:41:44 PRC] PHP Parse error:  syntax error, unexpected ')', expecting ',' or ';' in E:\server\nginx\html\thinkcmfx\data\runtime\Cache\Travel\c4ad217c5b846b911e4e0f8093121921.php on line 71
+[01-Feb-2016 19:41:45 PRC] PHP Parse error:  syntax error, unexpected ')', expecting ',' or ';' in E:\server\nginx\html\thinkcmfx\data\runtime\Cache\Travel\c4ad217c5b846b911e4e0f8093121921.php on line 71
+[01-Feb-2016 19:41:45 PRC] PHP Parse error:  syntax error, unexpected ')', expecting ',' or ';' in E:\server\nginx\html\thinkcmfx\data\runtime\Cache\Travel\c4ad217c5b846b911e4e0f8093121921.php on line 71
+[01-Feb-2016 19:41:45 PRC] PHP Parse error:  syntax error, unexpected ')', expecting ',' or ';' in E:\server\nginx\html\thinkcmfx\data\runtime\Cache\Travel\c4ad217c5b846b911e4e0f8093121921.php on line 71
+[01-Feb-2016 19:41:45 PRC] PHP Parse error:  syntax error, unexpected ')', expecting ',' or ';' in E:\server\nginx\html\thinkcmfx\data\runtime\Cache\Travel\c4ad217c5b846b911e4e0f8093121921.php on line 71
+[01-Feb-2016 19:42:08 PRC] PHP Parse error:  syntax error, unexpected ')', expecting ',' or ';' in E:\server\nginx\html\thinkcmfx\data\runtime\Cache\Travel\c4ad217c5b846b911e4e0f8093121921.php on line 71
+[27-Feb-2016 15:58:05 PRC] PHP Fatal error:  Call to undefined function Calendar\Controller\int() in E:\server\nginx\html\thinkcmfx\application\Calendar\Controller\IndexController.class.php on line 75
+[27-Feb-2016 16:00:23 PRC] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in E:\server\nginx\html\thinkcmfx\application\Calendar\Controller\IndexController.class.php on line 92
+[27-Feb-2016 16:01:17 PRC] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in E:\server\nginx\html\thinkcmfx\application\Calendar\Controller\IndexController.class.php on line 92
+[27-Feb-2016 16:01:29 PRC] PHP Parse error:  syntax error, unexpected '&' in E:\server\nginx\html\thinkcmfx\application\Calendar\Controller\IndexController.class.php on line 63
+[27-Feb-2016 16:08:48 PRC] PHP Parse error:  syntax error, unexpected ',' in E:\server\nginx\html\thinkcmfx\application\Calendar\Controller\IndexController.class.php on line 65
+[11-Mar-2016 16:00:58 PRC] PHP Fatal error:  Using $this when not in object context in E:\server\nginx\html\thinkcmfx\application\Portal\Common\function.php on line 54
+[11-Mar-2016 16:06:54 PRC] PHP Parse error:  syntax error, unexpected ')' in E:\server\nginx\html\thinkcmfx\application\Portal\Common\function.php on line 55
+[11-Mar-2016 23:18:22 PRC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in E:\server\nginx\html\thinkcmfx\simplewind\Core\Library\Behavior\ShowPageTraceBehavior.class.php on line 35

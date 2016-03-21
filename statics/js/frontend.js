@@ -146,13 +146,13 @@
                         var text = btn.text();
 
                         //按钮文案、状态修改
-                        btn.text(text + '中...').prop('disabled', true).addClass('disabled');
+                        btn.text(text + '...').prop('disabled', true).addClass('disabled');
                     },
                     success: function (data, statusText, xhr, $form) {
                         var text = btn.text();
 
                         //按钮文案、状态修改
-                        btn.removeClass('disabled').text(text.replace('中...', '')).parent().find('span').remove();
+                        btn.removeClass('disabled').text(text.replace('...', '')).parent().find('span').remove();
                         if (data.state === 'success') {
                         	noty({text: data.info,
                         		type:'success',
@@ -512,14 +512,14 @@
         				 var text = btn.text();
 
                          //按钮文案、状态修改
-                         btn.text(text + '中...').prop('disabled', true).addClass('disabled');
+                         btn.text(text + '...').prop('disabled', true).addClass('disabled');
         			},
         			data:data,
         			success: function (data, textStatus, jqXHR) {
                         var text = btn.text();
 
                         //按钮文案、状态修改
-                        btn.removeClass('disabled').text(text.replace('中...', '')).parent().find('span').remove();
+                        btn.removeClass('disabled').text(text.replace('...', '')).parent().find('span').remove();
                         btn.removeProp('disabled').removeClass('disabled');
                         if (data.state === 'success') {
                             $('<span class="tips_success">' + data.info + '</span>').appendTo(btn.parent()).fadeIn('slow').delay(1000).fadeOut(function () {

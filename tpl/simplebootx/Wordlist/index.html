@@ -1,0 +1,212 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Wordlist@clatfd</title>
+<link rel="stylesheet" type="text/css" href="/H-wordlist/css/css.css">
+<link rel="stylesheet" type="text/css" href="/lib/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/lib/css/toastr.min.css">
+<style type="text/css">
+	p{
+		font-size: 16px;
+	}
+</style>
+<script type="text/javascript" src="/lib/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="/lib/js/toastr.min.js"></script>
+<script type="text/javascript" src="/lib/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<div class="container-fluid">
+<table width="1250" align="center" class="table table-striped">
+<tr class="nali">
+	<td colspan="6">
+		<div class="visible-xs alert alert-warning alert-dismissible" role="alert">
+		 	<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+			欢迎{$username}！您正在使用<strong>特别小型</strong>设备！
+		</div>
+		<div class="visible-sm alert alert-warning alert-dismissible" role="alert">
+		 	<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+			欢迎{$username}！您正在使用<strong>小型</strong>设备！
+		</div>
+		<div class="visible-md alert alert-success alert-dismissible" role="alert">
+		 	<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+			欢迎{$username}！您正在使用<strong>中型</strong>设备！
+		</div>
+		<div class="visible-lg alert alert-success alert-dismissible" role="alert">
+		 	<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+			欢迎{$username}！您正在使用<strong>大型</strong>设备！
+		</div>
+	</td>
+</tr>
+<tr class="nali">
+	<td colspan="1">
+		<ul class="device">
+            <li class="device-monitor">
+                <div class="icon-monitor">
+                </div>
+            </li>
+            <li class="device-mobile">
+                <div class="icon-tablet">
+                </div>
+            </li>
+            <!-- <li class="device-mobile">
+                <div class="icon-mobile-1">
+                </div>
+            </li> -->
+            <li class="device-mobile">
+                <div class="icon-mobile-2">
+                </div>
+            </li>
+            <!-- <li class="device-mobile">
+                <div class="icon-mobile-3">
+                </div>
+            </li> -->
+        </ul>
+	</td>
+	<td colspan="5">
+		<!-- <button class="btn banneraddbutton" onclick="retrievelist()"><i class="glyphicon glyphicon-share-alt"></i></button> -->
+	</td>
+</tr>
+
+	<tr class="nali">	
+		<th colspan="5">GRE3000 <span id="allgronumgre3000"></span></th>
+		<th id="grenotcpnum"></th>
+	</tr>
+	
+	<foreach name="listsep" item="item" key="itemkey">
+		<tr class="nali">
+			<foreach name="item" item="subitem">
+			<td>
+				<if condition="$subitem[0]">
+				<a href="index.php?g=wordlist&m=member&a=query&list=gre3000&gro=2&idlo={$subitem[0]}&idup={$subitem[1]}">{$subitem[0]}~{$subitem[1]}</a>
+				</if>
+			</td>
+			</foreach>
+
+		</tr>
+	</foreach>
+	
+	<tr class="nali">
+		<td colspan="6">
+			<div class="progress" id="gre3000progress">
+			  <div class="progress-bar progress-bar-danger progress-bar-striped active" id="gro1probar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+			    0%
+			  </div>
+			  <div class="progress-bar progress-bar-warning progress-bar-striped" id="gro1probar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+			    0%
+			  </div>
+			  <div class="progress-bar progress-bar-info progress-bar-striped" id="gro1probar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+			    0%
+			  </div>
+			  <div class="progress-bar progress-bar-primary progress-bar-striped" id="gro1probar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+			    0%
+			  </div>
+			  <div class="progress-bar progress-bar-success progress-bar-striped" id="gro1probar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+			    0%
+			  </div>
+			</div>
+		</td>
+	</tr>
+
+
+	<tr class="nali">	
+		<th colspan="5">GRE Supplementary <span id="allgronumgre3000r"></span></th>
+		<th id="grenotcpnum"></th>
+	</tr>
+	<tr class="nali">
+		<td>
+		<a href="index.php?g=wordlist&m=member&a=query&list=gre3000&gro=2&idlo=3100&idup=3200">1-100</a>
+		</td>
+		<td>
+		<a href="index.php?g=wordlist&m=member&a=query&list=gre3000&gro=2&idlo=3201&idup=3300">101-200</a>
+		</td>
+		<td>
+		<a href="index.php?g=wordlist&m=member&a=query&list=gre3000&gro=2&idlo=3301&idup=3400">201-300</a>
+		</td>
+		<td>
+		<a href="index.php?g=wordlist&m=member&a=query&list=gre3000&gro=2&idlo=3401&idup=3500">301-400</a>
+		</td>
+		<td>
+		<a href="index.php?g=wordlist&m=member&a=query&list=gre3000&gro=2&idlo=3501&idup=3587">401-487</a>
+		</td>
+		<td>
+		</td>
+	</tr>
+
+	<tr class="nali">
+		<td colspan="6">
+			<div class="progress" id="gre3000rprogress">
+			  <div class="progress-bar progress-bar-danger progress-bar-striped active" id="gro1probar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+			    0%
+			  </div>
+			  <div class="progress-bar progress-bar-warning progress-bar-striped" id="gro1probar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+			    0%
+			  </div>
+			  <div class="progress-bar progress-bar-info progress-bar-striped" id="gro1probar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+			    0%
+			  </div>
+			  <div class="progress-bar progress-bar-primary progress-bar-striped" id="gro1probar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+			    0%
+			  </div>
+			  <div class="progress-bar progress-bar-success progress-bar-striped" id="gro1probar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+			    0%
+			  </div>
+			</div>
+		</td>
+	</tr>
+
+	<tr class="nali">	
+		<th colspan="5">*francais<span id="allgronumgre3000r"></span></th>
+		<th id="grenotcpnum"></th>
+	</tr>
+	<tr class="nali">
+		<td>
+		<a href="index.php?g=wordlist&m=member&a=query&list=francais&gro=2&idlo=3588&idup=3687">1-100</a>
+		</td>
+		<td>
+		<a href="index.php?g=wordlist&m=member&a=query&list=francais&gro=2&idlo=3688&idup=3787">101-200</a>
+		</td>
+		<td>
+		<a href="index.php?g=wordlist&m=member&a=query&list=francais&gro=2&idlo=3788&idup=3887">201-300</a>
+		</td>
+		<td>
+		<a href="index.php?g=wordlist&m=member&a=query&list=francais&gro=2&idlo=3888&idup=3987">301-400</a>
+		</td>
+		<td>
+		<a href="index.php?g=wordlist&m=member&a=query&list=francais&gro=2&idlo=5488&idup=5522">1901-1935</a>
+		</td>
+		<td>
+		</td>
+	</tr>
+</table>
+</div>
+<div>
+<h1><a href="index.php?g=wordlist&m=index&a=index">Instruction</a></h1>
+</div>
+<script type="text/javascript">
+
+
+function renewstatic(list,idlo,idup){
+$.ajax({url: "index.php?g=wordlist&m=member&a=stat&idlo="+idlo+"&idup="+idup,
+			success: function (r){
+				stadata=JSON.parse(r);
+				stadata[4]=(100-parseFloat(stadata[0].slice(0,-1))-parseFloat(stadata[1].slice(0,-1))-parseFloat(stadata[2].slice(0,-1))-parseFloat(stadata[3].slice(0,-1))).toFixed(1)+"%";
+				for(pbi=0;pbi<5;pbi++){
+					$("#"+list+"progress").find(".progress-bar").eq(pbi).attr("aria-valuenow",stadata[pbi].slice(0,-1));
+					if(parseFloat(stadata[pbi])>6)	
+						$("#"+list+"progress").find(".progress-bar").eq(pbi).html(stadata[pbi]+" "+(parseFloat(stadata[pbi])*parseInt(stadata[5])/100).toFixed(0));
+					else
+						$("#"+list+"progress").find(".progress-bar").eq(pbi).html(stadata[pbi]);
+					$("#"+list+"progress").find(".progress-bar").eq(pbi).css("width",stadata[pbi]);
+				}
+				$("#allgronum"+list).html(stadata[5]);
+			}
+		});
+}
+renewstatic('gre3000',1,3099);
+renewstatic('gre3000r',3100,3587);
+</script>
+
+</body>
+</html>

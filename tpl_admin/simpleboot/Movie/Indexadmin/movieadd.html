@@ -1,0 +1,227 @@
+<admintpl file="header" />
+<style type="text/css">
+    input{
+        margin: 5px;
+    }
+    table td{
+        padding: 5px;
+    }
+</style>
+
+<p><a href="http://www.imdb.com/" target="_blank">IMDB</a>,<a href="http://movie.douban.com/" target="_blank">DouBan</a></p>
+<form name="myform" id="myform" action="{:u('Indexadmin/addmovie')}" method="post" class="form-horizontal J_ajaxForms" enctype="multipart/form-data">
+    <input type="text" name="imdbid" id="imdbid" placeholder="imdbid"> 
+	<input type="text" name="dbid" id="dbid" placeholder="dbid"> 
+    <input type="text" name="moviename" id="moviename" placeholder="moviename"> 
+    <input type="text" name="avgrating" id="avgrating" placeholder="avgrating"> 
+    <input type="text" name="director" id="director" placeholder="director"> 
+    <input type="text" name="year" id="year" placeholder="year"> 
+    <input type="text" name="country" id="country" placeholder="country"> 
+    <input type="text" name="genre" id="genre" placeholder="genre"> 
+    <input type="text" name="summary" id="summary" placeholder="summary"> 
+    <input type="text" name="poster" id="poster" placeholder="poster"> 
+
+    <input type="text" name="viewdate" id="viewdate" placeholder="viewdate" value="{:date('Y-m-d',time())}" class="input J_date"> 
+    <input type="text" name="myrating" id="myrating" placeholder="myrating"> 
+    <input type="text" name="myticket" id="myticket" placeholder="myticket"> 
+    <input type="text" name="myreview" id="myreview" placeholder="myreview"> 
+
+    <button class="btn btn-primary btn_submit J_ajax_submit_btn" type="submit">提交</button>
+</form> 
+<table border="1" style="text-align: center;">
+<tr><th>10</th><th>9</th><th>8</th><th>7</th><th>6</th><th>5</th></tr>
+<tr><td>Masterpiece</td><td>Excellent</td><td>Good</td><td>Fair</td><td>Limited</td><td>Rubbish</td></tr>
+<tr><td>Highly recommend</td><td>Recommend</td><td>Slightly recommend</td><td>If have time</td><td>More negative than positive</td><td>Waste time</td></tr>
+</table>
+<hr/>
+<table border="1" id="movielist">
+<thead>
+<tr>
+    <th data-sort="int">imdbid</th>
+    <th data-sort="int" data-sort="string">dbid</th>
+    <th data-sort="string"><if condition="($sort eq 'moviename') AND ($sortorder eq 'DESC')"><a href="{:U('Indexadmin/index',array('sort'=>'moviename','sortorder'=>'asc'))}"><else/><a href="{:U('Indexadmin/index',array('sort'=>'moviename'))}"></if>moviename</a></th>
+    <th data-sort="float"><if condition="($sort eq 'avgrating') AND ($sortorder eq 'DESC')"><a href="{:U('Indexadmin/index',array('sort'=>'avgrating','sortorder'=>'asc'))}"><else/><a href="{:U('Indexadmin/index',array('sort'=>'avgrating'))}"></if>avgrating</a></th>
+    <th data-sort="float"><if condition="($sort eq 'myrating') AND ($sortorder eq 'DESC')"><a href="{:U('Indexadmin/index',array('sort'=>'myrating','sortorder'=>'asc'))}"><else/><a href="{:U('Indexadmin/index',array('sort'=>'myrating'))}"></if>myrating</a></th>
+    <th data-sort="string"><if condition="($sort eq 'director') AND ($sortorder eq 'DESC')"><a href="{:U('Indexadmin/index',array('sort'=>'director','sortorder'=>'asc'))}"><else/><a href="{:U('Indexadmin/index',array('sort'=>'director'))}"></if>director</a></th>
+    <th data-sort="int"><if condition="($sort eq 'year') AND ($sortorder eq 'DESC')"><a href="{:U('Indexadmin/index',array('sort'=>'year','sortorder'=>'asc'))}"><else/><a href="{:U('Indexadmin/index',array('sort'=>'year'))}"></if>year</a></th>
+    <th data-sort="string"><if condition="($sort eq 'viewdate') AND ($sortorder eq 'DESC')"><a href="{:U('Indexadmin/index',array('sort'=>'viewdate','sortorder'=>'asc'))}"><else/><a href="{:U('Indexadmin/index',array('sort'=>'viewdate'))}"></if>viewdate</a></th>
+    <th>poster</th>
+    <th>delete</th>
+</tr>
+</thead>
+<tbody>
+<foreach name="movielist" item="vo">
+    <tr>
+        <td><a href='http://www.imdb.com/title/tt{$vo.imdbid}/' target="_blank">{$vo.imdbid}</a></td>
+        <td><a href='http://movie.douban.com/subject/{$vo.dbid}/' target="_blank">{$vo.dbid}</a></td>
+        <td>{$vo.moviename}</td>
+        <td>{$vo.avgrating}</td>
+        <td>{$vo.myrating}</td>
+        <td>{$vo.director}</td>
+        <td>{$vo.year}</td>
+        <td>{$vo.viewdate}</td>
+        <td><img width="100px" src="{$vo.poster}"></td>
+        <td><a href="javascript:del('{$vo['id']}')">Del</a></td>
+    </tr>
+</foreach>
+</tbody>
+</table>
+<div class="pagination">{$Page}</div>
+
+
+
+<script type="text/javascript" src="/lib/js/DateTimePicker.js"></script>
+<script type="text/javascript" src="__ROOT__/statics/js/common.js"></script>
+<!-- <script src="/lib/js/stupidtable.min.js"></script> -->
+
+<script type="text/javascript">
+$("#imdbid").change(function(){
+    $.ajax({      
+            type: "GET",      
+            url: "index.php?g=movie&m=index&a=imdbquery&id="+$(this).val(),     
+            success: function(data){
+                filldata=data.data.info;
+                $.each(filldata, function(key, val) {      
+                    $("#"+key).val(val);
+                });  
+            }  
+        });
+    
+});
+
+function del(id){
+    $.ajax({      
+            type: "GET",      
+            url: "index.php?g=movie&m=indexadmin&a=del&id="+id,
+            success: function(data){
+                Wind.use("artDialog", function () {
+                    art.dialog({
+                        id: "succeed",
+                        icon: "succeed",
+                        fixed: true,
+                        lock: true,
+                        background: "#CCCCCC",
+                        opacity: 0,
+                        content: data.info,
+                        button:[
+                            {
+                                name: '完成',
+                                callback:function(){
+                                    reloadPage(window);
+                                    return true;
+                                },
+                                focus: true
+                            }
+                        ]
+                    });
+                });
+            }  
+        });
+}
+// $("#dbid").change(function(){
+//     $.getJSON("http://127.0.0.1/thinkcmfx/index.php?g=movie&m=index&a=dbquery&id="+$(this).val()+"&callback=?",   
+//             function(data){
+//                 filldata=data.data.info;
+//                 $.each(filldata, function(key, val) {      
+//                     $("#"+key).val(val);
+//                 });  
+//             });
+// });
+$(function () {
+    
+        Wind.use('validate', 'ajaxForm', 'artDialog', function () {
+            //javascript
+            var form = $('form.J_ajaxForms');
+            //ie处理placeholder提交问题
+            if ($.browser.msie) {
+                form.find('[placeholder]').each(function () {
+                    var input = $(this);
+                    if (input.val() == input.attr('placeholder')) {
+                        input.val('');
+                    }
+                });
+            }
+            //表单验证开始
+            form.validate({
+                //是否在获取焦点时验证
+                onfocusout:false,
+                //是否在敲击键盘时验证
+                onkeyup:false,
+                //当鼠标掉级时验证
+                onclick: false,
+                //验证错误
+                showErrors: function (errorMap, errorArr) {
+                    //errorMap {'name':'错误信息'}
+                    //errorArr [{'message':'错误信息',element:({})}]
+                    try{
+                        $(errorArr[0].element).focus();
+                        art.dialog({
+                            id:'error',
+                            icon: 'error',
+                            lock: true,
+                            fixed: true,
+                            background:"#CCCCCC",
+                            opacity:0,
+                            content: errorArr[0].message,
+                            cancelVal: '确定',
+                            cancel: function(){
+                                $(errorArr[0].element).focus();
+                            }
+                        });
+                    }catch(err){
+                    }
+                },
+                //验证规则
+                rules: {'viewdate':{required:1},'imdbid':{required:1}},
+                //验证未通过提示消息
+                messages: {'viewdate':{required:'请输入日期'},'imdbid':{required:'内容不能为空'}},
+                //给未通过验证的元素加效果,闪烁等
+                highlight: false,
+                //是否在获取焦点时验证
+                onfocusout: false,
+                //验证通过，提交表单
+                submitHandler: function (forms) {
+                    $(forms).ajaxSubmit({
+                        url: form.attr('action'), //按钮上是否自定义提交地址(多按钮情况)
+                        dataType: 'json',
+                        beforeSubmit: function (arr, $form, options) {
+                            
+                        },
+                        success: function (data, statusText, xhr, $form) {
+                            if(data.status){
+                                setCookie("refersh_time",1);
+                                //添加成功
+                                Wind.use("artDialog", function () {
+                                    art.dialog({
+                                        id: "succeed",
+                                        icon: "succeed",
+                                        fixed: true,
+                                        lock: true,
+                                        background: "#CCCCCC",
+                                        opacity: 0,
+                                        content: data.info,
+                                        button:[
+                                            {
+                                                name: '完成',
+                                                callback:function(){
+                                                    reloadPage(window);
+                                                    return true;
+                                                },
+                                                focus: true
+                                            }
+                                        ]
+                                    });
+                                });
+                            }else{
+                                isalert(data.info);
+                            }
+                        }
+                    });
+                }
+            });
+
+        });
+    ////-------------------------
+    
+});
+</script>

@@ -15,7 +15,7 @@
 			"file": "application/Common/Conf/config.php",
 			"settings":
 			{
-				"buffer_size": 3307,
+				"buffer_size": 3366,
 				"line_ending": "Unix"
 			}
 		},
@@ -39,7 +39,7 @@
 			"file": "tpl_admin/simpleboot/Admin/Mailer/index.html",
 			"settings":
 			{
-				"buffer_size": 1868,
+				"buffer_size": 1972,
 				"line_ending": "Windows"
 			}
 		}
@@ -134,15 +134,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3307,
+						"buffer_size": 3366,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								826,
-								826
+								0,
+								0
 							]
 						],
 						"settings":
@@ -222,15 +222,15 @@
 					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 1868,
+						"buffer_size": 1972,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								289,
-								295
+								0,
+								0
 							]
 						],
 						"settings":

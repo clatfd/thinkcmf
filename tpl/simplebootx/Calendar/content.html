@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href='__TMPL__Public/simpleboot/fullcalendar/fullcalendar.css' rel='stylesheet' />
+<link href='__TMPL__Public/simpleboot/fullcalendar/fullcalendar.print.css' rel='stylesheet' media='print' />
+<link href='__TMPL__Public/simpleboot/fullcalendar/custom.css' rel='stylesheet' />
+<link rel="stylesheet" type="text/css" href="/lib/css/DateTimePicker.css" />
+
+</head>
+<body>
+<div class="tz">
+<select id="selecttz">
+	<option value="{$tz}" selected>UTC{$tz}:00</option>
+
+	<option value="-12" >UTC-12:00</option>
+	<option value="-11" >UTC-11:00</option>
+	<option value="-10" >UTC-10:00</option>
+	<option value="-9" >UTC-9:00</option>
+	<option value="-8" >UTC-8:00</option>
+	<option value="-7" >UTC-7:00</option>
+	<option value="-6" >UTC-6:00</option>
+	<option value="-5" >UTC-5:00</option>
+	<option value="-4" >UTC-4:00</option>
+	<option value="-3" >UTC-3:00</option>
+	<option value="-2" >UTC-2:00</option>
+	<option value="-1" >UTC-1:00</option>
+	<option value="0" >UTC</option>
+	<option value="1" >UTC+1:00</option>
+	<option value="2" >UTC+2:00</option>
+	<option value="3" >UTC+3:00</option>
+	<option value="4" >UTC+4:00</option>
+	<option value="5" >UTC+5:00</option>
+	<option value="6" >UTC+6:00</option>
+	<option value="7" >UTC+7:00</option>
+	<option value="8" >UTC+8:00</option>
+	<option value="9" >UTC+9:00</option>
+	<option value="10" >UTC+10:00</option>
+	<option value="11" >UTC+11:00</option>
+	<option value="12" >UTC+12:00</option>
+	
+</select>
+</div>
+<div id='calendar'></div>
+<div id="additem">
+	<li class="addform ui-editable-temp ui-li-static ui-body-inherit ui-first-child" style="display: inline-block;">
+	    <form id="additemform" method="post">
+	    	<h1>约</h1>
+	    	<p><a href="index.php?g=user&m=login&a=index" target="_blank">login</a> required</p>
+	        <input type="hidden" id="id" name="id" placeholder="id">
+	        <input type="hidden" id="evtype" name="evtype" placeholder="eventtype" value="guest">
+	        <input type="hidden" id="allDay" name="allDay" placeholder="allDay" value="0">
+	        <span>Activity Title(*):</span>
+	        <input type="text" id="title" name="title" placeholder="title">
+	        <br/>
+	        <span>Description(*):</span>
+	        <input type="text" id="description" name="description" placeholder="description">
+	        <br/>
+	        <span>start(*):</span>
+		    <input type="text" id="start" name="start" placeholder="start" class="datepicker" data-field="datetime" data-format="yyyy-MM-dd hh:mm:ss" readonly>
+		    <br/>
+        	<span>end(*):</span>
+	        <input type="text" id="end" name="end" placeholder="end" class="datepicker" data-field="datetime" data-format="yyyy-MM-dd hh:mm:ss" readonly>
+	        <br/>
+	        <span>Link:</span>
+	        <input type="text" id="url" name="url" placeholder="url">
+	        <br/>
+	    </form>
+	        <button onclick="javascript:add()">Add</button>
+	        <button onclick="javascript:$('#additem').css('display','none');">Cancel</button>
+	</li>
+
+</div>
+
+<div id="dtBox"></div>
+
+</body>
+</html>
+
+<script src='/lib/js/jquery.js'></script>
+<script src='__TMPL__Public/simpleboot/fullcalendar/jquery-ui.custom.min.js'></script>
+<script src='__TMPL__Public/simpleboot/fullcalendar/fullcalendar.min.js'></script>
+<script type="text/javascript" src="/lib/js/DateTimePicker.js"></script>
+<script>
+
+	$(document).ready(function() {
+		$("#dtBox").DateTimePicker();
+		var holiday = [ "2015-10-01","2015-10-02","2015-10-03","2015-10-04","2015-10-05","2015-10-06","2015-10-07"];  
+		var workday = [ "2015-10-10"];  
+
+            $.getJSON("http://clatfd.cn/thinkcmfx/index.php?g=calendar&m=index&a=query&tz={$tz}&callback=?",
+            // $.getJSON("http://127.0.0.1/thinkcmfx/index.php?g=calendar&m=index&a=query&callback=?",
+				function (phpdata){
+					$('#calendar').fullCalendar({
+						header: {
+							left: 'prev, today, next',
+							center: 'title',
+							right: 'month,basicWeek,agendaWeek,basicDay,agendaDay'
+						},
+						buttonText: {
+			          	  today: 'Today',
+						  prev: 'Last',
+						  next: 'Next'
+				      	},
+						selectable: true,
+						selectHelper: true,
+						select: function(start, end, allDay) {
+							$("#additem").css("display","block");
+							$("#id").val("");
+							$("#title").val("");
+							$("#description").val("");
+							$("#start").val(start.format("yyyy-MM-dd")+" "+new Date().getHours()+":00");
+							$("#end").val(end.format("yyyy-MM-dd")+" "+new Date().getHours()+":30");
+						},
+					    eventRender: function(event, element) {
+					    	element.find("span.fc-event-title").after("<br/><span class='event-detail' style='display:none'></span>");
+					    	if(event.description)
+					    		element.find("span.event-detail").text(event.description);
+					    	if(event.d_url)
+					    		element.find("span.event-detail").append("<br/><a href='"+event.d_url+"' target='_blank'>Link</a></span>");
+					    	if(!element.find("span.fc-event-time").length)
+					    		element.find(".fc-event-inner").prepend("<span class='fc-event-time'></span>");
+					    	element.find("span.fc-event-time").text(event.start.toString().slice(16,21)+"-"+event.end.toString().slice(16,21));
+					    	element.hover(function(){
+					    		$(this).find("span.event-detail").css("display","inline-block");
+					    		$(this).css("z-index","888");
+					    	},
+					    	function(){
+					    		$(this).find("span.event-detail").css("display","none");
+					    		$(this).css("z-index","");
+					    	});
+					    },
+					    dayRender:function( date, cell ) { 
+					    	vdate=date.format("yyyy-MM-dd");
+							if($.inArray(vdate, holiday)>=0){
+					    	 	$("td.fc-day[data-date="+vdate+"]").css("backgroundColor","#F6FFFF");
+					    	}
+							if($.inArray(vdate, workday)>=0){
+					    	 	$("td.fc-day[data-date="+vdate+"]").css("backgroundColor","#FFEEEE");
+					    	}
+					    },
+						editable: true,
+						events: phpdata
+					});
+					$('.fc-button-prev').unbind('click');
+					$('.fc-button-next').unbind('click');
+					$('.fc-button-prev').bind('click', fnMthChange);
+					$('.fc-button-next').bind('click', fnMthChange);
+					$('.fc-button-today').bind('click', fnMthChange);
+					getSensorData();
+				});
+
+		$("#selecttz").change(function(){
+			document.location="index.php?g=calendar&m=Index&a=content&tz="+$(this).val();
+		})
+	});
+
+function fnMthChange() {
+	changeTime(this.innerText);
+	if ($('#calendar').fullCalendar('getView').name == "month") {
+		showTime();
+	}
+}
+function changeTime(label) {
+	if ($.trim(label) == "Last") {
+		$('#calendar').fullCalendar('prev');
+		perMonth();
+	} else if ($.trim(label) == "Next") {
+		$('#calendar').fullCalendar('next');
+		nextMonth();
+	} else if ($.trim(label) == "Today") {
+		$('#calendar').fullCalendar('today');
+		thisMyMonth();
+	}
+}
+function perMonth(){
+	var date = new Date().format("yyyy-MM");
+	var year  = date.split("-")[0];
+	var month = date.split("-")[1];
+	if(month >1 ){
+		month = month -1
+	}else{
+		year = year - 1 
+		month = 12;
+	}
+}
+
+function nextMonth(){
+	var date = new Date().format("yyyy-MM");
+	var year  = date.split("-")[0];
+	var month = date.split("-")[1];
+	if(month <12 ){
+		month = Number(month) + 1
+	}else{
+		year = Number(year) + 1 
+		month = 1;
+	}
+}
+
+function thisMyMonth(){
+	var d = new Date();
+}
+function showTime() {
+	var view = $('#calendar').fullCalendar('getView');
+	var start = toStrDateTime(view.start); 
+	var end = toStrDateTime(view.end);
+	var viewStart = $.fullCalendar.formatDate(view.start,"yyyy-MM");   
+	$("#calendar").fullCalendar('removeEvents');   
+	$.getJSON("http://clatfd.cn/thinkcmfx/index.php?g=calendar&m=index&a=query&month="+viewStart+"&callback=?",
+	// $.getJSON("http://127.0.0.1/thinkcmfx/index.php?g=calendar&m=index&a=query&month="+viewStart+"&callback=?",
+		function (phpdata){
+			// console.log(phpdata.length);
+            for(var el in phpdata){
+                var obj = new Object();   
+			 	obj=phpdata[el];
+		        $('#calendar').fullCalendar('renderEvent',obj,true);	 
+	        }  
+			getSensorData();
+	});   
+}
+function toStrDateTime(object) {
+	var view = jQuery('#calendar').fullCalendar('getView');
+	var str = view.calendar.formatDate(object, 'u');
+
+	str = str.replace("T", " ");
+	str = str.replace("Z", "");
+	return str;
+}
+function getSensorData(){
+	var view = $('#calendar').fullCalendar('getView');
+	var viewStart = $.fullCalendar.formatDate(view.start,"yyyy-MM");   
+	$.getJSON("http://clatfd.cn/thinkcmfx/index.php?g=sensor&m=index&a=getCalData&month="+viewStart+"&callback=?",
+	// $.getJSON("http://127.0.0.1/thinkcmfx/index.php?g=sensor&m=index&a=getCalData&month="+viewStart+"&callback=?",
+		function (phpdata){
+			console.log(phpdata.length);
+            for(var el in phpdata){
+            	if(!$("td.fc-day[data-date="+phpdata[el].date+"]").find(".sensorbar").length){
+            		$("td.fc-day[data-date="+phpdata[el].date+"]").append("<div class='sensorbar'></div>");
+            	}
+            	$("<div>").append("<a class='nostylea' target='_blank' href='http://104.131.150.53/thinkcmfx/index.php?g=sensor&m=index&a=index&sn="+phpdata[el].sensorno+"'>"+phpdata[el].sensordata+"</a>").addClass("sensor sensor"+phpdata[el].sensorno).append($("<span>").html("<a class='nostylea' target='_blank' href='http://104.131.150.53/thinkcmfx/index.php?g=sensor&m=index&a=index&sn="+phpdata[el].sensorno+"'>@"+phpdata[el].sensorno+"</a>").addClass("nonsee")).appendTo($("td.fc-day[data-date="+phpdata[el].date+"]").find(".sensorbar"));
+	        }  
+			$("td.fc-day").css("position","relative");
+			$(".sensor").hover(function(){
+				$(this).parent().addClass("topitem");
+				$(this).find("span").removeClass("nonsee");
+
+			},
+			function(){
+				$(this).parent().removeClass("topitem");
+				$(this).find("span").addClass("nonsee");
+			})
+	}); 
+}
+function add(){
+	var title = $("#title").val();
+	var description = $("#description").val();
+	var start = $("#start").val();
+	var end = $("#end").val();
+	var url = $("#url").val();
+	var allDay = $("#allDay").val();
+	var id=$("#id").val();
+	if(id){
+		$('#calendar').fullCalendar( 'removeEvents', id);
+		postdata=$("#additemform").serialize();
+	}
+	else
+		postdata=$("#additemform").serialize().slice(4); //del id 
+
+	$.ajax({     
+		type: "POST",   
+		url:'index.php?g=calendar&m=member&a=add',
+		data:  postdata, 
+		success : function(phpdata) { 
+			if(phpdata.status){
+				$('#calendar').fullCalendar('renderEvent',
+					{
+						nid : phpdata.data.id,
+						title: title,
+						description : description,
+						backgroundColor : phpdata.data.backgroundColor,
+						start: start,
+						end: end,
+						allDay: allDay,
+						d_url : url
+					},
+					true // make the event "stick"
+				);	
+				$('#calendar').fullCalendar('unselect');
+
+				$("#title").val("");
+				$("#description").val("");
+				
+				$("#additem").css("display","none");
+			}
+			else{
+				alert(phpdata.info);
+				console.log(phpdata.info);
+				if(phpdata.info=="Register and Login required!")
+					window.open(phpdata.url);
+			}
+		},
+		error: function() {
+            alert("Connection_error!");
+        }
+	})
+}
+
+
+Date.prototype.format = function (format) {
+        var o = {
+            "M+": this.getMonth() + 1, //month
+            "d+": this.getDate(), //day
+            "h+": this.getHours(), //hour
+            "m+": this.getMinutes(), //minute
+            "s+": this.getSeconds(), //second
+            "q+": Math.floor((this.getMonth() + 3) / 3), //quarter
+            "S": this.getMilliseconds() //millisecond
+        }
+        if (/(y+)/.test(format))
+            format = format.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+        for (var k in o)
+            if (new RegExp("(" + k + ")").test(format))
+                format = format.replace(RegExp.$1, RegExp.$1.length == 1 ? o[k] : ("00" + o[k]).substr(("" + o[k]).length));
+        return format;
+    }
+</script>

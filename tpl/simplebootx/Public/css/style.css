@@ -538,3 +538,12 @@ ul.tc-photos{margin: 0;}
 
 
 		
+/*tag label*/
+span.label{
+	min-height: 0px;
+	min-width: 0px;
+
+}
+span.label-warning{
+	background-color: #E59149;
+}

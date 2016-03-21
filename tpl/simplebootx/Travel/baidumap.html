@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<style type="text/css">
+		body, html {width: 100%;height: 100%;margin:0;font-family:"微软雅黑";}
+		#allmap{width:100%;height:500px;}
+		p{margin-left:5px; font-size:14px;}
+	</style>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=qtBl1tsn2fZTXUuEdqhvCHHH"></script>
+	<title>PhotoMap</title>
+</head>
+<body>
+	<div id="allmap">PhotoMap</div>
+	<!-- http://developer.baidu.com/map/jsdemo.htm#a1_2 -->
+</body>
+</html>
+<script src='/lib/js/jquery.js'></script>
+<script type="text/javascript">
+// 百度地图API功能
+	var sContent ="<div><a href='index.php?g=travel&m=index&a=photo&year=@imgyear@' target='_blank'><h4 style='margin:0 0 5px 0;padding:0.2em 0'>@title@</h4></a><a href='@imgsrc@' target='_blank'><img style='float:right;margin:4px' id='imgDemo' src='@imgsrc@' height='104' title='@title@'/></a><p style='margin:0;line-height:1.5;font-size:13px;text-indent:2em'>@imgdate@<br/>@imgcomment@</p></div>";
+	var content;
+	var opts = {
+				width : 450,     // 信息窗口宽度
+				//height: 80,     // 信息窗口高度
+				//title : "信息窗口" , // 信息窗口标题
+				enableMessage:true//设置允许信息窗发送短息
+			};
+	var map = new BMap.Map("allmap");
+	var navigationControl = new BMap.NavigationControl({
+	    // 靠左上角位置
+	    anchor: BMAP_ANCHOR_TOP_LEFT,
+	    // LARGE类型
+	    type: BMAP_NAVIGATION_CONTROL_LARGE,
+	    // 启用显示定位
+	    enableGeolocation: true
+	  });
+	map.addControl(navigationControl);
+	var data_info;
+	$.ajax({      
+        url: "index.php?g=travel&m=index&a=query",     
+        success: function(msg){
+        	data_info=JSON.parse(msg);
+        	
+			map.centerAndZoom(new BMap.Point(8,25), 3);
+			map.enableScrollWheelZoom(true);
+
+			for(var i=0;i<data_info.length;i++){
+				var marker = new BMap.Marker(google_bd_encrypt(data_info[i][1],data_info[i][0]));  // 创建标注
+				var regtitle=new RegExp("@title@","g");
+				var regcomment=new RegExp("@imgcomment@","g");
+				var regimg=new RegExp("@imgsrc@","g");
+				var regdate=new RegExp("@imgdate@","g");
+				var regyear=new RegExp("@imgyear@","g");
+				
+				content=sContent.replace(regtitle,data_info[i][2]);  
+				content=content.replace(regcomment,data_info[i][3]);  
+				content=content.replace(regimg,"tpl/simplebootx/Public/images/photo/"+data_info[i][4]);  
+				content=content.replace(regdate,data_info[i][5]);  
+				content=content.replace(regyear,data_info[i][5].slice(0,4));  
+			  	addClickHandler(content,marker);
+				map.addOverlay(marker);
+			}
+		}  
+    });
+
+	
+	// var data_info = [[103.795278,1.300278,"地址：北京市东城区王府井大街88号乐天银泰百货八层"],
+	// 				 [116.406605,39.921585,"地址：北京市东城区东华门大街"],
+	// 				 [116.412222,39.912345,"地址：北京市东城区正义路甲5号"]
+	// 				];
+
+
+	function google_bd_encrypt(gg_lat,gg_lon){
+		var x_pi = 3.14159265358979324 * 3000.0 / 180.0;
+        var x = parseFloat(gg_lon);
+        var y = parseFloat(gg_lat);
+        var z = Math.sqrt(x * x + y * y) + 0.00002 * Math.sin(y * x_pi);
+        var theta = Math.atan2(y, x) + 0.000003 * Math.cos(x * x_pi); 
+        var bd_lon = z * Math.cos(theta) + 0.0065;
+        var bd_lat = z * Math.sin(theta) + 0.006;
+        
+        return new BMap.Point(bd_lon,bd_lat);
+    }
+	
+	function addClickHandler(content,marker){
+		marker.addEventListener("click",function(e){
+			openInfo(content,e)}
+		);
+	}
+	function openInfo(content,e){
+		var p = e.target;
+		var point = new BMap.Point(p.getPosition().lng, p.getPosition().lat);
+		var infoWindow = new BMap.InfoWindow(content,opts);  // 创建信息窗口对象 
+		map.openInfoWindow(infoWindow,point); //开启信息窗口
+	}
+	
+</script>

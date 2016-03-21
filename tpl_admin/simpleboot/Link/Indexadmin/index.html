@@ -1,0 +1,48 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+ <title>Add Link Shortcut</title> 
+ <script type="text/javascript" src="/lib/js/jquery-1.11.1.min.js"></script>  
+</head>
+<body>
+<div class="tc-box first-box article-box"> 
+<h2>Add Link Shortcut</h2> 
+<hr> 
+<div id="article_content">  
+<table border="1">
+<foreach name="linkrecord" item="vo">
+	<tr>
+    	<td>{$vo.id}</td>
+    	<td>{$vo.url}</td>
+    	<td><a href="{$vo.shortcut}" target="_blank">{$vo.shortcut}</a></td>
+	</tr>
+</foreach>
+</table>
+<hr/>  
+<form id="linkform"> 
+	<input type="text" id="url" name="url" placeholder="url"> 
+	<input type="text" id="shortcut" name="shortcut" placeholder="shortcut"> 
+</form> 
+<button onclick="postdata()">Submit</button> 
+
+<script type="text/javascript">	
+$("#urlsel").change(
+	function(){
+		$("#url").val($(this).val())
+	}
+)
+function postdata(){
+		$.ajax({
+			type: "POST",
+			url:'/thinkcmfx/index.php?g=link&m=indexadmin&a=postdata',
+	        data:$('#linkform').serialize(),
+	        success: function(data) {
+				console.log(data);
+				}
+			});
+		}
+</script>   
+</div>    
+</div>
+</body>
+</html>

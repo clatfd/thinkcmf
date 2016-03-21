@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href='/thinkcmfx/tpl/simplebootx/Public/simpleboot/fullcalendar/fullcalendar.css' rel='stylesheet' />
+<link href='/thinkcmfx/tpl/simplebootx/Public/simpleboot/fullcalendar/fullcalendar.print.css' rel='stylesheet' media='print' />
+<link href='/thinkcmfx/tpl/simplebootx/Public/simpleboot/fullcalendar/custom.css' rel='stylesheet' />
+<link rel="stylesheet" type="text/css" href="/lib/css/DateTimePicker.css" />
+	
+</head>
+<body>
+
+<div id='calendar'></div>
+<div id="additem">
+	<li class="addform ui-editable-temp ui-li-static ui-body-inherit ui-first-child" style="display: inline-block;">
+	    <form id="additemform" method="post">
+	        <input type="hidden" id="id" name="id" placeholder="id">
+	        <span>标题:</span>
+	        <input type="text" id="title" name="title" placeholder="title">
+	        <br/>
+	        <span>描述:</span>
+	        <input type="text" id="description" name="description" placeholder="description">
+	        <br/>
+	        <span>全天项目:</span>
+	        <select id="allDay" name="allDay" placeholder="allDay">
+	            <option value="1">是</option>
+	            <option selected="selected" value="0">不是</option>
+	        </select>
+	        <br/>
+	        <span>重复:</span>
+	        <input type="text" id="rep" name="rep" placeholder="times+period">
+	        </select>
+	        <br/>
+	        <span>开始:</span>
+		    <input type="text" id="start" name="start" placeholder="start" class="datepicker" data-field="datetime" data-format="yyyy-MM-dd hh:mm:ss" readonly>
+		    <br/>
+        	<span>结束:</span>
+	        <input type="text" id="end" name="end" placeholder="end" class="datepicker" data-field="datetime" data-format="yyyy-MM-dd hh:mm:ss" readonly>
+	        <br/>
+		    <span>类型:</span>
+	        <select name="evtype" id="evtype">
+	            <option selected="selected" value="Courses">Courses</option>
+	            <option value="Hobbies">Hobbies</option>
+	            <option value="Labs">Labs</option>
+	            <option value="Others">Others</option>
+	        </select>
+	        <br/>
+	        <span>显示:</span>
+	        <select name="show">
+	            <option selected="selected" value="1">显示</option>
+	            <option value="0">不显示</option>
+	        </select>
+	        <br/>
+	        <span>权限:</span>
+	        <select name="privacy">
+	            <option selected="selected" value="1">任何人</option>
+	            <option value="2">本站用户</option>
+	            <option value="3">管理员</option>
+	        </select>
+	        <br/>
+	        <span>链接:</span>
+	        <input type="text" id="url" name="url" placeholder="url">
+	        <br/>
+	        <span>同步到google calendar:</span>
+	        <input type="checkbox" name="sync" id="sync"/>
+	    </form>
+	        <button onclick="javascript:add()">添加</button>
+	        <button onclick="javascript:$('#additem').css('display','none');">取消</button>
+	        <button onclick="javascript:del()">删除</button>
+	</li>
+
+</div>
+
+<div id="dtBox"></div>
+
+</body>
+</html>
+
+		
+<script src='/lib/js/jquery.js'></script>
+<script src='/lib/jquery-ui-1.10.4/js/jquery-ui-1.10.4.min.js'></script>
+<script type="text/javascript" src="/lib/js/DateTimePicker.js"></script>
+<script src='/thinkcmfx/tpl/simplebootx/Public/simpleboot/fullcalendar/fullcalendar.min.js'></script>
+
+<script>
+	var eventinfo = Object;
+
+$(document).ready(function() {
+	$("#dtBox").DateTimePicker();
+	var holiday = [ ["2015-10-01","2015-10-07"],["2015-12-28","2016-02-25"]];  
+	var workday = [ "2015-10-10"];  
+
+	 	$.getJSON("http://clatfd.cn/thinkcmfx/index.php?g=calendar&m=indexadmin&a=query&callback=?",
+        // $.getJSON("http://127.0.0.1/thinkcmfx/index.php?g=calendar&m=indexadmin&a=query&callback=?",
+			function (phpdata){
+				//console.log(phpdata.length);
+				var calendar = $('#calendar').fullCalendar({
+					header: {
+						left: 'prev, today, next',
+						center: 'title',
+						right: 'month,basicWeek,agendaWeek,basicDay,agendaDay'
+					},
+					buttonText: {
+		          	  today: 'Today',
+					  prev: 'Last',
+					  next: 'Next'
+			      	},
+					selectable: true,
+					selectHelper: true,
+					select: function(start, end, allDay) {
+						$("#additem").css("display","block");
+						$("#id").val("");
+						$("#title").val("");
+						$("#description").val("");
+						$("#start").val(start.format("yyyy-MM-dd")+" "+new Date().getHours()+":00");
+						$("#end").val(end.format("yyyy-MM-dd")+" "+new Date().getHours()+":30");
+						$("#evtype").val("");
+					},
+					eventClick: function(calEvent, jsEvent, view) {
+						$("#id").val(calEvent.id);
+						$("#title").val(calEvent.title);
+						$("#description").val(calEvent.description);
+						$("#start").val(calEvent.start.format("yyyy-MM-dd")+" "+calEvent.start.toString().slice(16,21));
+						$("#end").val(calEvent.end.format("yyyy-MM-dd")+" "+calEvent.end.toString().slice(16,21));
+						$("#evtype").val(calEvent.evtype);
+						if(calEvent.allDay)
+							$("#allDay").val("1");
+						else
+							$("#allDay").val("0");
+						$("#url").val(calEvent.d_url);
+						$("#additem").css("display","block");
+				    },
+				    eventRender: function(event, element) {
+				    	element.find("span.fc-event-title").after("<br/><span class='event-detail' style='display:none'></span>");
+				    	if(event.member)
+				    		element.find("span.event-detail").append(event.member+":");
+				    	if(event.description)
+				    		element.find("span.event-detail").append(event.description);
+				    	if(event.d_url)
+				    		element.find("span.event-detail").append("<br/><a href='"+event.d_url+"' target='_blank'>Link</a></span>");
+				    	if(!element.find("span.fc-event-time").length)
+				    		element.find(".fc-event-inner").prepend("<span class='fc-event-time'></span>");
+				    	element.find("span.fc-event-time").text(event.start.toString().slice(16,21)+"-"+event.end.toString().slice(16,21));
+				    	element.hover(function(){
+				    		$(this).find("span.event-detail").css("display","inline-block");
+				    		$(this).addClass("topitem");
+				    	},
+				    	function(){
+				    		$(this).find("span.event-detail").css("display","none");
+				    		$(this).removeClass("topitem");
+				    	});
+				    },
+				    dayRender:function( date, cell ) { 
+					    vdate=date.format("yyyy-MM-dd");
+				    	if(vdate!=new Date().format("yyyy-MM-dd")){
+				    		if(date.getDay()<6){
+						    	for(var i=0;i<holiday.length;i++){
+						    		var curdate=new Date(vdate);
+						    		var startdate=new Date(holiday[i][0]);
+						    		var enddate=new Date(holiday[i][1]);
+						    		if(curdate>=startdate&&curdate<=enddate){
+						    	 		$("td.fc-day[data-date="+vdate+"]").css("backgroundColor","#F6FFFF");
+						    	 		break;
+						    		}
+						    	}
+						    }
+							// if($.inArray(vdate, holiday)>=0){
+					  //   	 	$("td.fc-day[data-date="+vdate+"]").css("backgroundColor","#F6FFFF");
+					  //   	}
+							if($.inArray(vdate, workday)>=0){
+					    	 	$("td.fc-day[data-date="+vdate+"]").css("backgroundColor","#FFEEEE");
+					    	}
+				    	}
+				    },
+					editable: true,
+					events: phpdata
+				});
+				$('.fc-button-prev').unbind('click');
+				$('.fc-button-next').unbind('click');
+				$('.fc-button-prev').bind('click', fnMthChange);
+				$('.fc-button-next').bind('click', fnMthChange);
+				$('.fc-button-today').bind('click', fnMthChange);
+				getSensorData();
+			});
+
+	
+});
+
+function fnMthChange() {
+	changeTime(this.innerText);
+	if ($('#calendar').fullCalendar('getView').name == "month") {
+		showTime();
+	}
+}
+function changeTime(label) {
+	if ($.trim(label) == "Last") {
+		$('#calendar').fullCalendar('prev');
+		perMonth();
+	} else if ($.trim(label) == "Next") {
+		$('#calendar').fullCalendar('next');
+		nextMonth();
+	} else if ($.trim(label) == "Today") {
+		$('#calendar').fullCalendar('today');
+		thisMyMonth();
+	}
+}
+function perMonth(){
+	var date = new Date().format("yyyy-MM");
+	var year  = date.split("-")[0];
+	var month = date.split("-")[1];
+	if(month >1 ){
+		month = month -1
+	}else{
+		year = year - 1 
+		month = 12;
+	}
+}
+
+function nextMonth(){
+	var date = new Date().format("yyyy-MM");
+	var year  = date.split("-")[0];
+	var month = date.split("-")[1];
+	if(month <12 ){
+		month = Number(month) + 1
+	}else{
+		year = Number(year) + 1 
+		month = 1;
+	}
+}
+
+function thisMyMonth(){
+	var d = new Date();
+}
+function showTime() {
+	var view = $('#calendar').fullCalendar('getView');
+	var start = toStrDateTime(view.start); 
+	var end = toStrDateTime(view.end);
+	var viewStart = $.fullCalendar.formatDate(view.start,"yyyy-MM");   
+	$("#calendar").fullCalendar('removeEvents');   
+	$.getJSON("http://clatfd.cn/thinkcmfx/index.php?g=calendar&m=indexadmin&a=query&month="+viewStart+"&callback=?",
+	// $.getJSON("http://127.0.0.1/thinkcmfx/index.php?g=calendar&m=indexadmin&a=query&month="+viewStart+"&callback=?",
+		function (phpdata){
+			// console.log(phpdata.length);
+            for(var el in phpdata){
+                var obj = new Object();   
+			 	obj=phpdata[el];
+		        $('#calendar').fullCalendar('renderEvent',obj,true);	 
+	        }  
+			getSensorData();
+	});   
+}
+function toStrDateTime(object) {
+	var view = jQuery('#calendar').fullCalendar('getView');
+	var str = view.calendar.formatDate(object, 'u');
+
+	str = str.replace("T", " ");
+	str = str.replace("Z", "");
+	return str;
+}
+function getSensorData(){
+	var view = $('#calendar').fullCalendar('getView');
+	var viewStart = $.fullCalendar.formatDate(view.start,"yyyy-MM");   
+	$.getJSON("http://clatfd.cn/thinkcmfx/index.php?g=sensor&m=index&a=getCalData&month="+viewStart+"&callback=?",
+	// $.getJSON("http://127.0.0.1/thinkcmfx/index.php?g=sensor&m=index&a=getCalData&month="+viewStart+"&callback=?",
+		function (phpdata){
+			//console.log(phpdata.length);
+            for(var el in phpdata){
+            	if(!$("td.fc-day[data-date="+phpdata[el].date+"]").find(".sensorbar").length){
+            		$("td.fc-day[data-date="+phpdata[el].date+"]").append("<div class='sensorbar'></div>");
+            	}
+            	$("<div>").append(phpdata[el].sensordata).addClass("sensor sensor"+phpdata[el].sensorno).append($("<span>").text("@"+phpdata[el].sensorno).addClass("nonsee")).appendTo($("td.fc-day[data-date="+phpdata[el].date+"]").find(".sensorbar"));
+	        }  
+			$("td.fc-day").css("position","relative");
+			$(".sensor").hover(function(){
+				$(this).parent().addClass("topitem");
+				$(this).find("span").removeClass("nonsee");
+
+			},
+			function(){
+				$(this).parent().removeClass("topitem");
+				$(this).find("span").addClass("nonsee");
+			})
+	}); 
+}
+function add(){
+	var title = $("#title").val();
+	var description = $("#description").val();
+	var start = $("#start").val();
+	var end = $("#end").val();
+	var url = $("#url").val();
+	var allDay = $("#allDay").val();
+	var evtype = $("#evtype").val();
+	var id=$("#id").val();
+	var sync=$("#sync").prop('checked');
+	
+
+	if(id){
+		$('#calendar').fullCalendar( 'removeEvents', id);
+		postdata=$("#additemform").serialize();
+	}
+	else
+		postdata=$("#additemform").serialize().slice(4); //del id 
+
+	$.ajax({     
+		type: "POST",   
+		url:'index.php?g=calendar&m=indexadmin&a=add',
+		data:  postdata, 
+		success : function(phpdata) { 
+			if(phpdata.status){
+				$("td.fc-day").css("position","inherit");
+				$('#calendar').fullCalendar('renderEvent',
+					{
+						id : phpdata.data.id,
+						title: title,
+						description : description,
+						backgroundColor : phpdata.data.backgroundColor,
+						start: start,
+						end: end,
+						allDay: allDay,
+						evtype: evtype,
+						d_url : url
+					},
+					true // make the event "stick"
+				);	
+				$('#calendar').fullCalendar('unselect');
+				$("td.fc-day").css("position","relative");
+				$("#id").val("");
+				$("#title").val("");
+				$("#description").val("");
+				
+				$("#additem").css("display","none");
+			}
+			else{
+				alert(receivedata.errmsg);
+			}
+		},
+		error: function() {
+            alert("Connection_error!");
+        }
+	})
+
+	if(sync){
+		eventinfo.summary=title;
+		eventinfo.description=description;
+		eventinfo.start=new Date(start).format("yyyy-MM-ddThh:mm:ss+08:00");
+		eventinfo.end=new Date(end).format("yyyy-MM-ddThh:mm:ss+08:00");
+		eventinfo.htmlLink=url;
+		loadCalendarApi();
+		// $.ajax({     
+		// 	type: "POST",   
+		// 	url:'index.php?g=calendar&m=indexadmin&a=insertgc',
+		// 	data:  postdata, 
+		// 	success : function(phpdata) { 
+		// 		if(phpdata.status){
+					
+		// 			alert(receivedata.errmsg);
+		// 		}
+		// 	},
+		// 	error: function() {
+	 //            alert("Connection_error!");
+	 //        }
+		// })
+		
+	}
+}
+function del(){
+	var id = $("#id").val();
+	if(id!=""){
+		$.ajax({     
+			type: "GET",   
+			url:'index.php?g=calendar&m=indexadmin&a=del&id='+id,
+			success : function(phpdata) { 
+				if(phpdata.status){
+					id=phpdata.data.id;
+					
+					$("#id").val("");
+					$("#title").val("");
+					$("#description").val("");
+					
+					$("#additem").css("display","none");
+					$("td.fc-day").css("position","inherit");
+					$('#calendar').fullCalendar( 'removeEvents', id);
+					$("td.fc-day").css("position","relative");
+				}
+				else{
+					alert(receivedata.errmsg);
+				}
+			},
+			error: function() {
+	            alert("Connection_error!");
+	        }
+		})
+	}
+}
+
+
+Date.prototype.format = function (format) {
+    var o = {
+        "M+": this.getMonth() + 1, //month
+        "d+": this.getDate(), //day
+        "h+": this.getHours(), //hour
+        "m+": this.getMinutes(), //minute
+        "s+": this.getSeconds(), //second
+        "q+": Math.floor((this.getMonth() + 3) / 3), //quarter
+        "S": this.getMilliseconds() //millisecond
+    }
+    if (/(y+)/.test(format))
+        format = format.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+    for (var k in o)
+        if (new RegExp("(" + k + ")").test(format))
+            format = format.replace(RegExp.$1, RegExp.$1.length == 1 ? o[k] : ("00" + o[k]).substr(("" + o[k]).length));
+    return format;
+}
+
+$("#start").change(function(){
+	// var start = $("#start").val();
+	var end=new Date($("#start").val());
+	end.setHours(end.getHours()+2);
+	$("#end").val(end.format("yyyy-MM-dd hh:mm"));
+})
+</script>
+
+
+<script type="text/javascript">
+      // Your Client ID can be retrieved from your project in the Google
+      // Developer Console, https://console.developers.google.com
+      var CLIENT_ID = '405346062434-4tf5o716vkvgv0koemlo16bsm1dvcdi2.apps.googleusercontent.com';
+
+      var SCOPES = ["https://www.googleapis.com/auth/calendar"];
+
+      /**
+       * Check if current user has authorized this application.
+       */
+      function checkAuth() {
+        gapi.auth.authorize(
+          {
+            'client_id': CLIENT_ID,
+            'scope': SCOPES.join(' '),
+            'immediate': true
+          }, handleAuthResult);
+      }
+
+      /**
+       * Handle response from authorization server.
+       *
+       * @param {Object} authResult Authorization result.
+       */
+      function handleAuthResult(authResult) {
+        var authorizeDiv = document.getElementById('authorize-div');
+        if (authResult && !authResult.error) {
+          // Hide auth UI, then load client library.
+          authorizeDiv.style.display = 'none';
+          
+        } else {
+          // Show auth UI, allowing the user to initiate authorization by
+          // clicking authorize button.
+          authorizeDiv.style.display = 'inline';
+        }
+      }
+
+      /**
+       * Initiate auth flow in response to user clicking authorize button.
+       *
+       * @param {Event} event Button click event.
+       */
+      function handleAuthClick(event) {
+        gapi.auth.authorize(
+          {client_id: CLIENT_ID, scope: SCOPES, immediate: false},
+          handleAuthResult);
+        return false;
+      }
+
+      /**
+       * Load Google Calendar client library. List upcoming events
+       * once client library is loaded.
+       */
+      function loadCalendarApi() {
+        //gapi.client.load('calendar', 'v3', listUpcomingEvents);
+        gapi.client.load('calendar', 'v3', addEvent);
+      }
+
+      /**
+       * Print the summary and start datetime/date of the next ten events in
+       * the authorized user's calendar. If no events are found an
+       * appropriate message is printed.
+       */
+      function listUpcomingEvents() {
+        var request = gapi.client.calendar.events.list({
+          'calendarId': 'primary',
+          'timeMin': (new Date()).toISOString(),
+          'showDeleted': false,
+          'singleEvents': true,
+          'maxResults': 10,
+          'orderBy': 'startTime'
+        });
+
+        request.execute(function(resp) {
+          var events = resp.items;
+          appendPre('Upcoming events:');
+
+          if (events.length > 0) {
+            for (i = 0; i < events.length; i++) {
+              var event = events[i];
+              var when = event.start.dateTime;
+              if (!when) {
+                when = event.start.date;
+              }
+              appendPre(event.summary + ' (' + when + ')')
+            }
+          } else {
+            appendPre('No upcoming events found.');
+          }
+
+        });
+      }
+
+      /**
+       * Append a pre element to the body containing the given message
+       * as its text node.
+       *
+       * @param {string} message Text to be placed in pre element.
+       */
+      function appendPre(message) {
+        var pre = document.getElementById('output');
+        var textContent = document.createTextNode(message + '\n');
+        pre.appendChild(textContent);
+      }
+
+      function addEvent(){
+	    var event = {
+		  'summary': eventinfo.summary,
+		  'description': eventinfo.description,
+		  'start': {
+		    'dateTime': eventinfo.start,
+		    'timeZone': 'Asia/Shanghai'
+		  },
+		  'end': {
+		    'dateTime': eventinfo.end,
+		    'timeZone': 'Asia/Shanghai'
+		  },
+		  "htmlLink": eventinfo.htmlLink
+		  
+		};
+
+		var request = gapi.client.calendar.events.insert({
+		  'calendarId': 'primary',
+		  'resource': event
+		});
+
+		request.execute(function(event) {
+		  console.log('Event created: ' + event.htmlLink);
+		});
+      }
+    </script>
+    <script src="https://apis.google.com/js/client.js?onload=checkAuth">
+    </script>
+
+    <div id="authorize-div" style="display: none">
+      <span>Authorize access to Google Calendar API</span>
+      <!--Button for the user to click to initiate auth sequence -->
+      <button id="authorize-button" onclick="handleAuthClick(event)">
+        Authorize
+      </button>
+    </div>

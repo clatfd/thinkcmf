@@ -32,7 +32,7 @@
 	</head>
 <body>
 	<div class="wrap">
-		<h1><a href="__ROOT__">CLATFD 后台管理中心{$ip}</a></h1>
+		<h1><a href="__ROOT__">CLATFD 后台管理中心</a></h1>
 		<form method="post" name="login" action="{:U('public/dologin')}" autoComplete="off" class="J_ajaxForm">
 			<div class="login">
 				<ul>
@@ -52,8 +52,9 @@
 					</li>
 				</ul>
 				<div id="login_btn_wraper">
-					<button type="submit" name="submit" class="btn btn_submit J_ajax_submit_btn">登录</button>
+					<button type="submit" name="submit" class="btn btn_submit J_ajax_submit_btn">{$submitbtn}</button>
 				</div>
+				<p>Ip:{$ip}</p>
 			</div>
 		</form>
 	</div>

@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+  <html>
+  <head>
+    <title>{$post_title} {$site_name} </title>
+    <meta name="keywords" content="{$post_keywords}" />
+    <meta name="description" content="{$post_excerpt}">
+    <tc_include file="Public:head" />
+    <style>
+      #article_content img{height:auto !important}
+    </style>
+    <script language="javascript" type="text/javascript">
+      function resizeIframe(obj) {
+        obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+      }
+    </script>
+  </head>
+<body>
+<tc_include file="Public:nav" />
+<div class="container tc-main">
+      <if condition="$map eq 'Baidu'">
+      <h2>Baidu Map,  <a href="index.php?g=travel&m=index&a=photomap&type=Google">Google Map</a></h2>
+      <iframe src="{:U('index/baidumap')}" style="width:100%;height:500px" scrolling="no" frameborder="0" id="appiframe-0" class="appiframe" onload='javascript:resizeIframe(this);' ></iframe>
+      <elseif condition="$map eq 'Google'"/>
+      <h2><a href="index.php?g=travel&m=index&a=photomap&type=Baidu">Baidu Map</a>, Google Map</h2>
+      <iframe src="{:U('index/googlemap')}" style="width:100%;height:500px" scrolling="no" frameborder="0" id="appiframe-0" class="appiframe" onload='javascript:resizeIframe(this);' ></iframe>
+      </if>
+      <div class="tc-box">
+          {:Comments("posts",$id)}
+      </div>
+
+              
+<tc_include file="Public:footer"/>
+</div>
+
+<tc_include file="Public:scripts"/>
+</body>
+</html>

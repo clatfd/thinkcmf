@@ -1,0 +1,185 @@
+name: inverse
+layout: true
+class: center, middle, inverse
+---
+name: cover
+#An Adaptive Computer-aided Tongue Diagnosis Method using Color-calibration Preprocessing and Multiple Feature Synthesis based on Android Platform
+##Miao Wang, Li Chen, Qing Li, Dongyi Wang, Yiqin Liu, Yi Zhang, Shoulan Bing, Huiliang Shang\*
+[International Journal of Wireless and Mobile Computing,Vol. 9, No. 3, pp.240–249]
+.footnote[ Go to [Journal site](http://www.inderscience.com/info/inarticletoc.php?jcode=ijwmc&year=2015&vol=9&issue=3) Use Up/Down Key to turn page.]
+---
+name: Background
+layout: false
+.left-column[
+  # Background 
+]
+.right-column[
+- According to Traditional Chinese Medicine (TCM), the tongue can reflect the condition of organs as well as the degree and progression of disease.
+
+- The prevalence and capability of mobile phones offer an ideal platform for our tongue diagnosis system to be practiced.
+]
+---
+name: Problem
+layout: false
+.left-column[
+  # Problem 
+]
+.right-column[
+- In traditional method of tongue diagnosis, doctors determine the syndrome mainly through **visual observation** and **subjective experience**.
+
+- Quite a few computerized tongue diagnosis methods are quite **sensitive** to the quality of the initial tongue image. Camera bears the possibility of **distorting** the original colors of the images
+]
+---
+name: Task
+layout: false
+.left-column[
+  # What we do 
+]
+.right-column[
+  
+##An Android APP:
+
+- Use QCGP to solve the problem of white balance
+
+- Adapted HSV model in Tongue brim pixels searching
+
+- Adapted inverted pentagonal four-line tongue outline searching and linking algorithm
+
+- Accuracy and effectiveness corroborated with professional clinicians
+
+]
+
+---
+name: QCGP
+layout: false
+.left-column[
+  # QCGP(Quadratic Combining GW&PR) 
+]
+.right-column[
+
+- Grey World Method:
+	K =（R<SUB>avg</SUB>+G<SUB>avg</SUB>+B<SUB>avg</SUB>)/3, R<SUB>new</SUB> = (R*K)/R<SUB>avg</SUB>
+	assuming a certain standard spatial spectral average exists
+
+- Perfect Reflector Method:
+	R<SUB>new</SUB> = R*255/R<SUB>AvgTop10%</SUB>
+
+- Quadratic combining two balance algorithms: 
+	u<SUP>r</SUP>R<SUP>2</SUP><SUB>avg</SUB>+v<SUP>r</SUP>R<SUB>avg</SUB> = K<SUB>avg</SUB>
+	u<SUP>r</SUP>R<SUP>2</SUP><SUB>max</SUB>+v<SUP>r</SUP>R<SUB>max</SUB> = K<SUB>max</SUB>
+]
+  
+---
+name: White_Balance
+# White Balance
+.div4[
+![img1](/thinkcmfx/tpl/simplebootx/Public/simpleboot/remark/whitebalance/initial_tongue_image.jpg "initial tongue image")
+.center[initial tongue image]
+]
+.div4[]
+.div4[
+![img1](/thinkcmfx/tpl/simplebootx/Public/simpleboot/remark/whitebalance/after_color_calibration.jpg "Tongue image after color calibration")
+.center[Tongue image after color calibration]
+]
+---
+name:Main_procedure
+#Main procedure
+.div2[]
+.div4[
+![img1](/thinkcmfx/tpl/simplebootx/Public/simpleboot/remark/whitebalance/brim_edges.jpg "Tongue brim edges")
+.center[Tongue brim edges]
+]
+.div4[
+![img1](/thinkcmfx/tpl/simplebootx/Public/simpleboot/remark/whitebalance/edges_image.jpg "Tongue edges image")
+.center[Tongue edges image]
+]
+.div2[]
+.clearfix[
+.center[ ]
+]
+.div2[]
+.div4[
+![img1](/thinkcmfx/tpl/simplebootx/Public/simpleboot/remark/whitebalance/General_brim_image.jpg "General tongue brim image")
+.center[General tongue brim image]
+]
+.div4[
+![img1](/thinkcmfx/tpl/simplebootx/Public/simpleboot/remark/whitebalance/outline_image.jpg "Tongue outline image")
+.center[Tongue outline image]
+]
+.div2[]
+---
+name: extraction
+layout: false
+.left-column[
+  # Tongue feature extraction 
+]
+.right-column[
+  
+##Parameters:
+
+- thickness of tongue coating: the ratio of the number of tongue coating pixels(a hue range near yellow) to that of total pixels
+
+- average hue of tongue blade pixels: average hue within a hue range near red and also not excessively big in value
+
+- humidity of the tongue: the ratio of pixels with excessively big values to that of total pixels 
+
+- crackle flaws: the ratio of edges pixels in edge image to that of total pixels
+
+]
+---
+name: Result
+layout: false
+.left-column[
+  # Test Result
+  ![img1](/thinkcmfx/tpl/simplebootx/Public/simpleboot/remark/whitebalance/within_white_outline.jpg "within white outline")
+	.center[Tongue area within white outline]
+]
+.right-column[
+  
+##Parameters:
+
+- thickness of tongue coating: the ratio of the number of tongue coating pixels(a hue range near yellow) to that of total pixels
+
+- average hue of tongue blade pixels: average hue within a hue range near red and also not excessively big in value
+
+- humidity of the tongue: the ratio of pixels with excessively big values to that of total pixels 
+
+- crackle flaws: the ratio of edges pixels in edge image to that of total pixels
+
+]
+---
+name: Comparison
+#Comparison with other method
+.center[ Speed and accuracy.red[&#42;] between four algorithms ]
+<table>
+	<tr>
+		<th>Algorithm</th><th>CEM-L*A*B*</th><th>watershed</th><th>Original snake</th><th>C2G2FSnake</th>
+	</tr>
+	<tr>
+		<td>Speed (s)</td><td>0.630</td><td>1.65</td><td>4.01</td><td>11.46</td>
+	</tr>
+	<tr>
+		<td>Quality (%)</td><td>98.9</td><td>89.0</td><td>73.4</td><td>98.4</td>
+	</tr>
+</table>
+
+
+.footnote[
+.red[&#42;] Tested in Matlab 2014a on Windows 8.1<br/>
+Quality: Percent of contour region with wrong pixels according to the ideal contour picture
+]
+
+---
+name: References
+#Some References
+- [1] W. Su, Z.-Y. Xu, Z.-Q. Wang, and J.-T. Xu, “Objectified study on tongue images of patients with lung cancer of different syndromes,” Chin. J. Integr. Med., vol. 17, no. 4, pp. 272–276, 2011.
+- [2] Z. Wangmeng, W. Kuanquan, Z. David, Z. Hongzhi, Combination of Polar Edge Detection and Active Contour Model for Automated Tongue Segmentation, Third International Conference on Image and Graphics (ICIG’04), 2004, pp. 270-273.
+- [3] J. Wu, Z. Yonghong, and B. Jing, Tongue Area Extraction in Tongue Diagnosis of Traditional Chinese Medicine, Engineering in Medicine and
+Biology Society. 27th Annual International Conference of the, 2006, pp.4955-4957. 
+- [4] F. Hongguang, W. Rongqiu Wu, and W. Weiming, Active Contour Model based on Dynamic Extern Force and Gradient Vector Flow, 2008 International onference on BioMedical Engineering and Informatics, 2008,vol. (1) pp. 863-867. 
+- [5] Z. Xue-ming, L. Hangdong, and Z. Lizhong, Application of Image Segmentation Technique in Tongue Diagnosis, 2009 International Forum on Information Technology and Applications, 2009, vol. (2), pp. 768-771.
+
+
+---
+class: center, middle, inverse
+#End

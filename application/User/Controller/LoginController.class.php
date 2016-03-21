@@ -7,6 +7,8 @@ use Common\Controller\HomeBaseController;
 class LoginController extends HomeBaseController {
 	
 	function index(){
+        if(isset($_SESSION["username"]))
+            $this->assign("username",$_SESSION["username"]);
 		$this->display(":login");
 	}
 	

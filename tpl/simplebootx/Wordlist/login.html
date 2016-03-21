@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+	<html>
+	<head>
+		<title>Wordlist@clatfd</title>
+		<meta name="keywords" content="{$post_keywords}" />
+		<meta name="description" content="{$post_excerpt}">
+		<tc_include file="Public:head" />
+		<style>
+			#article_content img{height:auto !important}
+		</style>
+	</head>
+<body class="">
+<tc_include file="Public:nav" />
+<div class="container tc-main">
+	<div class="row">
+		<div class="tc-box first-box article-box">
+	    	<h2>{$post_title}</h2>
+	    	<hr>
+	    	<div id="article_content">
+	    	<h1>Wordlist @ clatfd</h1>
+	    	<h2>Instruction</h2>
+			<p>This is a private web I used to memorize English vocabulary, now open to public. Still in development and in beta version. </p>
+			<p>Words are from 《要你命三千》 and important words I met during my revison of GRE.</p>
+			<p>The basic ideology of this tool is dividing words in group. Original words are all in group 2, click the english word, then its Chinese meaning appears. When you have recognized a word, you can click "up" button, then it is labeled as group 3. When you review words again, you can only select group 3 words and decide whether to revert the word to group 2 in order to recite again, or continue to level it up to group 4.</p>
+			<p>Each word can be attributed as "IMP","MFL" or "INV" labels, which I use to label important, meaningful and inveterately-hard-to-memorize words.</p>
+			<p>A clear and simplified Chinese meaning to each word is <strong>very important</strong> when choosing a good vocabulary book. I think few of the existing books can do that well, even《要你命三千》. A comprehensive but similar Chinese meanings are quite redundant so that not suitable for Chinese students to memorize. In this wordlist, Chinese meaning of each word is carefully revised and similar meanings are combined, leaving only really representative and important meanings worth memorizing. You can also update your meaning through Update dialog box (press 'w' in keyboard)</p>
+			<p>Link to: <a href="http://clatfd.cn/data/gre3000+r.xlsx">Wordlist Database(in xlsx)</a></p>
+			<p>My original purpose of avoiding vocabulary books when learning vocabulary is for the convenience to shuffle. Click "Random" button ("q" in keyboard), the order of the list is changed, so that location of words is not fixed on page.</p>
+			<p>As you can see from my personal <a href="index.php?g=profile&m=index&a=index" target="_blank">profile</a>, I got V160+Q170 in recent GRE test. I must acknowledge that vocabulary is an important factor, but not the whole of GRE test. One thing is clear -- without accumulating enough vocabulary, it is hard to expect a high score and it may be an obstacle in graduate study even if you <strong>luckily</strong> pass through GRE test. </p>
+			<p>Thanks for <a href="http://dict.cn" target="_blank">dict.cn</a> providing sound data and reference in this web.</p>
+			<p>Hope you get satisfactory result from GRE test!</p>
+			<p style="text-align:center">
+				<a href="index.php?g=wordlist&m=Member&a=index"><button type="submit" class="btn btn-primary btn-large"><i class="fa fa-sign-in"></i> Log in</button></a>
+				<a href="index.php?g=user&m=register&a=index"><button type="submit" class="btn btn-warning btn-large"><i class="fa fa-user"></i> Sign up</button></a>
+			</p>
+	    	</div>
+	    	
+	    	{:Comments("posts",999)}
+	    </div>
+	</div>
+              
+<tc_include file="Public:footer"/>
+</div>
+
+<tc_include file="Public:scripts"/>
+</body>
+</html>

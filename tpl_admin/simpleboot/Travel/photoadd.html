@@ -1,0 +1,206 @@
+<admintpl file="header" />
+<style type="text/css">
+    input{
+        margin: 5px;
+    }
+    table td{
+        padding: 5px;
+    }
+</style>
+
+<form name="myform" id="myform" action="{:u('Indexadmin/writeexif')}" method="post" class="form-horizontal J_ajaxForms" enctype="multipart/form-data">
+    <select name="originalname" id="originalname">
+        <foreach name="rawfiles" item="rp">
+        <option value="{$rp}">{$rp}</option>
+        </foreach>
+    </select>
+    <foreach name="formitem" item="vo">
+    <input type="text" name="{$vo}" id="{$vo}" placeholder="{$vo}"> 
+    </foreach>
+	<select name="fav">
+        <option value="0">Common</option>
+        <option value="1">Favorite</option>
+    </select>
+    <button class="btn btn-primary btn_submit J_ajax_submit_btn" type="submit">提交</button>
+</form> 
+
+<table border="1" id="photolist">
+<thead>
+<tr>
+    <th>id</th>
+    <th>originalname</th>
+    <foreach name="formitem" item="vo">
+    <th><if condition="($sort eq $vo) AND ($sortorder eq 'DESC')"><a href="{:U('Indexadmin/index',array('sort'=>$vo,'sortorder'=>'asc'))}"><else/><a href="{:U('Indexadmin/index',array('sort'=>$vo))}"></if>{$vo}</a></th>
+    </foreach>
+    <th>photo</th>
+    <th>delete</th>
+</tr>
+</thead>
+<tbody>
+<foreach name="photolist" item="vo">
+    <tr>
+        <td>{$vo['id']}</td>
+        <td>{$vo['originalname']}</td>
+        <foreach name="formitem" item="voi">
+        <td>{$vo[$voi]}</td>
+        </foreach>
+        <td><img width="50px" src="__ROOT__/tpl/simplebootx/Public/images/photo/{$vo.photoname}"></td>
+        <td><a href="javascript:del('{$vo['id']}')">Del</a></td>
+    </tr>
+</foreach>
+</tbody>
+</table>
+<div class="pagination">{$Page}</div>
+
+
+
+<script type="text/javascript" src="/lib/js/DateTimePicker.js"></script>
+<script type="text/javascript" src="__ROOT__/statics/js/common.js"></script>
+<!-- <script src="/lib/js/stupidtable.min.js"></script> -->
+
+<script type="text/javascript">
+$("#originalname").change(function(){
+    query($(this).val());
+    
+});
+function query(filename){
+    $.ajax({      
+            type: "GET",      
+            url: "index.php?g=travel&m=indexadmin&a=query&filename="+filename,     
+            success: function(data){
+                filldata=data.data.info;
+                $.each(filldata, function(key, val) {      
+                    $("#"+key).val(val);
+                });  
+            }  
+        });
+}
+function del(id){
+    $.ajax({      
+            type: "GET",      
+            url: "index.php?g=travel&m=indexadmin&a=del&id="+id,
+            success: function(data){
+                Wind.use("artDialog", function () {
+                    art.dialog({
+                        id: "succeed",
+                        icon: "succeed",
+                        fixed: true,
+                        lock: true,
+                        background: "#CCCCCC",
+                        opacity: 0,
+                        content: data.info,
+                        button:[
+                            {
+                                name: '完成',
+                                callback:function(){
+                                    reloadPage(window);
+                                    return true;
+                                },
+                                focus: true
+                            }
+                        ]
+                    });
+                });
+            }  
+        });
+}
+
+$(function () {
+    
+        Wind.use('validate', 'ajaxForm', 'artDialog', function () {
+            //javascript
+            var form = $('form.J_ajaxForms');
+            //ie处理placeholder提交问题
+            if ($.browser.msie) {
+                form.find('[placeholder]').each(function () {
+                    var input = $(this);
+                    if (input.val() == input.attr('placeholder')) {
+                        input.val('');
+                    }
+                });
+            }
+            //表单验证开始
+            form.validate({
+                //是否在获取焦点时验证
+                onfocusout:false,
+                //是否在敲击键盘时验证
+                onkeyup:false,
+                //当鼠标掉级时验证
+                onclick: false,
+                //验证错误
+                showErrors: function (errorMap, errorArr) {
+                    //errorMap {'name':'错误信息'}
+                    //errorArr [{'message':'错误信息',element:({})}]
+                    try{
+                        $(errorArr[0].element).focus();
+                        art.dialog({
+                            id:'error',
+                            icon: 'error',
+                            lock: true,
+                            fixed: true,
+                            background:"#CCCCCC",
+                            opacity:0,
+                            content: errorArr[0].message,
+                            cancelVal: '确定',
+                            cancel: function(){
+                                $(errorArr[0].element).focus();
+                            }
+                        });
+                    }catch(err){
+                    }
+                },
+                //验证规则
+                rules: {'photoname':{required:1},'title':{required:1}},
+                //验证未通过提示消息
+                messages: {'photoname':{required:'内容不能为空'},'title':{required:'内容不能为空'}},
+                //给未通过验证的元素加效果,闪烁等
+                highlight: false,
+                //是否在获取焦点时验证
+                onfocusout: false,
+                //验证通过，提交表单
+                submitHandler: function (forms) {
+                    $(forms).ajaxSubmit({
+                        url: form.attr('action'), //按钮上是否自定义提交地址(多按钮情况)
+                        dataType: 'json',
+                        beforeSubmit: function (arr, $form, options) {
+                            
+                        },
+                        success: function (data, statusText, xhr, $form) {
+                            if(data.status){
+                                setCookie("refersh_time",1);
+                                //添加成功
+                                Wind.use("artDialog", function () {
+                                    art.dialog({
+                                        id: "succeed",
+                                        icon: "succeed",
+                                        fixed: true,
+                                        lock: true,
+                                        background: "#CCCCCC",
+                                        opacity: 0,
+                                        content: data.info,
+                                        button:[
+                                            {
+                                                name: '完成',
+                                                callback:function(){
+                                                    reloadPage(window);
+                                                    return true;
+                                                },
+                                                focus: true
+                                            }
+                                        ]
+                                    });
+                                });
+                            }else{
+                                isalert(data.info);
+                            }
+                        }
+                    });
+                }
+            });
+
+        });
+    ////-------------------------
+    query($("#originalname").val());
+});
+
+</script>

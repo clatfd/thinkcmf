@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Info windows</title>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+
+<script src='/lib/js/jquery.js'></script>
+<script type="text/javascript">
+
+  var sContent = "<div id='content'><div id='siteNotice'><a href='index.php?g=travel&m=index&a=photo&year=@imgyear@' target='_blank'><h4 style='margin:0 0 5px 0;padding:0.2em 0'>@title@</h4></a><a href='@imgsrc@' target='_blank'><img style='float:right;margin:4px' id='imgDemo' src='@imgsrc@' height='104' title='@title@'/></a><p style='margin:0;line-height:1.5;font-size:13px;text-indent:2em'>@imgdate@<br/>@imgcomment@</p></div>";
+  var map;
+  var content;
+  var pos=Array();
+  var marker=Array();
+  var infowindow=Array();
+  var regtitle=new RegExp("@title@","g");
+  var regcomment=new RegExp("@imgcomment@","g");
+  var regimg=new RegExp("@imgsrc@","g");
+  var regdate=new RegExp("@imgdate@","g");
+  var regyear=new RegExp("@imgyear@","g");
+  var data_info;
+function initMap() {
+  map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 4,
+    center: {lat: 19.325, lng: 118.070}
+  });
+  $.ajax({      
+        url: "index.php?g=travel&m=index&a=query",     
+        success: function(msg){
+          data_info=JSON.parse(msg);
+          
+          for(var i=0;i<data_info.length;i++){
+            pos[i] = {lat: parseFloat(data_info[i][1]), lng: parseFloat(data_info[i][0])};
+            
+            contentString=sContent.replace(regtitle,data_info[i][2]);  
+            contentString=contentString.replace(regcomment,data_info[i][3]);  
+            contentString=contentString.replace(regimg,"tpl/simplebootx/Public/images/photo/"+data_info[i][4]);  
+            contentString=contentString.replace(regdate,data_info[i][5]);  
+            contentString=contentString.replace(regyear,data_info[i][5].slice(0,4));  
+            infowindow[i] = new google.maps.InfoWindow({
+              content: contentString
+            });
+
+            marker[i] = new google.maps.Marker({
+              position: pos[i],
+              map: map,
+              animation: google.maps.Animation.DROP,
+              title: data_info[i][2]
+            });
+            marker[i].index=i;
+            marker[i].addListener('click', function() {
+              infowindow[this.index].open(map, marker[this.index]);
+            });
+          }
+          
+      }  
+    });
+}
+
+    </script>
+    <script async defer
+        src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAirLsk1ld_ToOEiV6DrFZVCG1rC5Xa3C0&signed_in=false&callback=initMap"></script>
+  </body>
+</html>

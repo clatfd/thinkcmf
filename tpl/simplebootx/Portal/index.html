@@ -72,12 +72,12 @@ $home_slides=empty($home_slides)?$default_home_slides:$home_slides;
 		</div>
 		<div class="span4">
 			 <h2 class="font-large nospace"><i class="fa fa-calendar"></i><a href="index.php?g=todo&m=index&a=index"> schedule 日程</a></h2>
-             <p>See what is on my <a href="index.php?m=page&a=index&id=21">calendar</a> Or <a href="index.php?g=todo&m=index&a=index">what to do</a> recently</p>
+             <p>See what is on my <a href="index.php?g=calendar&m=index&a=index">Calendar</a> Or <a href="index.php?g=todo&m=index&a=index">What to do</a> recently</p>
              <p>Register and Login required</p>
 		</div>
 		<div class="span4">
 			  <h2 class="font-large nospace"><i class="fa fa-bar-chart"></i><a href="index.php?g=portal&m=page&a=index&id=15"> Statistic 数据统计</a></h2>
-              <p>Android based apps updating Statistics about <a href="index.php?g=sensor&m=index&a=index70">Body weight</a> and <a href="index.php?m=page&a=index&id=15">Sports activities</a></p>
+              <p>Android apps updating Statistics about <a href="index.php?g=sensor&m=index&a=index70">Body weight</a>, <a href="index.php?g=sensor&m=index&a=index&sn=mi_sw">Sleep time</a> and <a href="index.php?m=page&a=index&id=15">Sports activities</a></p>
               <p>Chen Li <a href="index.php?g=profile&m=index&a=index#num">in numbers</a></p>
 		</div>
 	</div>
@@ -95,12 +95,12 @@ $home_slides=empty($home_slides)?$default_home_slides:$home_slides;
 		<div class="span4">
 			 <h2 class="font-large nospace"><i class="fa fa-cogs"></i><a href="index.php?m=list&a=index&id=13"> Projects 项目</a></h2>
              <p><a href="index.php?m=list&a=index&id=14">Software</a> and <a href="index.php?m=list&a=index&id=15">Hardware</a></p>
+             <p>Link to: <a href="/wd">Wordlist</a>, <a href="/sim">Sim</a></p>
 		</div>
 		<div class="span4">
 			  <h2 class="font-large nospace"><i class="fa fa-cubes"></i><a href="index.php?m=page&a=index&id=27"> Research 实验室</a></h2>
-              <p><a href="index.php?m=list&a=index&id=14">Imaging</p>
-              <p><a href="index.php?m=list&amp;a=index&amp;id=19">Biomedical</a></p>
-			  <p><a href="index.php?m=list&amp;a=index&amp;id=23">Others</a></p>
+              <p><a href="index.php?m=list&a=index&id=14">Imaging</a>, <a href="index.php?m=list&amp;a=index&amp;id=19">Biomedical</a>, <a href="index.php?m=list&amp;a=index&amp;id=23">Others</a></p>
+              <p><a href="index.php?m=list&a=index&id=26">Papers</a></p>
 		</div>
 	</div>
 
@@ -123,7 +123,7 @@ $home_slides=empty($home_slides)?$default_home_slides:$home_slides;
 		<h3 class="text-center"><a href="{:U('portal/page/index',array('id'=>63))}" >Recent Posts</a></h3>
 	</div>
 	<php>
-		$lastnews=sp_sql_posts("cid:$portal_last_post;field:post_title,post_excerpt,tid,smeta;order:tid desc;limit:4;"); 
+		$lastnews=sp_sql_posts("cid:$portal_last_post;field:post_title,post_excerpt,tid,smeta,post_keywords,term_id;order:tid desc;limit:4;term_name"); 
 	</php>
 	<div class="row">
 		<foreach name="lastnews" item="vo">
@@ -144,6 +144,13 @@ $home_slides=empty($home_slides)?$default_home_slides:$home_slides;
 					<hr>
 				</div>
 				<div class="body">
+					<a href="{:leuu('list/index',array('id'=>$vo['term_id']))}" target="_blank"> <span class="label label-success">{$vo['term_name']}</span></a>
+					<php>$article_keywords=explode(',',$vo['post_keywords']);</php>
+					<foreach name="article_keywords" item="kws">
+					<a href="{:leuu('search/index',array('keyword'=>$kws))}" target="_blank"><span class="label label-warning">{$kws}</span><span>&nbsp;</span></a>
+					</foreach>
+				</div>
+				<div class="body">
 					<p><a href="{:leuu('article/index',array('id'=>$vo['tid']))}">{:msubstr($vo['post_excerpt'],0,32)}</a></p>
 				</div>
 			</div>
@@ -159,7 +166,7 @@ $home_slides=empty($home_slides)?$default_home_slides:$home_slides;
 		<h3 class="text-center"><a href="{:U('portal/page/index',array('id'=>62))}" >Recommended</a></h3>
 	</div>
 	<php>
-		$lastnews=sp_sql_posts("cid:$portal_hot_articles;field:post_title,post_excerpt,tid,smeta;order:post_date desc;limit:4;",array('recommended'=>1)); 
+		$lastnews=sp_sql_posts("cid:$portal_hot_articles;field:post_title,post_excerpt,tid,smeta,post_keywords,term_id;order:post_date desc;limit:4;term_name",array('recommended'=>1)); 
 	</php>
 	<div class="row">
 		<foreach name="lastnews" item="vo">
@@ -178,6 +185,13 @@ $home_slides=empty($home_slides)?$default_home_slides:$home_slides;
 					</div>
 					<h3><a href="{:leuu('article/index',array('id'=>$vo['tid']))}">{$vo.post_title}</a></h3>
 					<hr>
+				</div>
+				<div class="body">
+					<a href="{:leuu('list/index',array('id'=>$vo['term_id']))}" target="_blank"> <span class="label label-success">{$vo['term_name']}</span></a>
+					<php>$article_keywords=explode(',',$vo['post_keywords']);</php>
+					<foreach name="article_keywords" item="kws">
+					<a href="{:leuu('search/index',array('keyword'=>$kws))}" target="_blank"><span class="label label-warning">{$kws}</span><span>&nbsp;</span></a>
+					</foreach>
 				</div>
 				<div class="body">
 					<p><a href="{:leuu('article/index',array('id'=>$vo['tid']))}">{:msubstr($vo['post_excerpt'],0,32)}</a></p>

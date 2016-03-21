@@ -1,0 +1,334 @@
+﻿<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+
+  <title>Year Review in {$year}</title>
+  <!-- main css file -->
+  <link rel="stylesheet" href="tpl/simplebootx/Profile/css/style.css">
+
+  <!-- you can change css skin here -->
+  <link rel="stylesheet" id="skin_css" href="tpl/simplebootx/Profile/css/skins/default.css">
+
+  <!-- contains styles not supported by IE 6, 7, 8 -->
+  <!--[if gt IE 8]><!-->
+  <!-- css3 hover effects -->
+  <link rel="stylesheet" media="screen" href="tpl/simplebootx/Profile/css/effects/all.css">
+  <!-- for screens 768px or less in width -->
+  <link rel="stylesheet" type="text/css" media="screen" href="tpl/simplebootx/Profile/css/responsive.css" />
+  <!-- iPhone specific -->
+  <link rel="stylesheet" type="text/css" media="screen and (min-device-width : 320px) and (max-device-width: 480px)" href="tpl/simplebootx/Profile/css/mobile.css" />
+  <!-- <![endif]-->
+
+  <!-- printing rules -->
+  <link rel="stylesheet" media="print" href="tpl/simplebootx/Profile/css/print.css">
+
+  <!-- Fancybox Plugin -->
+  <link rel="stylesheet" href="tpl/simplebootx/Profile/js/libs/fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen">
+
+  <!--link rel="shortcut icon" href="favicon.gif" /-->
+
+
+  <!-- modify this file to add any changes. This will make update process much easier -->
+  <link rel="stylesheet" href="tpl/simplebootx/Profile/css/user.css">
+
+  <link href="__TMPL__Public/css/slippry/slippry.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+  <div id="container" style="width:100%">
+
+    <!-- header block -->
+
+    <header class="wrap-header">
+      <article>
+
+        <div class="wrap-ribbons">
+          <a class="ribbon" href="index.php?g=profile&m=index&a=index" target="_blank">View <em>Profile</em></a>
+        </div>
+
+        <div class="wrap-title">
+          <h1>Year Review of <span>Li Chen</span></h1>
+          <p>in {$year}</p>
+          <p>cl@fd</p>
+        </div>
+
+        <div class="social-services">
+          <!-- social services: tweet / google +1 / facebook like -->
+          <div class="wrap-g-plusone"><div class="g-plusone" data-size="medium"></div></div>
+          <div class="wrap-fb-like">
+          </div>
+        </div>
+
+      </article>
+    </header>
+	<!-- <div class="copyrights"> <a href="#"  title="#">#</a></div> -->
+    <!-- information block -->
+
+    <div class="row row-academic">
+      <article>
+        <h2 class="section-title" name="num" id="num"><a href="#">Li Chen In numbers</a></h2>
+        <div class="clearfix"></div>
+
+        <h3>Physical Record in {$year}</h3>
+        <div class="section-about-numbers">
+          <div class="col-md-3 col-sm-6 col-xs-6 col-item">
+            <div class="badge-content"><span class="badge-large">180</span><span class="badge-small">cm<br/>Height</span>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-6 col-item">
+            <div class="badge-content"><span class="badge-large">{$data.weight}</span><span class="badge-small">Kg<br/><a href="index.php?g=sensor&m=index&a=index&sn=70" target="_blank">Body Weight</a><br/>Year Average</span>
+            </div>
+          </div>
+          <div class="clearfix visible-sm"></div>
+          <div class="col-md-3 col-sm-6 col-xs-6 col-item">
+            <div class="badge-content"><span class="badge-large">{$data.bmi}</span><span class="badge-small"><a href="https://en.wikipedia.org/wiki/Body_mass_index" target="_blank">BMI</a><br/>{$data.bmitag}</span>
+            </div>
+          </div>
+        </div>  
+        <div class="clearfix"></div>
+
+        <h3>Academic Record in {$year}</h3>
+        <div class="section-about-numbers">
+          <div class="col-md-3 col-sm-6 col-xs-6 col-item">
+            <div class="badge-content"><span class="badge-large">{$data.GPA}</span><span class="badge-small">GPA:<br>in 2014-15 academic year</span>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-6 col-item">
+            <div class="badge-content"><span class="badge-large">{$data.sendemail}</span><span class="badge-small">Sent Email</span>
+            </div>
+          </div>
+          <div class="clearfix visible-sm"></div>
+          <div class="col-md-3 col-sm-6 col-xs-6 col-item">
+            <div class="badge-content"><span class="badge-large">{$data.recvemail}</span><span class="badge-small">Received Email</span>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-6 col-item">
+            <div class="badge-content"><span class="badge-large">{$data.librarycount}</span><span class="badge-small">Times<br/>Went Library</span>
+            </div>
+          </div>
+        
+          <div class="clearfix"></div>
+
+          <div class="col-md-3 col-sm-6 col-xs-6 col-item">
+            <div class="badge-content"><span class="badge-large">{$data.borrowbook}</span><span class="badge-small">Times<br/>Borrowed Books</span>
+            </div>
+          </div>
+          
+          <div class="clearfix visible-sm"></div>
+          <div class="col-md-3 col-sm-6 col-xs-6 col-item">
+            <div class="badge-content"><span class="badge-large">{$data.wordtransaction}</span><span class="badge-small"><a href="http://wd.clatfd.cn">Wordlist</a> Transactions</span>
+            </div>
+          </div>
+        </div> 
+        <div class="clearfix"></div> 
+        
+        <h3>Research Record in {$year}</h3>
+        <div class="section-about-numbers">
+          <div class="col-md-3 col-sm-6 col-xs-6 col-item">
+            <div class="badge-content"><span class="badge-large">{$data.pjcount}</span><span class="badge-small"><a href="index.php?g=profile&m=project&a=index">Projects</a> Finished</span>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-6 col-item">
+            <div class="badge-content"><span class="badge-large">{$data.papercount}</span><span class="badge-small"><a href="index.php?m=list&a=index&id=26">Papers</a> Published</span>
+            </div>
+          </div>
+        </div>
+        <div class="clearfix"></div> 
+        
+        <h3>Sports Record in {$year}</h3>
+        <div class="section-about-numbers">
+          <div class="col-md-3 col-sm-6 col-xs-6 col-item">
+            <div class="badge-content"><span class="badge-large">{$data['rundist']+113}</span><span class="badge-small">Km<br/> <a href="index.php?g=sensor&m=index&a=index&sn=2000" target="_blank">Run Distance</a><br/></span>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-6 col-item">
+            <div class="badge-content"><span class="badge-large">{$data.midata.avgstp}</span><span class="badge-small"> <a href="index.php?g=sensor&m=index&a=index&sn=95" target="_blank">Steps Per Day</a><br/>Year Average</span>
+            </div>
+          </div>
+          <div class="clearfix visible-sm"></div>
+          <div class="col-md-3 col-sm-6 col-xs-6 col-item">
+            <div class="badge-content"><span class="badge-large">{$data['gymcount']+15}</span><span class="badge-small"> <a href="index.php?g=sensor&m=index&a=index&sn=95" target="_blank">Gym Count</a><br/></span>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-6 col-item">
+            <div class="badge-content"><span class="badge-large">{$data.pushupcount}</span><span class="badge-small"> <a href="index.php?g=sensor&m=index&a=index&sn=75" target="_blank">Pushup Count</a><br/></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <h3>Sleep Record in {$year} (Year Average)</h3>
+        <div class="section-about-numbers">
+          <div class="col-md-3 col-sm-6 col-xs-6 col-item">
+            <div class="badge-content"><span class="badge-large">{$data.midata.avglt}</span><span class="badge-small">Hours<br/><a href="index.php?g=sensor&m=index&a=index&sn=mi_slp" target="_blank">Sleep duration</a></span>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-6 col-item">
+            <div class="badge-content"><span class="badge-large">{$data.midata.avgdp}</span><span class="badge-small">Hours<br/><a href="index.php?g=sensor&m=index&a=index&sn=mi_slp" target="_blank">Deep Sleep duration</a></span>
+            </div>
+          </div>
+          <div class="clearfix visible-sm"></div>
+          <div class="col-md-3 col-sm-6 col-xs-6 col-item">
+            <div class="badge-content"><span class="badge-large">{$data.midata.avgslp}</span><span class="badge-small">Goto <a href="index.php?g=sensor&m=index&a=index&sn=mi_sw" target="_blank">Sleep</a> at</span>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-6 col-item">
+            <div class="badge-content"><span class="badge-large">{$data.midata.avgwak}</span><span class="badge-small"><a href="index.php?g=sensor&m=index&a=index&sn=mi_sw" target="_blank">Wake</a> up at</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <h3>Hobbies Record in {$year}</h3>
+        <div class="section-about-numbers">
+          <div class="col-md-3 col-sm-6 col-xs-6 col-item">
+            <div class="badge-content"><span class="badge-large">{$data.moviecount}</span><span class="badge-small">Movies<br>watched</span>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-6 col-item">
+            <div class="badge-content"><span class="badge-large">{$data.travelcount}</span><span class="badge-small">Travels</span>
+            </div>
+          </div>
+          <div class="clearfix visible-sm"></div>
+          <div class="col-md-3 col-sm-6 col-xs-6 col-item">
+            <div class="badge-content"><span class="badge-large">{$data.readstory.count}</span><span class="badge-small">Read stories:{$data.readstory.storyname}</span>
+            </div>
+          </div>
+        </div>
+
+      </article>
+    </div>
+
+
+    <div class="row row-photo">
+      <article>
+
+        <h2 class="section-title"><a href="#">Memorable Photos in {$year}</a></h2>
+        <div id="memphoto" class="portfolio">
+        <div class="grid-sizer" style="float: left;width: 31%;margin: 0 2% 2% 0;border: 1px solid #ddd;"></div>
+        <foreach name="memphoto" item="vo">
+          <li class="effect2">
+            <div class="border">
+              <img src="tpl/simplebootx/Public/images/photo/{$vo.photoname}" alt="" />
+              <div class="mask">
+                <h2><a href="index.php?g=travel&m=index&a=photo&year={$year}" class="view" target="_blank">{$vo.title}</a></h2>
+                <p>Captured on {$vo.capturedt}</p>
+                <!-- <img src="tpl/simplebootx/Public/images/spotlight-poi.png" width="5px" /> -->
+                <if condition="$vo.lat neq ''">
+                <p>GPS location: <a href="https://www.google.com/maps/search/{$vo.lat},{$vo.lon}">{$vo.lat}, {$vo.lon}</a></p>
+                </if>
+                <if condition="$vo.alt neq 0"><p>Altitude: {$vo.alt}m</p></if>
+                <if condition="$vo.cam neq 'Unknown'"><p>Camera: {$vo.cam} 
+                <if condition="$vo.focal neq 0">Focal:{$vo.focal} </if>
+                <if condition="$vo.iso neq 0">ISO:{$vo.iso}</if>
+                <if condition="$vo.shutter neq 0">Shutter:{$vo.shutter}</if>
+                </p>
+                </if>
+                <p>Description: {$vo.comment}</p>
+                <!-- <a href="#" class="view" target="_blank">visit</a> -->
+                <div class="memphotomore"><a href="index.php?g=travel&m=index&a=photo&year={$year}" target="_blank">More</a></div>
+              </div>
+            </div>
+          </li>
+        </foreach>
+        </ul>
+
+      </article>
+    </div>
+
+
+    <div class="row row-wel">
+      <article class="markup">
+        <h2 class="section-title">Year Summary</h2>
+        <p>Year 2015 is remarkable in my life.</p>
+        <p>In January, the day after my last exam, I arrived in Singapore, a beautiful city to start my exchange semester. Life there was completely new, I suddenly fell into agony of memorizing names of new friends again. Having been adapted to busy life in 2014, the peace and comfort in Singapore was a strange experience to me.</p>
+        <p>In February, we took part in Mathematical contest in modeling, and last day of the contest was the first time worked overnight. We were still amazed at our high efficiency and strong passion. During recess week, we travelled to Thailand. On the river of Mae Klong River, I suddenly got released from the stressful life, and enjoyed every moment of exchange semester since then. However, during the trip, the bad news came that my grandpa passed away. It never occurred to me that the farewell two months ago was the separation between life and death.</p>
+        <p>March was the dark month. By 15th, all my 3 submitted papers were rejected. On 20th, my first GRE failed. On 23rd, previous Singapore premier Lee Kuan Yew died, by the same disease as my grandpa. And I strangely became addicted to sleep, maybe sleep is a cure to pain.</p>
+        <p>April was exam month, but to us, travel month. We went Malacca and Sri Lanka before and after final exam, and we marveled at beautiful scenery and unique culture. Besides, I started to make my personal website and became obsessed with it.</p>
+        <p>May meant farewell to NUS and Singapore. Despite having lived four months there, I never felt enough. Returning to Fudan, everything was familiar but strange, a very special feeling. </p>
+        <p>In June, I discussed future plans of research with Shang, we started two new papers and resubmitted previous ones. I started caring about graduate application. In the same time, I prepared GRE again. But unfortunately, on the day I took exam, Nanjing suffered unrecorded heavy rain, my exam suffered again.</p>
+        <p>Hardly had I come out of the shadow of GRE, I took TOEFL in July and it was a success. Since then, everything turned in favored to me. My first paper was accepted on 27th, and the following papers all went well.</p>
+        <p>In August, I contacted Guo and started my capstone research in Biomedical Imaging. The summer vacation was spent on GRE, and a few research projects. In that period of time I became stressful again, until finally I was out of breath finding I got 160 verbal on 29th.</p>
+        <p>September was a month of puzzle. I found loss after the tiresome GRE. Previous contact with future advisors were of little help. I was at a loss seeing so many graduate schools and doubted my ability of being admitted. I felt knocked down by biomedical imaging. The structure light project was complicated and was easy to drive me crazy.</p>
+        <p>It came to October and I started to write my SOP, and revised and revised for many times, finding it was really hard to present a complete me to others in a thousand words. But I was certain website was a nice supplement.</p>
+        <p>November was application month. I finally chose my final 20 schools after careful screening and comparison. The SOP and CV finally met my satisfaction, it was a strange feeling when clicking on submit button for first school.</p>
+        <p>In December, I finally finished all online application and suddenly found the approaching final exam. I felt sick to Maoism, it was not happy days, but it was senior years :-)</p>
+      </article>
+    </div>
+
+    <div class="row row-wel">
+      <article class="markup">
+        <h2 class="section-title">Year Remark</h2>
+        <p>I think year 2015 was high in its entropy and I grew a lot in this year.</p>
+        <p>First of all, there were so many Firsts: going abroad, publishing a paper, achieving all A+ in exchange semester, working overnight, going to bar...</p>
+        <p>The experience was abundant. When I left Shanghai in January, my passport was blank. When I returned, it was full of colorful stamps. Diverse culture, fantastic scenery and different people broadened my eyesight and enriched my life experience.</p>
+        <p>I had learned life was not straightforward. In 2015, I felt up and downs, like riding on a roller coaster, but I had learned to be optimistic and tried to cultivate my patience to wait the impending success.</p>
+        <p>After the busy 2014 and re-orienting 2015, I felt more capable of switching my life mode. I figured out I should switch to the correct mode and enjoy every moment. Relax was relax and work was work. I am trying to deal the balance between work and relax, and between ration and emotion.</p>
+        <p>I found out I never lost passion or creativity, even under adversity or longtime relax. Soon after exchange, I worked on new projects and proposed new algorithms. And the capstone research and website enabled me to find out my adaptability to cope with various problems and courage to explore new areas.</p>
+        <p>Life in 2015 was remarkable. I am thankful for the exchange semester, providing me with many recourses to see much in this world, and thankful for every difficulty and hardship I had met to be a better me and find out my hidden potential.</p>
+      </article>
+    </div>
+
+    <tc_include file="Profile:footlink" />
+
+  </div>
+
+
+
+  <div id="resize">Resize</div>
+
+<tc_include file="Public:scripts"/>
+
+  <script src="tpl/simplebootx/Profile/js/libs/modernizr-2.0.6.min.js"></script>
+
+  <!-- jQuery 1.6.2 -->
+  <script>window.jQuery || document.write('<script src="tpl/simplebootx/Profile/js/libs/jquery-1.6.2.min.js"><\/script>')</script>
+
+  <!-- jQuery Fancybox plugin === http://www.cssmoban.com/ -->
+  <script src="tpl/simplebootx/Profile/js/libs/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+
+  <script defer src="tpl/simplebootx/Profile/js/plugins.js"></script>
+  <script defer src="tpl/simplebootx/Profile/js/script.js"></script>
+
+  <script defer src="tpl/simplebootx/Profile/customize/customize.js"></script>
+  <script src="__TMPL__Public/js/slippry.min.js"></script>
+  <script src="__TMPL__Public/js/imagesloaded.pkgd.min.js"></script>
+    <script src="__TMPL__Public/js/masonry.pkgd.min.js"></script>
+  <script>
+  var $container=$('#memphoto').masonry({
+      columnWidth: '.grid-sizer',
+      itemSelector: '.effect2'
+    });
+  // layout Masonry again after all images have loaded
+  $container.imagesLoaded( function() {
+    $container.masonry();
+  });
+  
+  </script>
+<script>
+$(document).ready(function(){
+  $("#homeslider").slippry({
+    transition: 'fade',
+    useCSS: true,
+    captions: false,
+    speed: 1000,
+    pause: 5000,
+    auto: true,
+    preload: 'visible'
+  });
+
+});
+</script>
+
+</body>
+</html>

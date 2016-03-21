@@ -457,6 +457,7 @@ function _sp_get_submenu_datas($id){
 	$nav_obj= M("Nav");
 	$condition['label'] = $id;
 	$navsitem= $nav_obj->where($condition)->find();
+	//var_dump($navsitem);
 	$navsitemid=$navsitem['id'];
 	$navs= $nav_obj->where("parentid=$navsitemid and status=1")->order(array("listorder" => "ASC"))->select();
 	foreach ($navs as $key=>$nav){

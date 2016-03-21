@@ -2,14 +2,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
 	<title>Sensor</title>
-    
+    <link rel="stylesheet" type="text/css" href="/thinkcmfx/tpl/simplebootx/Sensor/style.css">
 </head>
 
 <body style="text-align:center">
     <div id="canvasdiv" style="width: 95%;margin:auto">
-        <canvas id="canvas" height="450" width="800"></canvas>
+        <canvas id="canvas" height="650" width="800"></canvas>
     </div>
-    
     Limit to recent <input id="num" type="text" maxlength="3" size="3" value="15"/>items
     <button onclick="query()">ok</button>
     <br/>
@@ -17,29 +16,32 @@
       <option value ="75" <if condition="$sn==75">selected</if>>Pushup</option>
       <option value ="70" <if condition="$sn==70">selected</if> >Body weight</option>
       <option value ="20" <if condition="$sn==20">selected</if> >Pull up</option>
-      
+      <option value ="2000" <if condition="$sn==2000">selected</if> >Run</option>
+      <option value ="mi_slp" <if condition="$sn eq 'mi_slp'">selected</if>>Sleep duration</option>
+      <option value ="mi_stp" <if condition="$sn eq 'mi_stp'">selected</if> >Steps</option>
+      <option value ="mi_sw" <if condition="$sn eq 'mi_sw'">selected</if> >Sleep Wake</option>
     </select>
     <!-- &nbsp; -->
 <script>
     var canvas = document.getElementById("canvas");
     var context = canvas.getContext("2d");
-    context.font = "50px Courier New";
-    context.fillStyle = "blue";
-    context.fillText("Loading", 250, 150);
+    context.font = "30px Arial";
+    context.fillStyle = "#428bca";
+    context.fillText("Loading", 150, 150);
 </script>
 <script src="__ROOT__/statics/js/jquery.js"></script>
-<script src="/thinkcmfx1.5.0/tpl/simplebootx/Sensor/Chart.min.js"></script>
+<script src="/thinkcmfx/tpl/simplebootx/Sensor/Chart.min.js"></script>
 <script>
+        var phpdata;
 function query(){
     var canvas = document.getElementById("canvas");
     var context = canvas.getContext("2d");
-    context.font = "50px Courier New";
-    context.fillStyle = "blue";
-    context.fillText("Loading", 250, 150);
+    context.font = "30px Arial";
+    context.fillStyle = "#428bca";
+    context.fillText("Loading", 150, 150);
 
     //context.clearRect(0, 0, canvas.width, canvas.height);
-        var phpdata;
-        var sensorno={$sn};
+        var sensorno="{$sn}";
         $(function() {
             var num=$("#num").val();
             $.getJSON("http://104.131.150.53/thinkcmfx/index.php?g=sensor&m=index&a=getdata&sensorno="+sensorno+"&num="+num+"&callback=?",
@@ -52,24 +54,35 @@ function query(){
                     var context = canvas.getContext("2d");
                     //phpdata=JSON.parse(r);
                     //data[0].values.push(phpdata);
+
                     var barChartData = {
                         labels :phpdata['time'],
                         datasets : [
                             {
+                                label: "{$legend}",
                                 fillColor : "rgba(220,220,220,0.5)",
                                 strokeColor : "rgba(220,220,220,0.8)",
                                 highlightFill: "rgba(220,220,220,0.75)",
                                 highlightStroke: "rgba(220,220,220,1)",
                                 data : phpdata['data']
                             }
-                        ]
+                        ]   
 
                     }
-
+                  
                     var ctx = document.getElementById("canvas").getContext("2d");
                     window.myBar = new Chart(ctx).{$type}(barChartData, {
-                        responsive : true
+                        responsive : true,
+                        /*
+                        datasetStroke: false,
+                        scaleShowLabels: true,
+                        scaleTimeFormat: "HH:MM",
+                        scaleDateTimeFormat: "HH:MM",
+                        scaleType: "date",
+                        scaleLabel: "<%= new Date(value).getHours()+':'+new Date(value).getMinutes()%>",
+                        */
                     });
+                    $("#canvas").after(myBar.generateLegend());
                 }
 			);	
 			});
@@ -79,6 +92,18 @@ query();
 $("#sensorno").change(function(){
     parent.location.href="index.php?g=sensor&m=index&a=index&sn="+$(this).val();
 })
+function formatdate(data){
+    rdata=Array();
+    for (var i = data.length - 1; i >= 0; i--) {
+        var obj=Object();
+        obj.x=new Date(data[i].x);
+        obj.y=new Date(data[i].y);
+        rdata.push(obj);
+    };
+    return rdata;
+}
+     
+         
 </script>
 
 </body>

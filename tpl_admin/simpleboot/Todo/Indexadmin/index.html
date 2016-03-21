@@ -57,6 +57,7 @@
                                 <option value="3">None</option>
                             </select>
                         </form>
+                        <button id="formadd" class="addnewtodo-btn ui-btn ui-shadow ui-corner-all" onclick="addnewtodo('{$listname}')">Add</button>
                         
                     </li>
                     <foreach name="listi['todos']" item="vo">
@@ -156,6 +157,8 @@ $("input[name=deadline]").datepicker( "option", "dateFormat","yy-mm-dd","showAni
 $(".editbtn").click(function(){
     targetform=$(this).parent().parent().find(".addform");
     if(targetform.css("display")=="none"){
+        $(".addform").css("display","none");
+        $(".editbtn").text("Edit");
         targetform.css("display","inline-block");
         $(this).removeClass("ui-icon-edit").addClass("ui-icon-check");
         $(this).text("Done");
@@ -164,7 +167,7 @@ $(".editbtn").click(function(){
     else{
         $(".addform").css("display","none");
         $(this).removeClass("ui-icon-check").addClass("ui-icon-edit");
-         $(this).text("Edit");
+        $(this).text("Edit");
     }
 });
 //collapse
@@ -179,15 +182,8 @@ $(".collapsehead").click(function(){
     }
 });
 
-$("form").change(function(){
-    if(!$(this).parent().find("button").length){
-        listname=$(this).parent().parent().attr("id");
-        $(this).after('<button id="formadd" class="addnewtodo-btn ui-btn ui-shadow ui-corner-all" onclick="addnewtodo()">Add</button>')
-    }
-});
-
-function addnewtodo(){
-    targetform=$("button.addnewtodo-btn").parent().find("form");
+function addnewtodo(targetname){
+    targetform=$("#div-"+targetname+"-todo").find("form");
     // par=targetform.serialize();
     groupname=targetform.find("input[name=groupname]").val();
     title=targetform.find("input[name=title]").val();

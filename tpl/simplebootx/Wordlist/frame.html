@@ -1,0 +1,373 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>{$list}_{$gro}_{$idlo}~{$idup}</title>
+<link rel="stylesheet" type="text/css" href="/H-wordlist/css/css.css">
+<link rel="stylesheet" type="text/css" href="/lib/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/lib/css/bootstrap-theme.min.css">
+<link rel="stylesheet" type="text/css" href="/lib/css/toastr.min.css">
+<link rel="stylesheet" type="text/css" href="/lib/css/font-awesome.min.css">
+<!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+
+
+
+</head>
+
+<body onkeyup="whichButton(event)">
+<script type="text/javascript">
+//initialforwdlist();
+
+function whichButton(event)
+{	
+	if(event.ctrlKey){
+		
+	}
+	else if(event.keyCode==83)
+	{
+		//alert("s");
+		$("#showall").click();
+	}
+	else if(event.keyCode==82)
+	{
+		//alert("r");
+		$("#rev").click();
+	}
+	else if(event.keyCode==71)
+	{
+		//alert("g");
+		$("#gotoexam").click();
+	}
+	else if(event.keyCode==85)
+	{
+		//alert("u");
+		if($("#undo").attr("disabled")!="disabled")
+			$("#undo").click();
+	}		
+	else if(event.keyCode==81)
+	{
+		//alert("q");
+		$("button[data-sort=random]").click()
+	}	
+	else if(event.keyCode==13)
+	{
+		//alert("Enter");
+		$("#formsubmit").click();
+	}
+	else if(event.keyCode==70)
+	{
+		//alert("f");
+		$("#buttonchitoeng").click();
+	}	
+	else if(event.keyCode==76)
+	{
+		//alert("l");
+		$("#buttonlastrevword").click();
+	}	
+	else if(event.keyCode==78)
+	{
+		//alert("n");
+		$("#buttonlooknextword").click();
+	}
+	else if(event.keyCode==84)
+	{
+		//alert("t");
+		$("#showstatis").click();
+	}
+	else if(event.keyCode==77){
+		//alert("m");
+		$("#gotomobile").click();
+	}
+	else if(event.keyCode==87){
+		//alert("w");
+		$("#showUpdateWordBtn").click();
+	}
+	
+//	else{alert(event.keyCode)}
+
+	
+}
+</script>
+
+<div class="control-bar row">
+	<div class="cl-xs-8 col-md-5">
+		<label>Filter:</label>
+		<button class="filter controlbtn" data-filter="all">All</button>
+		<button class="filter controlbtn" data-filter=".category-common">Com</button>
+		<button class="filter controlbtn" data-filter=".category-imp">Imp</button>
+		<button class="filter controlbtn" data-filter=".category-mfl">Mfl</button>
+		<button class="filter controlbtn" data-filter=".category-inv">Inv</button>
+	</div>
+	<div class="cl-xs-4 col-md-5" onclick="mdclearfix()">
+		<label>Sort:</label>
+		<button class="sort controlbtn" data-sort="random">Random</button>
+		<button class="sort controlbtn" data-sort="myorder:asc">Asc</button>
+		<button class="sort controlbtn" data-sort="myorder:desc">Desc</button>
+		<button class="btn banneraddbutton" onclick="changetolist()"><i class="glyphicon glyphicon-th-list"></i></button>
+		<!-- <button id="ToggleConfig" class="btn toggle-config config-open banneraddbutton"  style="padding: 0px 5px;"><i class="glyphicon glyphicon-cog"></i></button> -->
+
+		
+	</div>
+	<div class="cl-xs-12 col-md-8">
+		<form name="form1" id="form1" method="GET" action="{:U('wordlist/member/query')}">
+			<span class="banner" style="width=100px">
+				<input type="hidden" name="g" value="wordlist">
+				<input type="hidden" name="m" value="member">
+				<input type="hidden" name="a" value="query">
+				List:
+				<select id="formlist" name="list" style="width: 119px;">
+					<option  <if condition="$list eq 'imp' "> selected="selected" </if> >imp</option>
+					<option  <if condition="$list eq 'mfl' "> selected="selected" </if> >mfl</option>
+					<option  <if condition="$list eq 'ivt' "> selected="selected" </if> >ivt</option>
+					<option <if condition="$list eq 'gre3000' "> selected="selected" </if> >gre3000</option>	
+					<option <if condition="$list eq 'francais' "> selected="selected" </if> >francais</option>	
+					<!-- <option <if condition="$list eq 'gre3000r' "> selected="selected" </if> >gre3000r</option> -->
+				</select>
+				&nbsp;
+				Group:
+				<select id="formgro" name="gro">
+					<option <if condition="$gro eq 1 "> selected="selected" </if> >1</option>
+					<option <if condition="$gro eq 2 "> selected="selected" </if> >2</option>
+					<option <if condition="$gro eq 3 "> selected="selected" </if> >3</option>
+					<option <if condition="$gro eq 4 "> selected="selected" </if> >4</option>
+					<option <if condition="$gro eq 5 "> selected="selected" </if> >5</option>
+				</select>
+				&nbsp;
+				Idfrom:
+				<select name="idlo">
+					<if condition="$idlo-400 egt 0 "><option>{$idlo-400}</option></if>
+					<if condition="$idlo-300 egt 0 "><option>{$idlo-300}</option></if>
+					<if condition="$idlo-200 egt 0 "><option>{$idlo-200}</option></if>
+					<if condition="$idlo-100 egt 0 "><option>{$idlo-100}</option></if>
+					<option selected="selected">{$idlo}</option>
+					<option>{$idlo+100} </option>
+					<option>{$idlo+200} </option>
+					<option>{$idlo+300} </option>
+					<option>{$idlo+400} </option>
+				</select>
+				&nbsp;
+				to:
+				<select name="idup">
+					<if condition="$idup-400 egt 0 "><option>{$idup-400}</option></if>
+					<if condition="$idup-300 egt 0 "><option>{$idup-300}</option></if>
+					<if condition="$idup-200 egt 0 "><option>{$idup-200}</option></if>
+					<if condition="$idup-100 egt 0 "><option>{$idup-100}</option></if>
+					<option selected="selected">{$idup}</option>
+					<option>{$idup+100} </option>
+					<option>{$idup+200} </option>
+					<option>{$idup+300} </option>
+					<option>{$idup+400} </option>
+				</select>
+				&nbsp;
+				Rand:
+				<input id="randselectnum" name="rd" value="{$rd}" />
+				<input id="formsubmit" type="submit" value="Go" />
+			</span>
+		</form>
+	</div>
+	<div class="cl-xs-10 col-md-3 banner">
+		{$username} &nbsp;
+		<span id="reviewmodespan"></span>
+		<span id="chitoengmodespan"></span>
+	</div>
+	<div class="cl-xs-2 col-md-1 banner" style="padding-top: 8px;">
+		<i class="visible-xs visible-sm glyphicon glyphicon-phone"></i>
+		<i class="visible-md fa fa-android"></i>
+		<i class="visible-lg fa fa-windows"></i>
+        
+	</div>
+</div>
+
+<div id="Container" class="sandbox">
+  	<div class="row">
+		<foreach name="wdlistarr" item="item" key="itemkey">
+			<div class="col-xs-6 col-md-4 col-lg-3 mix <if condition='in_array($item[eng],$implist)'>category-imp</if><if condition='in_array($item[eng],$mfllist)'> category-mfl</if><if condition='in_array($item[eng],$ivtlist)'> category-ivt</if><if condition='!in_array($item[eng],$impalllist)'> category-common</if>" data-myorder={$item.id}>
+				<div id="wddiv{$item.id}" class="divgrid" border="0" data-source="{$item.jsondata}" chi="{$item.chi}" eng="{$item[eng]}" rec="{$item.rec}" gro="{$item.gro}">  
+					<div class="wdeng" id="wd{$item.id}" align="center" valign="middle" onclick="lookwd({$item.id},'{$item.chi}','{$item[eng]}',{$itemkey})">{$item.id}&nbsp;&nbsp;&nbsp;{$item[eng]}
+					</div>
+					<div class="recdiv" height="40" colspan="2" align="center" valign="middle"><span class="recspan">{$item.gro}&nbsp;{$item.rec}&nbsp;</span><i class="glyphicon glyphicon-book searchdict" onclick="if(event.ctrlKey) window.open('http://dict.cn/{$item[eng]}'); else searchdict('{$item[eng]}')"></i>&nbsp;<i class="glyphicon glyphicon-refresh" onclick="clickupdate('{$item[id]}')"></i>&nbsp;<i class="glyphicon glyphicon-play" onclick="findsound('{$item[eng]}')"></i>&nbsp;<i class="glyphicon glyphicon-<if condition='in_array($item[eng],$impalllist)'>star<else />plus</if> id="implabel{$item.id}" onclick="impspancontrol({$item.id})"></i><span id="impspan{$item.id}" class="impspan" style="display:none"><div class="<if condition='in_array($item[eng],$implist)'>remove<else/>add</if>imp" onclick="impadjust({$item.id},'imp')">I</div><div class="<if condition='in_array($item[eng],$mfllist) '>remove<else />add</if>mfl" onclick="impadjust({$item.id},'mfl')">M</div><div class="<if condition='in_array($item[eng],$ivtlist)'>remove<else/>add</if>ivt" onclick="impadjust({$item.id},'ivt')">V</div></span>
+					</div>
+					<div id="bt{$item.id}" height="20" class="updowndiv">
+						<span class="glyphicon glyphicon-chevron-up arrowp" onclick="postu({$item.id},'{$list}','{$item[eng]}','{$item.chi}','{$item.gro}')"></span>
+						&nbsp;&nbsp;
+						<span class="glyphicon glyphicon-remove arrowp" onclick="removeword({$item.id})"></span>
+						&nbsp;&nbsp;
+						<span class="glyphicon glyphicon-chevron-down arrowp" onclick="postd({$item.id},'{$list}','{$item[eng]}','{$item.chi}','{$item.gro}')"></span>
+					</div>
+			 	</div>  
+			</div>
+			<if condition="$itemkey % 4 eq 3 ">
+			<div class="clearfix visible-lg"></div>
+			</if>
+			<if condition="$itemkey % 3 eq 2 ">
+			<div class="clearfix visible-md"></div>
+			</if>
+			<if condition="$itemkey % 2 eq 1 ">
+			<div class="clearfix visible-sm"></div>
+			</if>
+		</foreach>
+	</div>
+</div>
+<p class="menu">
+  total number:<span id="totnum">{$totalnum}</span>/<span id="allgronum"></span>
+  &nbsp;&nbsp;  
+  Remote_address:{$Remote_address};
+  Ip:<span id="ipaddr">{$ipaddress}</span>
+</p>
+
+<div id="qrcode"></div>
+
+<div class="row control-foot">
+	<div class="col-xs-12 col-lg-12">
+		<button id="undo" class="btn btn-danger" style="opacity: 0.3;" onclick="undo('{$list}','default')" disabled="disabled">  Undo(U)  </button>
+		&nbsp;&nbsp;  
+		<button id="rev" class="btn btn-success" onclick="revall()" onmouseover='javascript:toastr.info("When review mode is on, the chinese meaing will not hide after 2 seconds")'>Review(R)</button>
+		&nbsp;&nbsp;    
+		<button id="showall" class="btn btn-success" onclick="showall({$idlo},{$idup})" onmouseover='javascript:toastr.info("Click to show all chinese meanings")'">Showall(S)</button>
+		&nbsp;&nbsp;    
+		<button id="buttonchitoeng" class="btn btn-success" onclick="funchitoeng()" onmouseover='javascript:toastr.info("When Chinese mode is on, chinese meaning appears, click to show english words")'>Chinese(C)</button>
+		&nbsp;&nbsp;    
+		<a href="index.php?g=wordlist&m=member&a=mobile&list={$list}&amp;gro={$gro}&amp;idlo={$idlo}&amp;idup={$idup}"><button id="gotomobile" class="btn btn-warning"  onmouseover='javascript:toastr.info("Mobile suited version")'>Mobile(M)</button></a>
+		&nbsp;&nbsp;  
+		
+	
+		<button id="buttonlastrevword" class="btn btn-primary" onclick="funlastreviewwords()" onmouseover='javascript:toastr.info("Click to see last word clicked")'>Last(L)</button>
+		&nbsp;&nbsp;  
+		<button id="buttonlooknextword" class="btn btn-primary" onclick="looknextword()" onmouseover='javascript:toastr.info("Click to see chinese meaning of the word next to the word just clicked")'>Next(N)</button>
+		&nbsp;&nbsp;  
+		<button id="showstatis" class="btn btn-primary" onclick="showstatis()" onmouseover='javascript:toastr.info("Show the percentage of words up leveled to the total number of words in this page")'>Stat(T)</button>
+		&nbsp;&nbsp;  
+		<button id="showUpdateWordBtn" class="btn btn-primary" onclick="showUpdateWord()" onmouseover='javascript:toastr.info("Update Chinese meaning and phonetic symbol of word")'>UpWord(W)</button>
+	</div>
+</div>
+
+<div class="progress">
+  <div class="progress-bar progress-bar-danger progress-bar-striped<if condition="$gro eq 1 "> active</if>" id="gro1probar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+    0%
+  </div>
+  <div class="progress-bar progress-bar-warning progress-bar-striped<if condition="$gro eq 2 "> active</if>" id="gro1probar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+    0%
+  </div>
+  <div class="progress-bar progress-bar-info progress-bar-striped<if condition="$gro eq 3 "> active</if>" id="gro1probar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+    0%
+  </div>
+  <div class="progress-bar progress-bar-primary progress-bar-striped<if condition="$gro eq 4 "> active</if>" id="gro1probar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+    0%
+  </div>
+  <div class="progress-bar progress-bar-success progress-bar-striped<if condition="$gro eq 5 "> active</if>" id="gro1probar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+    0%
+  </div>
+</div>
+
+<div class="row control-foot">
+	<div class="col-md-2 col-xs-3">
+		 <a class="menu" href="index.php?g=wordlist&m=member&a=query&list={$list}&gro={$gro-1}&idlo={$idlo}&idup={$idup}">last_group </a>
+	 </div>
+ 	<div class="col-md-2 col-xs-3">
+		<a class="menu" href="index.php?g=wordlist&m=member&a=query&list={$list}&gro={$gro+1}&idlo={$idlo}&idup={$idup}">next_group </a>
+	</div>
+	<div class="col-md-2 col-xs-3">
+		<a class="menu" href="index.php?g=wordlist&m=member&a=query&list={$list}&amp;gro={$gro}&amp;idlo={$idlo-$idup+$idlo-1}&amp;idup={$idlo-1}">last_list </a>
+  	</div>
+  	<div class="col-md-2 col-xs-3">
+		<a class="menu" href="index.php?g=wordlist&m=member&a=query&list={$list}&amp;gro={$gro}&amp;idlo={$idup+1}&amp;idup={$idup+$idup-$idlo+1}">next_list </a> 
+	</div>
+  	<div class="col-md-4 col-xs-6">
+  		<a class="menu" href="index.php?g=wordlist&m=member&a=index">return</a>
+  	</div>
+</div>
+
+
+<div id='manconsolediv' class="hidden">
+<div id='manconsoledivhead' style="cursor:move"><b>Update Word</b></div>
+<br/>
+<form id="updatewordform">list:<input id='mclist' value="{$list}" type='text'/> eng<input id='mceng' name='mceng' value='' type='text' onchange='onchangemcdivcheckinfo()'autofocus/>
+<br/>
+id:<input id='mcid' name='wordid' type='text'/> rec:<input id='mcrec' name='mcrec' type='text' /> gro:<input id='mcgro' name='mcgro' value="{$gro}" type='text' disabled/> 
+<br/>
+chi:<input id='mcchi' name='userremark' type='text' size='100'/>
+</form>
+<br/>
+<button id='mcsubmit' onclick='updatewordsubmit()'>Update</button> <button onclick='hideUpdateWord()'>Cancel</button>
+</div>
+
+<script type="text/javascript" src="/lib/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="/lib/js/toastr.min.js"></script>
+<script type="text/javascript" src="/lib/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/thinkcmfx/tpl/simplebootx/Wordlist/js/js_addfunction.js"></script>
+<script type="text/javascript" src="/thinkcmfx/tpl/simplebootx/Wordlist/js/js.js"></script>
+<script type="text/javascript" src="/lib/js/jquery.mixitup.min.js"></script>
+<script type="text/javascript" src="/lib/js/jquery.qrcode.js"></script>
+<script type="text/javascript" src="/lib/js/qrcode.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	if(localStorage.getItem("rev")=="1")
+		$("#reviewmodespan").append("Review ");
+
+	//movable div
+	var $j=function(id){return document.getElementById(id);};
+	var getMouseP=function (e){
+		//获取鼠标坐标 请传递evnet参数
+		e = e || window.event;
+		var m=(e.pageX || e.pageY)?{ x:e.pageX, y:e.pageY } : { x:e.clientX + document.body.scrollLeft - document.body.clientLeft, y:e.clientY + document.body.scrollTop  - document.body.clientTop };
+		return m;
+	};
+	    
+	move=function(o,t){
+		o=$j(o);
+		t=$j(t);
+		o.onmousedown=function(ev){
+		
+			var mxy=getMouseP(ev);//获取当前鼠标坐标
+			var by={x:mxy.x-(t.offsetLeft),y:mxy.y-(t.offsetTop)};
+			o.style.cursor="move";
+			document.onmousemove=function(ev){
+				var mxy=getMouseP(ev);
+				t.style.left=mxy.x-by.x+"px";
+				t.style.top=mxy.y-by.y+"px";
+				t.style.opacity="0.8";
+			};
+			document.onmouseup=function(){
+				//window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty();
+				this.onmousemove=null;
+				t.style.opacity="1";
+			}
+		}
+	}
+
+
+	$('#Container').mixItUp();
+	renewstatic();
+	$(".progress").click(function(){renewstatic()});
+
+	$("#ipaddr").hover(
+	  function() {
+	    $(qrcode).css("display","inline-block");
+	  },
+	  function() {
+	    $(qrcode).css("display","none");
+	  }
+	);
+	
+	$('#qrcode').qrcode("http://{$ipaddress}/thinkcmfx/index.php?g=wordlist&m=member&a=query&list={$list}&gro={$gro}&idlo={$idlo}&idup={$idup}&rd={$rd}");
+});
+
+function renewstatic(){
+$.ajax({url: "index.php?g=wordlist&m=member&a=stat&idlo={$idlo}&idup={$idup}",
+			success: function (r){
+				stadata=JSON.parse(r);
+				stadata[4]=(100-parseFloat(stadata[0].slice(0,-1))-parseFloat(stadata[1].slice(0,-1))-parseFloat(stadata[2].slice(0,-1))-parseFloat(stadata[3].slice(0,-1))).toFixed(1)+"%";
+				for(pbi=0;pbi<5;pbi++){
+					$(".progress-bar").eq(pbi).attr("aria-valuenow",stadata[pbi].slice(0,-1));
+					$(".progress-bar").eq(pbi).html(stadata[pbi]);
+					$(".progress-bar").eq(pbi).css("width",stadata[pbi]);
+				}
+				$("#allgronum").html(stadata[5]);
+			}
+		});
+}
+</script>
+</body>
+</html>

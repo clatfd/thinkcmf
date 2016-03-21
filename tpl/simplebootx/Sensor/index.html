@@ -16,13 +16,11 @@
         <div class="span12">
             
             <div class="tc-box first-box article-box">
-                <h2><a href="{:U('index/content')}">Sensor{$sn} {$sname}</a></h2>
+                <h2><a href="{:U('index/content')}">Sensor {$sn}: {$sname}</a></h2>
                 <p>Records of {$sname} numbers, see <a href="index.php?g=&m=article&a=index&id=63" target="_blank">detailed</a></p>
                 <hr>
                 <div id="article_content">
-                
-                <iframe src="{:U('index/content',array('sn'=>$sn))}" style="width:100%;height: 650px;" scroll="no" frameborder="0" id="appiframe-0" class="appiframe"></iframe>
-
+                    <iframe src="{:U('index/content',array('sn'=>$sn))}" style="width:100%;height: 850px;" scroll="no" frameborder="0" id="appiframe-0" class="appiframe"></iframe>
                 </div>
                 
                 {:Comments("posts",$id)}

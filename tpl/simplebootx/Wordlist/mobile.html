@@ -1,0 +1,152 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Mobile_{$list}_{$gro}_{$idlo}~{$idup}</title>
+<link rel="stylesheet" type="text/css" href="/H-wordlist/css/cssexam.css">
+<link rel="stylesheet" type="text/css" href="/lib/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/lib/css/bootstrap-theme.min.css">
+<link rel="stylesheet" type="text/css" href="/lib/css/toastr.min.css">
+<link rel="stylesheet" type="text/css" href="/lib/css/font-awesome.min.css">
+
+<script type="text/javascript" src="/lib/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="/lib/js/toastr.min.js"></script>
+<script type="text/javascript" src="/lib/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/thinkcmfx/tpl/simplebootx/Wordlist/js/js_addfunction.js"></script>
+<script type="text/javascript" src="/thinkcmfx/tpl/simplebootx/Wordlist/js/js.js"></script>
+</head>
+
+
+
+<body>
+<script>
+refreshtimes=-1;
+</script>
+<!-- 980*1413-->
+<div id="total"> 
+<form name="form1" id="form1" method="GET">
+<span id="banner">
+List:&nbsp;&nbsp;&nbsp;
+  <select id="formlist" name="list">
+	<option  <if condition="$list eq 'imp' "> selected="selected" </if> >imp</option>
+	<option  <if condition="$list eq 'mfl' "> selected="selected" </if> >mfl</option>
+	<option  <if condition="$list eq 'ivt' "> selected="selected" </if> >ivt</option>
+	<option <if condition="$list eq 'gre3000' "> selected="selected" </if> >gre3000</option>	
+	<!-- <option <if condition="$list eq 'gre3000r' "> selected="selected" </if> >gre3000r</option> -->
+  </select>
+  Group:
+<select id="formgro" name="gro">
+  <option>1</option>
+  <option selected="selected">2</option>
+  <option>3</option>
+  <option>4</option>
+  <option>5</option>
+</select>
+<br/>
+ Idfrom:
+
+<input id="formidlo" name="textfield" type="text" value="1" size="8" />
+
+to:
+<input id="formidup" name="textfield" type="text" value="24" size="8" />
+
+</span>
+</form>
+    
+<div class="examdiv">
+	 <div id="wdtb">  
+		<div class="wddiv">
+			<!-- <div class="floater"></div>  -->
+			<div id="examwd">
+				<span></span>&nbsp;&nbsp;&nbsp;
+			</div>
+		</div>
+		<div class="recdiv" >
+			<span id="examtdrec" class="recspan"></span>
+		</div>			
+		<div class="updowndiv" onclick="refreshexamwd()">
+			<span class="glyphicon glyphicon-chevron-up arrowp"></span>
+			&nbsp;&nbsp;
+			<span class="glyphicon glyphicon-remove arrowp"></span>
+			&nbsp;&nbsp;
+			<span class="glyphicon glyphicon-chevron-down arrowp"></span>
+		</div>
+		<div class="toolsdiv">
+			<i class="glyphicon glyphicon-book searchdict"></i>&nbsp;
+			<i class="glyphicon glyphicon-play searchvoice"></i>&nbsp;
+			<span class="addimp">I</span>
+			<span class="addmfl">M</span>
+			<span class="addivt">V</span>
+		</div>
+	 </div>  
+</div>
+
+
+
+<div id="examswitchbar">	
+
+
+  <span class="menu">
+
+  	total number:<span id="totnum"></span>/<span id="totnumlength"></span><span id="totnumimp"></span> <span id="dateinput" ></span>
+	&nbsp;&nbsp;  
+  </span> 
+	
+	
+	<p align="center">
+	<a href="javascript:history.go(-1)"><button id="backtolist" class="btn btn-lg btn-info">Back_to_list</button></a>
+	&nbsp;&nbsp;
+	<button onclick="changewdlist()" id="buttonchangelist" class="btn btn-lg btn-warning">Changelist</button>
+	<button id="undo" style="opacity: 0.01;" onclick="undo('test','exam')" class="btn btn-lg btn-danger">  Undo  </button>
+	</p>
+
+	<p align="center">
+	<button id="lastword" onclick="subrefreshtimes()" class="btn btn-lg btn-success">Last_word</button>
+	<button id="lastword" onclick="funchitoengexam()" class="btn btn-lg btn-info">Chi_to_Eng  </button>
+	<button id="skiptimesbutton" onclick="refreshexamwd('skip')" class="btn btn-lg btn-warning">Skip</button>
+	<input id="skiptimes" type="text" value="" size="5"/>
+	</p>
+
+<span id="listadjust">
+	<p align="center">
+	<a href="javascript:$('#formgro').val(parseInt($('#formgro').val())-1)"><button id="buttonlastgroup" class="btn btn-lg btn-primary">Last_Gro</button> </a>
+	<a href="javascript:$('#formgro').val(parseInt($('#formgro').val())+1)"><button id="buttonnextgroup" class="btn btn-lg btn-primary">Next_Gro</button> </a>
+	<a href="javascript:$('#formidlo').val(parseInt($('#formidlo').val())-25);$('#formidup').val(parseInt($('#formidup').val())-25)"><button id="buttonlastlist" class="btn btn-lg btn-success">Last_Lst</button></a>
+	<a href="javascript:$('#formidlo').val(parseInt($('#formidlo').val())+25);$('#formidup').val(parseInt($('#formidup').val())+25)"><button id="buttonnextlist" class="btn btn-lg btn-success">Next_Lst</button></a>
+	</p>
+</span>
+
+</div>
+
+</div>
+<script>
+	if(getPar("list"))	
+		localStorage.setItem("clist",getPar("list"));
+	if(getPar("gro"))	
+		localStorage.setItem("cgro",getPar("gro"));
+	if(getPar("idlo"))	
+		localStorage.setItem("cidlo",getPar("idlo"));
+	if(getPar("idup"))	
+		localStorage.setItem("cidup",getPar("idup"));
+
+	if(localStorage.getItem("cidup")!=null&&localStorage.getItem("cidup")!=""){
+	    clist=localStorage.getItem("clist");
+	    cgro=localStorage.getItem("cgro");
+	    cidlo=localStorage.getItem("cidlo");
+	    cidup=localStorage.getItem("cidup");
+	    $("#formlist").val(clist);
+	    $("#formgro").val(cgro);
+	    $("#formidlo").val(cidlo);
+	    $("#formidup").val(cidup);
+	}
+	//var setwdlist=setTimeout("changewdlist('exam')",500)
+	initialforwdlist();
+	$("#skiptimes").click(function(){$("#skiptimes").val("10");$("#skiptimesbutton").attr("disabled",false);});
+	$("div.examdiv").click(function(){$("#skiptimes").val("")});
+	
+</script>
+</body>
+</html>
+
+
+

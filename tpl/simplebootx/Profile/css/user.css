@@ -4,7 +4,9 @@
   Doing this will allow you to update this template easily.
 
 */
-
+.clearfix{
+  clear:both;
+}
 h2.section-title a{
 	color: white;
 }
@@ -19,7 +21,7 @@ div.echart.loading#main{
 }
 
 .section-about-numbers .badge-content .badge-large {
-  font-size: 75px;
+  font-size: 65px;
   margin: 0;
   color: #ef7c00;
   display: block;
@@ -53,11 +55,17 @@ div.echart.loading#main{
   .col-md-3 {
     width: 25%;
   }
+  .visible-sm{
+    display: none!important;
+  }
 }
 @media (max-width: 767px){
   .sy-box{margin: 20px -20px 0 0px;}
   .col-md-3 {
     width: 50%;
+  }
+  .visible-sm {
+    display: block!important;
   }
 }
 .slide-content{
@@ -67,4 +75,18 @@ div.echart.loading#main{
   height: 22px;
 }
 .slide-content{
+}
+
+.memphotomore{
+  position: absolute;
+  width: 49px;
+  height: 20px;
+  bottom: 2px;
+  right: 2px;
+  background-color: #00A0C6;
+  z-index: 1;
+
+}
+.memphotomore a{
+  color: #fff !important;
 }

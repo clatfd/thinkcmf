@@ -140,20 +140,14 @@
           </li>
         </ul>
 
-        <p>
-            Care for world and people,&nbsp;
+        <p style="text-align: center;font-weight: bold;">
+            Care for world and people,&nbsp;&nbsp;&nbsp;&nbsp;Fight for peace and prosperity,&nbsp;&nbsp;&nbsp;&nbsp;Dream big and work hard,
         </p>
-        <p>
-            Fight for peace and prosperity,&nbsp;
-        </p>
-        <p>
-            Dream big and work hard,
-        </p>
-        <p>
+        <p style="text-align: center;font-weight: bold;font-size: 20px;">
             I am Li Chen.
         </p>
         <p>
-           A junior student in <a href="http://www.fudan.edu.cn">Fudan University</a> department of <a href="http://ee.fudan.edu.cn" target="_blank">Electronic Engineering</a>.&nbsp;&nbsp;Link:<a href="index.php?m=page&a=index&id=64" target="_blank">Past education timeline</a>
+           A senior student in <a href="http://www.fudan.edu.cn" target="_blank">Fudan University</a> department of <a href="http://ee.fudan.edu.cn" target="_blank">Electronic Engineering</a>.&nbsp;&nbsp;Link:<a href="index.php?m=page&a=index&id=64" target="_blank">Past education timeline</a>
         </p>
 
       </article>
@@ -161,7 +155,7 @@
 
     <div class="row row-academic">
       <article>
-        <h2 class="section-title" name="num"><a href="#">Li Chen In numbers</a></h2>
+        <h2 class="section-title" name="num" id="num"><a href="#">Li Chen In numbers</a></h2>
         <div class="clearfix"></div>
         <h3>Academic Record</h3>
         <div class="section-about-numbers">
@@ -170,7 +164,7 @@
             </div>
           </div>
           <div class="col-md-3 col-sm-6 col-xs-6 col-item">
-            <div class="badge-content"><span class="badge-large">10</span><span class="badge-small">Ranking:<br>Out of 99</span>
+            <div class="badge-content"><span class="badge-large">9</span><span class="badge-small">Ranking:<br>Out of 99</span>
             </div>
           </div>
           <div class="col-md-3 col-sm-6 col-xs-6 col-item">
@@ -181,9 +175,47 @@
             <div class="badge-content"><span class="badge-large">108</span><span class="badge-small">TOEFL<br/>Reading:30 Writing:29</span>
             </div>
           </div>
+
+        <div class="clearfix"></div>
+
+        <h3>Physical Record</h3>
+          <div class="col-md-3 col-sm-6 col-xs-6 col-item">
+            <div class="badge-content"><span class="badge-large">180</span><span class="badge-small">cm<br/>Height</span>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-6 col-item">
+            <div class="badge-content"><span class="badge-large">{$weight['sensordata']}</span><span class="badge-small">Kg<br/><a href="index.php?g=sensor&m=index&a=index&sn=70" target="_blank">Body Weight</a><br/>{:substr($weight['time'],0,10)}</span>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-6 col-item">
+            <div class="badge-content"><span class="badge-large">{$bmi}</span><span class="badge-small"><a href="https://en.wikipedia.org/wiki/Body_mass_index" target="_blank">BMI</a><br/>{$bmitag}</span>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-6 col-item">
+            <div class="badge-content"><span class="badge-large">{$step}</span><span class="badge-small">Average <a href="index.php?g=sensor&m=index&a=index&sn=mi_stp" target="_blank">Steps</a><br/>{$sleepdate}</span>
+            </div>
+          </div>
+        <div class="clearfix"></div>
+
+        <h3>Average Sleep Record during {$sleepdate}</h3>
+          <div class="col-md-3 col-sm-6 col-xs-6 col-item">
+            <div class="badge-content"><span class="badge-large">{$lt}</span><span class="badge-small">Hours<br/><a href="index.php?g=sensor&m=index&a=index&sn=mi_slp" target="_blank">Sleep duration</a></span>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-6 col-item">
+            <div class="badge-content"><span class="badge-large">{$dp}</span><span class="badge-small">Hours<br/><a href="index.php?g=sensor&m=index&a=index&sn=mi_slp" target="_blank">Deep Sleep duration</a></span>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-6 col-item">
+            <div class="badge-content"><span class="badge-large">{$sleeptime}</span><span class="badge-small">Goto <a href="index.php?g=sensor&m=index&a=index&sn=mi_sw" target="_blank">Sleep</a> at</span>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-6 col-item">
+            <div class="badge-content"><span class="badge-large">{$waketime}</span><span class="badge-small"><a href="index.php?g=sensor&m=index&a=index&sn=mi_sw" target="_blank">Wake</a> up at</span>
+            </div>
+          </div>
           
         </div>
-
         <!-- <h3></h3> -->
       </article>
     </div>
@@ -364,7 +396,7 @@
             <p class="subtitle">
               Professor &mdash; <a href="http://www.fudan.edu.cn">Fudan University</a><br />
               <a href="http://phylab.fudan.edu.cn">Physics Teaching Lab</a><br />
-              From 2013.9 &mdash; now
+              From 2013.9 &mdash; 2014.12
             </p>
             <div class="smaller-text">
               <p>
@@ -378,6 +410,29 @@
               etc.
             </p>
           </div>
+          <div class="clearfix"></div>
+          <div class="column">
+            <h3>Yi Guo</h3>
+            <a href="http://it.fudan.edu.cn/People.aspx?id=08129" target="_blank" class="logo">
+              <img src="tpl/simplebootx/Profile/img/demo/guoy.jpg" width="100%" alt="" />
+            </a>
+            <p class="subtitle">
+              Professor &mdash; <a href="http://www.fudan.edu.cn">Fudan University</a><br />
+              <a href="http://ee.fudan.edu.cn">Department of Electronic Engineering</a><br />
+              From 2015.8 &mdash; now
+            </p>
+            <div class="smaller-text">
+              <p>
+                 Researches on medical image processing.
+              </p>
+            </div>
+            <p class="reference">
+              Experience with me:<br />
+              <!-- <a href="index.php?g=&m=article&a=index&id=77" target="_blank"> -->Capstone research about vessel tumor 3D image processing<!-- </a> --><br/>
+            </p>
+          </div>
+
+          
         </div>
 
       </article>
@@ -510,7 +565,7 @@
       <article class="markup">
         <h2 class="section-title">About Website</h2>
         <p>
-          This is a personal website of Li Chen, which you can know well about me.
+          This is a personal website of Li Chen, where you can know well about me.
         </p>
         <p>
          <a href="index.php?g=user&m=register&a=index" target="_blank">Sign in</a> to view More. Comments are highly welcomed!
@@ -518,17 +573,7 @@
       </article>
     </div>
 
-    <div class="row row-wts">
-      <article class="markup">
-        <h2 class="section-title">May Also want to</h2>
-        <p><a href="index.php?g=profile&m=index&a=cv" target="_blank">View <em>CV</em></a></p>
-        <p><a href="index.php?g=profile&m=index&a=archive" target="_blank">View <em>Experience Archive</em></a></p>
-        <p><a href="index.php?g=profile&m=index&a=resume" target="_blank">View <em>Resume</em></a></p>
-        <p><a href="index.php?g=profile&m=index&a=ram" target="_blank">View <em>Research Ability Map</em></a></p>
-        <p><a href="index.php?m=page&a=index&id=64" target="_blank">View <em>Education Timeline</em></a></p>
-        <p><a href="/sim" target="_blank">Feel bored? Chat With <em>Sim(Auto-reply robot)</em></a></p>
-      </article>
-    </div>
+    <tc_include file="Profile:footlink" />
 
     <div class="row row-profile row-inversed" name="contacts">
       <article>
@@ -548,7 +593,7 @@
           </tr>
           <tr>
             <th>E-Mail</th>
-            <td>c.1994@163.com(main), clatfd@gmail.com(technical), li_chen12@fudan.edu.cn(Fudan mail), cl@clatfd.cn(this web)  <a href="#contacts" class="zoom-html"></a></td>
+            <td>c.1994 AT 163.com(main),<br/> clatfd AT gmail.com(technical),<br/> li_chen12 AT fudan.edu.cn(Fudan mail),<br/> cl AT clatfd.cn(this web)  <a href="#contacts" class="zoom-html"></a></td>
           </tr>
           <tr>
             <td colspan="2">

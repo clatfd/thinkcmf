@@ -100,7 +100,9 @@ class RegisterController extends HomeBaseController {
     					unset($_SESSION['user']);
     					$this->success("注册成功，激活后才能使用！",U("user/login/index"));
     				}else {
-    					$this->success("注册成功！",__ROOT__."/");
+                        $redirect=empty($_SESSION['login_http_referer'])?__ROOT__."/":$_SESSION['login_http_referer'];
+                        $_SESSION['login_http_referer']="";
+                        $this->success("Register success", $redirect,1);
     				}
     					
     			}else{

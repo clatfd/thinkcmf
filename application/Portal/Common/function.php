@@ -24,9 +24,10 @@ function sp_sql_posts($tag,$where=array()){
 	
 	$tag=sp_param_lable($tag);
 	$field = !empty($tag['field']) ? $tag['field'] : '*';
-	$limit = !empty($tag['limit']) ? $tag['limit'] : '';
+	//add 
+	//in case delete duplicate
+	$limit = !empty($tag['limit']) ? ((int)$tag['limit'])*3 : '';
 	$order = !empty($tag['order']) ? $tag['order'] : 'post_date';
-
 
 	//根据参数生成查询条件
 	$where['status'] = array('eq',1);
@@ -47,6 +48,29 @@ function sp_sql_posts($tag,$where=array()){
 	$rs= M("TermRelationships");
 
 	$posts=$rs->alias("a")->join($join)->join($join2)->field($field)->where($where)->order($order)->limit($limit)->select();
+	//add start
+	//add term name
+	if(isset($tag['term_name'])){
+		foreach ($posts as $key => $value) {
+			$termname=sp_get_term($value["term_id"]);
+			$posts[$key]["term_name"]=$termname["name"];
+		}
+	}
+		
+	//del repeat content
+	$lasttitle="";
+	$totalsize=sizeof($posts);
+	for ($i=0;$i<$totalsize;$i++) {
+		if($lasttitle==$posts[$i]["post_title"]){
+			unset($posts[$i]);
+			$unsetnum++;
+		}
+		else{
+			$lasttitle=$posts[$i]["post_title"];
+		}
+	}
+	$posts=array_slice($posts,0,4);
+	//add end
 	return $posts;
 }
 
@@ -214,9 +238,22 @@ function sp_sql_posts_paged($tag,$pagesize=20,$where=array(),$pagetpl='{first}{p
 	$page->SetPager('default', $pagetpl, array("listlong" => "9", "first" => "First", "last" => "Last", "prev" => "Prev", "next" => "Next", "list" => "*", "disabledclass" => ""));
 	$posts=$rs->alias("a")->join($join)->join($join2)->field($field)->where($where)->order($order)->limit($page->firstRow . ',' . $page->listRows)->select();
 
+	//add start
+	$lasttitle="";
+	$unsetnum=0;
+	for ($i=0;$i<$totalsize;$i++) {
+		if($lasttitle==$posts[$i]["post_title"]){
+			unset($posts[$i]);
+			$unsetnum++;
+		}
+		else{
+			$lasttitle=$posts[$i]["post_title"];
+		}
+	}
+	$content['count']=$totalsize-$unsetnum;
+	//add end
 	$content['posts']=$posts;
 	$content['page']=$page->show('default');
-	$content['count']=$totalsize;
 	return $content;
 }
 
@@ -273,7 +310,20 @@ function sp_sql_posts_paged_bykeyword($keyword,$tag,$pagesize=20,$pagetpl='{firs
 	$page->__set("PageParam", $PageParam);
 	$page->SetPager('default', $pagetpl, array("listlong" => "9", "first" => "First", "last" => "Last", "prev" => "Prev", "next" => "Next", "list" => "*", "disabledclass" => ""));
 	$posts=$rs->alias("a")->join($join)->join($join2)->field($field)->where($where)->order($order)->limit($page->firstRow . ',' . $page->listRows)->select();
-	$content['count']=$totalsize;
+	//add start
+	$lasttitle="";
+	$unsetnum=0;
+	for ($i=0;$i<$totalsize;$i++) {
+		if($lasttitle==$posts[$i]["post_title"]){
+			unset($posts[$i]);
+			$unsetnum++;
+		}
+		else{
+			$lasttitle=$posts[$i]["post_title"];
+		}
+	}
+	$content['count']=$totalsize-$unsetnum;
+	//add end
 	$content['posts']=$posts;
 	$content['page']=$page->show('default');
 	return $content;

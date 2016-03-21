@@ -1,0 +1,109 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+	<title>Sensor</title>
+    <link rel="stylesheet" type="text/css" href="/thinkcmfx/tpl/simplebootx/Sensor/style.css">
+</head>
+
+<body style="text-align:center">
+    <div id="canvasdiv" style="width: 95%;margin:auto">
+        <canvas id="canvas" height="650" width="800"></canvas>
+    </div>
+    
+    Limit to recent <input id="num" type="text" maxlength="3" size="3" value="15"/>items
+    <button onclick="query()">ok</button>
+    <br/>
+    Sensor:<select id="sensorno">
+      <option value ="75" <if condition="$sn==75">selected</if>>Pushup</option>
+      <option value ="70" <if condition="$sn==70">selected</if> >Body weight</option>
+      <option value ="20" <if condition="$sn==20">selected</if> >Pull up</option>
+      <option value ="mi_slp" <if condition="$sn eq 'mi_slp'">selected</if>>Sleep duration</option>
+      <option value ="mi_stp" <if condition="$sn eq 'mi_stp'">selected</if> >Steps</option>
+      <option value ="mi_sw" <if condition="$sn eq 'mi_sw'">selected</if> >Sleep Wake</option>
+      
+    </select>
+    <!-- &nbsp; -->
+<script>
+    var canvas = document.getElementById("canvas");
+    var context = canvas.getContext("2d");
+    context.font = "30px Arial";
+    context.fillStyle = "#428bca";
+    context.fillText("Loading", 150, 150);
+</script>
+<script src="__ROOT__/statics/js/jquery.js"></script>
+<script src="/thinkcmfx1.5.0/tpl/simplebootx/Sensor/Chart.min.js"></script>
+<script>
+function query(){
+    var canvas = document.getElementById("canvas");
+    var context = canvas.getContext("2d");
+    context.font = "30px Arial";
+    context.fillStyle = "#428bca";
+    context.fillText("Loading", 150, 150);
+
+    //context.clearRect(0, 0, canvas.width, canvas.height);
+        var phpdata;
+        var sensorno="{$sn}";
+        $(function() {
+            var num=$("#num").val();
+            $.getJSON("http://104.131.150.53/thinkcmfx/index.php?g=sensor&m=index&a=getdata&sensorno="+sensorno+"&num="+num+"&callback=?",
+            //$.getJSON("http://104.131.150.53/api/query.php?sn=75&num="+num+"&callback=?",
+            //$.getJSON("/clatfd/1/api/query.php?sn=75&num="+num+"&callback=?",
+				function (phpdata){
+                    $("#canvas").remove();
+                    $("#canvasdiv").append('<canvas id="canvas" height="450" width="800"></canvas>');
+                    var canvas = document.getElementById("canvas");
+                    var context = canvas.getContext("2d");
+                    //phpdata=JSON.parse(r);
+                    //data[0].values.push(phpdata);
+                    var barChartData = {
+                        labels :phpdata['time'],
+                        datasets: [
+                            {
+                                label: "{$legend[0]}",
+                                fillColor: "rgba(220,220,220,0.2)",
+                                strokeColor: "rgba(220,220,220,1)",
+                                pointColor: "rgba(220,220,220,1)",
+                                pointStrokeColor: "#fff",
+                                pointHighlightFill: "#fff",
+                                pointHighlightStroke: "rgba(220,220,220,1)",
+                                data: phpdata['data1']
+                            },
+                            {
+                                label: "{$legend[1]}",
+                                fillColor: "rgba(151,187,205,0.2)",
+                                strokeColor: "rgba(151,187,205,1)",
+                                pointColor: "rgba(151,187,205,1)",
+                                pointStrokeColor: "#fff",
+                                pointHighlightFill: "#fff",
+                                pointHighlightStroke: "rgba(151,187,205,1)",
+                                data: phpdata['data2']
+                            }
+                        ]
+
+                    }
+
+                    var ctx = document.getElementById("canvas").getContext("2d");
+                    window.myBar = new Chart(ctx).{$type}(barChartData, {
+                        responsive : true,
+                        <if condition="$sn eq 'mi_slp'">
+                        scaleOverride :true ,   //是否用硬编码重写y轴网格线
+                        scaleSteps : 45,        //y轴刻度的个数
+                        scaleStepWidth : 0.2,   //y轴每个刻度的宽度
+                        scaleStartValue : 0,    //y轴的起始值
+                        </if>
+                        
+                    });
+                    $("#canvas").after(myBar.generateLegend());
+                }
+			);	
+			});
+
+}   
+query();
+$("#sensorno").change(function(){
+    parent.location.href="index.php?g=sensor&m=index&a=index&sn="+$(this).val();
+})
+</script>
+
+</body>
+</html>

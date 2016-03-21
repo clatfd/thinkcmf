@@ -1,0 +1,100 @@
+body {
+	margin-top: 40px;
+	text-align: center;
+	font-size: 14px;
+	font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+	}
+
+#calendar {
+	width: 900px;
+	margin: 0 auto;
+	}
+input,select
+{
+	width: 150px;
+	padding: 10px;
+	margin-left: 20px;
+	margin-bottom: 20px;
+}
+input[type=checkbox]{
+	width:20px;
+}
+button
+{
+	width: 80px;
+	padding: 10px;
+	margin-left: 20px;
+	margin-bottom: 20px;
+}
+#additem{
+    position: absolute;
+    width: 300px;
+    display: none;
+    background-color: #fcf8e3;
+    opacity: 0.9;
+    left: 50%;
+    top:100px;
+    margin-left: -200px;
+    padding: 20px;
+    z-index: 999;
+}
+span.edit{
+	width:50px;
+	margin: 0px;
+	padding: 5px;
+}
+.event-detail{
+	padding: 5px;
+}
+span.event-detail a{
+	color:white;
+}
+
+td.fc-sat,td.fc-sun{
+	background-color: #F6FFFF;
+}
+td.fc-sat.fc-today, td.fc-sun.fc-today{
+	background-color: #fcf8e3;;
+}
+
+/*sensor style*/
+.fc-day{
+}
+.sensor{
+	font-size: 12px;
+    padding: 2px;
+    color: white;
+    margin: 4px;
+    display: inline-block;
+    font-weight: bold;
+	background-color: #CCFF00;
+	/*//position: relative;*/
+	min-width: 18px;
+	text-align: center;
+}
+.sensor75{
+	background-color: #CCCCFF;
+}
+.sensor2000{
+	background-color: #99CCCC;
+}
+.sensor20{
+	background-color: #66CCCC;
+}
+.sensor95{
+	background-color: #6699CC;
+}
+.topitem{
+	z-index: 999;
+}
+.nonsee{
+	display: none;
+}
+.sensorbar{
+	position: absolute;
+	bottom: 0px;
+}
+a.nostylea{
+	color: white;
+	text-decoration:none;
+}

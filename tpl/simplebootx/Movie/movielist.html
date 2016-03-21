@@ -1,0 +1,51 @@
+<style type="text/css">
+    table td{
+        padding: 5px;
+    }
+</style>
+<p><a href="http://www.imdb.com/" target="_blank">IMDB</a>,<a href="http://movie.douban.com/" target="_blank">DouBan</a></p>
+
+<table border="1" style="text-align: center;">
+<tr><th>10</th><th>9</th><th>8</th><th>7</th><th>6</th><th>5</th></tr>
+<tr><td>Masterpiece</td><td>Excellent</td><td>Good</td><td>Fair</td><td>Limited</td><td>Rubbish</td></tr>
+<tr><td>Highly recommend</td><td>Recommend</td><td>Slightly recommend</td><td>If have time</td><td>More negative than positive</td><td>Waste time</td></tr>
+</table>
+<hr/>
+<table border="1" id="movielist">
+<thead>
+<tr>
+    <th data-sort="int">imdbid</th>
+    <th data-sort="int" data-sort="string">dbid</th>
+    <th data-sort="string"><if condition="($sort eq 'moviename') AND ($sortorder eq 'DESC')"><a href="{:U('Indexadmin/index',array('sort'=>'moviename','sortorder'=>'asc'))}"><else/><a href="{:U('Indexadmin/index',array('sort'=>'moviename'))}"></if>moviename</a></th>
+    <th data-sort="float"><if condition="($sort eq 'avgrating') AND ($sortorder eq 'DESC')"><a href="{:U('Indexadmin/index',array('sort'=>'avgrating','sortorder'=>'asc'))}"><else/><a href="{:U('Indexadmin/index',array('sort'=>'avgrating'))}"></if>avgrating</a></th>
+    <th data-sort="float"><if condition="($sort eq 'myrating') AND ($sortorder eq 'DESC')"><a href="{:U('Indexadmin/index',array('sort'=>'myrating','sortorder'=>'asc'))}"><else/><a href="{:U('Indexadmin/index',array('sort'=>'myrating'))}"></if>myrating</a></th>
+    <th data-sort="string"><if condition="($sort eq 'director') AND ($sortorder eq 'DESC')"><a href="{:U('Indexadmin/index',array('sort'=>'director','sortorder'=>'asc'))}"><else/><a href="{:U('Indexadmin/index',array('sort'=>'director'))}"></if>director</a></th>
+    <th data-sort="int"><if condition="($sort eq 'year') AND ($sortorder eq 'DESC')"><a href="{:U('Indexadmin/index',array('sort'=>'year','sortorder'=>'asc'))}"><else/><a href="{:U('Indexadmin/index',array('sort'=>'year'))}"></if>year</a></th>
+    <th data-sort="string"><if condition="($sort eq 'viewdate') AND ($sortorder eq 'DESC')"><a href="{:U('Indexadmin/index',array('sort'=>'viewdate','sortorder'=>'asc'))}"><else/><a href="{:U('Indexadmin/index',array('sort'=>'viewdate'))}"></if>viewdate</a></th>
+    <th>poster</th>
+</tr>
+</thead>
+<tbody>
+<foreach name="movielist" item="vo">
+    <tr>
+        <td><a href='http://www.imdb.com/title/tt{$vo.imdbid}/' target="_blank">{$vo.imdbid}</a></td>
+        <td><a href='http://movie.douban.com/subject/{$vo.dbid}/' target="_blank">{$vo.dbid}</a></td>
+        <td>{$vo.moviename}</td>
+        <td>{$vo.avgrating}</td>
+        <td>{$vo.myrating}</td>
+        <td>{$vo.director}</td>
+        <td>{$vo.year}</td>
+        <td>{$vo.viewdate}</td>
+        <td><img width="100px" src="{$vo.poster}"></td>
+    </tr>
+</foreach>
+</tbody>
+</table>
+<div class="pagination">{$Page}</div>
+<div class="pagination">
+        <ul>
+          {$lists['page']}
+        </ul>
+      </div>
+<script src="__ROOT__/statics/js/jquery.js"></script>
+
