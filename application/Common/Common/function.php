@@ -594,12 +594,12 @@ function sp_send_email($address,$subject,$message){
 	// 设置PHPMailer使用SMTP服务器发送Email
 	$mail->IsSMTP();
 	//Set the SMTP port number - likely to be 25, 465 or 587
-	$mail->Port = 465;
+	$mail->Port = 25;
 	$mail->IsHTML(true);
 	// 设置邮件的字符编码，若不指定，则为'UTF-8'
 	$mail->CharSet='UTF-8';
 	// 添加收件人地址，可以多次使用来添加多个收件人
-	$mail->AddAddress($address);
+	$mail->addAddress($address, '');
 	// 设置邮件正文
 	$mail->Body=$message;
 	// 设置邮件头的From字段。

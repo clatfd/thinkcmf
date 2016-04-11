@@ -61,7 +61,7 @@
 					    <img class="media-object avatar" src="{:U('user/public/avatar',array('id'=>$voo['uid']))}" class="headicon"/>
 					  </a>
 					  <div class="comment-body">
-					    <div class="comment-content"><a href="{:U('user/index/index',array('id'=>$voo['uid']))}">{$voo.full_name}</a>:<span>Reply 回复 <a href="{:U('user/index/index',array('id'=>$voo['to_uid']))}">{$parent_comments[$voo['parentid']]['full_name']}</a> {$voo.content}</span></div>
+					    <div class="comment-content"><a href="{:U('user/index/index',array('id'=>$voo['uid']))}">{$voo.full_name}</a>:<span>Reply <a href="{:U('user/index/index',array('id'=>$voo['to_uid']))}">{$parent_comments[$voo['parentid']]['full_name']}</a>: {$voo.content}</span></div>
 					    <div><span class="time">{:date('m月d日  H:i',strtotime($voo['createtime']))}</span> <a onclick="comment_reply(this);" href="javascript:;"><i class="fa fa-comment"></i></a></div>
 					  </div>
 					  <div class="clearfix"></div>

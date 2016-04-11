@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"user",
+				"user_email"
+			],
+			[
 				"min",
 				"min-height"
 			],
@@ -208,10 +212,6 @@
 				"imptype"
 			],
 			[
-				"user",
-				"userid"
-			],
-			[
 				"arra",
 				"array"
 			],
@@ -300,26 +300,28 @@
 	"buffers":
 	[
 		{
-			"file": "application/Sensor/Controller/IndexadminController.class.php",
+			"contents": "Searching 174 files for \"sp_send_email\"\n\nE:\\server\\nginx\\html\\thinkcmfx\\application\\Comment\\Controller\\CommentController.class.php:\n   87  						$content=\"Dear \".$find_user[\"user_nicename\"].\", <br/>Your comment posted on <a href='http://clatfd.cn/thinkcmfx/\".$_POST[\"url\"].\"'>http://clatfd.cn/thinkcmfx/\".$_POST[\"url\"]. \"</a> is replied.\";\n   88  						$this->sendmail($receiver, \"Comment Reply from clatfd.cn\", $content);\n   89: 						// sp_send_email($receiver, \"Comment Reply from clatfd.cn\", $content);\n   90  					}\n   91  					$this->ajaxReturn(sp_ajax_return(array(\"id\"=>$result),\"评论成功！\",1));\n   ..\n  101  \n  102  	function sendmail($receiver,$subject,$content){\n  103: 	 	//sp_send_email($receiver, $title, $content);\n  104  	 	import(\"PHPMailer\");\n  105  		$mail=new \\PHPMailer();\n\nE:\\server\\nginx\\html\\thinkcmfx\\application\\Common\\Common\\function.php:\n  589  \n  590  \n  591: function sp_send_email($address,$subject,$message){\n  592  	import(\"PHPMailer\");\n  593  	$mail=new \\PHPMailer();\n\nE:\\server\\nginx\\html\\thinkcmfx\\application\\Common\\Controller\\HomeBaseController.class.php:\n   81  		$content = str_replace(array('http://#link#','#username#'), array($url,$username),$template);\n   82  	\n   83: 		$send_result=sp_send_email($_SESSION['user']['user_email'], $title, $content);\n   84  	\n   85  		if($send_result['error']){\n\nE:\\server\\nginx\\html\\thinkcmfx\\application\\Mailer\\Controller\\IndexadminController.class.php:\n   13  		$subject=$_POST['subject'];\n   14  		$content=$_POST['content'];\n   15: 	 	//sp_send_email($receiver, $title, $content);\n   16  	 	import(\"PHPMailer\");\n   17  		$mail=new \\PHPMailer();\n\nE:\\server\\nginx\\html\\thinkcmfx\\application\\Profile\\Controller\\IndexController.class.php:\n  128  			$insert_data=array('visitorname'=>$vipname,'visittime'=>date(\"Y-m-d H:i:s\",time()),'type'=>'cv','ip'=>$_SERVER[\"REMOTE_ADDR\"]);\n  129  			$result=$this->posts_model->add($insert_data);\n  130: 			//$send_result=sp_send_email('c.1994@163.com', $vipname.' read cv', '@'.date(\"Y-m-d H:i:s\",time()));\n  131  			if ($result!==false) {\n  132  				$this->success(\"Welcome \".$vipname.\"!\",U('portal/page/index',array('id'=>110)),1);\n\nE:\\server\\nginx\\html\\thinkcmfx\\application\\User\\Controller\\LoginController.class.php:\n   84  		$content = str_replace(array('http://#link#','#username#'), array($url,$username),$template);\n   85  	\n   86: 		$send_result=sp_send_email($user['user_email'], $title, $content);\n   87  	\n   88  		if($send_result['error']){\n\n7 matches across 6 files\n\n\nSearching 2473 files for \"sp_send_email\"\n\nE:\\server\\nginx\\html\\thinkcmfx\\application\\Comment\\Controller\\CommentController.class.php:\n   87  						$content=\"Dear \".$find_user[\"user_nicename\"].\", <br/>Your comment posted on <a href='http://clatfd.cn/thinkcmfx/\".$_POST[\"url\"].\"'>http://clatfd.cn/thinkcmfx/\".$_POST[\"url\"]. \"</a> is replied.\";\n   88  						$this->sendmail($receiver, \"Comment Reply from clatfd.cn\", $content);\n   89: 						// sp_send_email($receiver, \"Comment Reply from clatfd.cn\", $content);\n   90  					}\n   91  					$this->ajaxReturn(sp_ajax_return(array(\"id\"=>$result),\"评论成功！\",1));\n   ..\n  101  \n  102  	function sendmail($receiver,$subject,$content){\n  103: 	 	//sp_send_email($receiver, $title, $content);\n  104  	 	import(\"PHPMailer\");\n  105  		$mail=new \\PHPMailer();\n\nE:\\server\\nginx\\html\\thinkcmfx\\application\\Common\\Common\\function.php:\n  589  \n  590  \n  591: function sp_send_email($address,$subject,$message){\n  592  	import(\"PHPMailer\");\n  593  	$mail=new \\PHPMailer();\n\nE:\\server\\nginx\\html\\thinkcmfx\\application\\Common\\Controller\\HomeBaseController.class.php:\n   81  		$content = str_replace(array('http://#link#','#username#'), array($url,$username),$template);\n   82  	\n   83: 		$send_result=sp_send_email($_SESSION['user']['user_email'], $title, $content);\n   84  	\n   85  		if($send_result['error']){\n\nE:\\server\\nginx\\html\\thinkcmfx\\application\\Mailer\\Controller\\IndexadminController.class.php:\n   13  		$subject=$_POST['subject'];\n   14  		$content=$_POST['content'];\n   15: 	 	//sp_send_email($receiver, $title, $content);\n   16  	 	import(\"PHPMailer\");\n   17  		$mail=new \\PHPMailer();\n\nE:\\server\\nginx\\html\\thinkcmfx\\application\\Profile\\Controller\\IndexController.class.php:\n  128  			$insert_data=array('visitorname'=>$vipname,'visittime'=>date(\"Y-m-d H:i:s\",time()),'type'=>'cv','ip'=>$_SERVER[\"REMOTE_ADDR\"]);\n  129  			$result=$this->posts_model->add($insert_data);\n  130: 			//$send_result=sp_send_email('c.1994@163.com', $vipname.' read cv', '@'.date(\"Y-m-d H:i:s\",time()));\n  131  			if ($result!==false) {\n  132  				$this->success(\"Welcome \".$vipname.\"!\",U('portal/page/index',array('id'=>110)),1);\n\nE:\\server\\nginx\\html\\thinkcmfx\\application\\User\\Controller\\LoginController.class.php:\n   84  		$content = str_replace(array('http://#link#','#username#'), array($url,$username),$template);\n   85  	\n   86: 		$send_result=sp_send_email($user['user_email'], $title, $content);\n   87  	\n   88  		if($send_result['error']){\n\n7 matches across 6 files\n\n\nSearching 2473 files for \"sp_send_email\"\n\nE:\\server\\nginx\\html\\thinkcmfx\\application\\Comment\\Controller\\CommentController.class.php:\n   87  						$content=\"Dear \".$find_user[\"user_nicename\"].\", <br/>Your comment posted on <a href='http://clatfd.cn/thinkcmfx/\".$_POST[\"url\"].\"'>http://clatfd.cn/thinkcmfx/\".$_POST[\"url\"]. \"</a> is replied.\";\n   88  						$this->sendmail($receiver, \"Comment Reply from clatfd.cn\", $content);\n   89: 						// sp_send_email($receiver, \"Comment Reply from clatfd.cn\", $content);\n   90  					}\n   91  					$this->ajaxReturn(sp_ajax_return(array(\"id\"=>$result),\"评论成功！\",1));\n   ..\n  101  \n  102  	function sendmail($receiver,$subject,$content){\n  103: 	 	//sp_send_email($receiver, $title, $content);\n  104  	 	import(\"PHPMailer\");\n  105  		$mail=new \\PHPMailer();\n\nE:\\server\\nginx\\html\\thinkcmfx\\application\\Common\\Common\\function.php:\n  589  \n  590  \n  591: function sp_send_email($address,$subject,$message){\n  592  	import(\"PHPMailer\");\n  593  	$mail=new \\PHPMailer();\n\nE:\\server\\nginx\\html\\thinkcmfx\\application\\Common\\Controller\\HomeBaseController.class.php:\n   81  		$content = str_replace(array('http://#link#','#username#'), array($url,$username),$template);\n   82  	\n   83: 		$send_result=sp_send_email($_SESSION['user']['user_email'], $title, $content);\n   84  	\n   85  		if($send_result['error']){\n\nE:\\server\\nginx\\html\\thinkcmfx\\application\\Mailer\\Controller\\IndexadminController.class.php:\n   13  		$subject=$_POST['subject'];\n   14  		$content=$_POST['content'];\n   15: 	 	//sp_send_email($receiver, $title, $content);\n   16  	 	import(\"PHPMailer\");\n   17  		$mail=new \\PHPMailer();\n\nE:\\server\\nginx\\html\\thinkcmfx\\application\\Profile\\Controller\\IndexController.class.php:\n  128  			$insert_data=array('visitorname'=>$vipname,'visittime'=>date(\"Y-m-d H:i:s\",time()),'type'=>'cv','ip'=>$_SERVER[\"REMOTE_ADDR\"]);\n  129  			$result=$this->posts_model->add($insert_data);\n  130: 			//$send_result=sp_send_email('c.1994@163.com', $vipname.' read cv', '@'.date(\"Y-m-d H:i:s\",time()));\n  131  			if ($result!==false) {\n  132  				$this->success(\"Welcome \".$vipname.\"!\",U('portal/page/index',array('id'=>110)),1);\n\nE:\\server\\nginx\\html\\thinkcmfx\\application\\User\\Controller\\LoginController.class.php:\n   84  		$content = str_replace(array('http://#link#','#username#'), array($url,$username),$template);\n   85  	\n   86: 		$send_result=sp_send_email($user['user_email'], $title, $content);\n   87  	\n   88  		if($send_result['error']){\n\n7 matches across 6 files\n",
 			"settings":
 			{
-				"buffer_size": 715,
+				"buffer_size": 7482,
+				"line_ending": "Windows",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"file": "application/Common/Common/function.php",
+			"settings":
+			{
+				"buffer_size": 35986,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "application/Sensor/Controller/IndexController.class.php",
+			"file": "application/Comment/Controller/CommentController.class.php",
 			"settings":
 			{
-				"buffer_size": 7254,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "application/Common/Model/LinksModel.class.php",
-			"settings":
-			{
-				"buffer_size": 398,
+				"buffer_size": 4083,
 				"line_ending": "Windows"
 			}
 		}
@@ -359,7 +361,32 @@
 	},
 	"file_history":
 	[
+		"/E/server/nginx/html/thinkcmfx/application/Sensor/Controller/IndexadminController.class.php",
 		"/E/server/nginx/html/thinkcmfx/application/Sensor/Controller/IndexController.class.php",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Public/simpleboot/remark/website/website.md",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Calendar/content.html",
+		"/E/server/nginx/html/thinkcmfx/tpl_admin/simpleboot/Calendar/Indexadmin/index.html",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Travel/photoindex.html",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Travel/photomap.html",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/config.html",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Calendar/index.html",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Movie/index.html",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Profile/indexyear.html",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Profile/ramindex.html",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Wordlist/login.html",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/User/center.html",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/User/index.html",
+		"/E/server/nginx/html/thinkcmfx/application/Comment/Controller/CommentController.class.php",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Comment/comment.html",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Sensor/index.html",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Portal/music.html",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Profile/index.html",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Todo/index.html",
+		"/E/server/nginx/html/lib/css/remark.css",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Public/simpleboot/remark/whitebalance/whitebalance.md",
+		"/E/server/nginx/html/thinkcmfx/statics/js/frontend.js",
+		"/E/server/nginx/conf/nginx.conf",
+		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Public/simpleboot/remark/website/whitebalance.md",
 		"/E/server/nginx/html/thinkcmfx/application/Calendar/Controller/IndexController.class.php",
 		"/E/server/nginx/html/thinkcmfx/application/Travel/Controller/IndexadminController.class.php",
 		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Travel/baidumap.html",
@@ -370,8 +397,6 @@
 		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Wordlist/index.html",
 		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Wordlist/frame.html",
 		"/E/server/nginx/html/thinkcmfx/application/Calendar/Controller/IndexadminController.class.php",
-		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Calendar/content.html",
-		"/E/server/nginx/html/thinkcmfx/tpl_admin/simpleboot/Calendar/Indexadmin/index.html",
 		"/E/server/nginx/html/test.php",
 		"/E/server/nginx/html/thinkcmfx/tpl_admin/simpleboot/Calendar/Indexadmin/googleinsert.html",
 		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Public/simpleboot/fullcalendar/custom.css",
@@ -380,27 +405,22 @@
 		"/E/server/nginx/html/thinkcmfx/tpl_admin/simpleboot/Travel/photoadd.html",
 		"/E/server/nginx/html/thinkcmfx/application/Wordlist/Controller/MemberController.class.php",
 		"/E/server/nginx/html/thinkcmfx/application/Wordlist/Controller/IndexController.class.php",
-		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Wordlist/login.html",
 		"/E/server/nginx/html/thinkcmfx/application/User/Controller/LoginController.class.php",
-		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Profile/index.html",
 		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Wordlist/js/js.js",
 		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Public/nav.html",
 		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Public/usernav.html",
 		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/User/register.html",
 		"/E/server/nginx/html/thinkcmfx/tpl_admin/simpleboot/Admin/Rbac/authorize.html",
-		"/E/server/nginx/html/thinkcmfx/statics/js/frontend.js",
 		"/E/server/nginx/html/thinkcmfx/statics/js/common.js",
 		"/E/server/nginx/html/thinkcmfx/application/User/Controller/RegisterController.class.php",
 		"/E/server/nginx/html/lib/js/json2.js",
 		"/E/server/nginx/html/thinkcmfx/tpl_admin/simpleboot/Movie/Indexadmin/movieadd.html",
-		"/E/server/nginx/conf/nginx.conf",
 		"/E/server/php/php.ini",
 		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Movie/movielist.html",
 		"/E/server/nginx/html/thinkcmfx/application/Movie/Controller/IndexController.class.php",
 		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Profile/content.html",
 		"/E/server/nginx/html/thinkcmfx/tpl_admin/simpleboot/Wordlist/Indexadmin/index.html",
 		"/E/server/nginx/html/thinkcmfx/application/Movie/Controller/IndexadminController.class.php",
-		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Movie/index.html",
 		"/E/server/nginx/html/thinkcmfx/application/Portal/Controller/ListController.class.php",
 		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/success.html",
 		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/jump.html",
@@ -415,7 +435,6 @@
 		"/E/server/nginx/html/thinkcmfx/tpl_admin/simpleboot/Admin/Link/index.html",
 		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Travel/photocontent.html",
 		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Profile/remark.html",
-		"/E/server/nginx/html/lib/css/remark.css",
 		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Profile/footlink.html",
 		"/E/server/nginx/html/thinkcmfx/application/Common/Common/function.php",
 		"/E/server/nginx/html/douban-php-sdk-master/douban-php-sdk-master/example/search.php",
@@ -423,18 +442,15 @@
 		"/E/server/nginx/html/api/curlwd.php",
 		"/E/server/nginx/html/shupingnew/admin/query.html",
 		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Public/simpleboot/remark/acquaintance/acquaintance.md",
-		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Public/simpleboot/remark/whitebalance/whitebalance.md",
 		"/C/Users/cl/Desktop/tongue.cpp",
 		"/E/server/nginx/html/dokuwiki/soravote_sae/pdo.class.php",
 		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Portal/list.html",
-		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Portal/music.html",
 		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Portal/newest.html",
 		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Portal/page.html",
 		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Portal/article.html",
 		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Portal/subindex.html",
 		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Portal/subpage.html",
 		"/E/server/nginx/html/thinkcmfx/application/Profile/Controller/YearController.class.php",
-		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Travel/photomap.html",
 		"/E/server/nginx/html/thinkcmfx/application/Travel/Controller/IndexController.class.php",
 		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Travel/googlemap.html",
 		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Travel/photomapgoogle.html",
@@ -442,7 +458,6 @@
 		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Public/simpleboot/remark/cem/cem.md",
 		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Portal/list_masonry.html",
 		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Profile/css/user.css",
-		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Profile/indexyear.html",
 		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Profile/year2015.html",
 		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Travel/photo.html",
 		"/E/server/nginx/html/thinkcmfx/tpl_admin/simpleboot/Admin/login.html",
@@ -473,20 +488,7 @@
 		"/E/server/nginx/html/jqueryplug/map/css/default.css",
 		"/E/server/nginx/html/H-wordlist/twigframe.html",
 		"/E/server/nginx/html/H-wordlist/js/js.js",
-		"/E/server/nginx/html/thinkcmfx/application/Common/Controller/AdminbaseController.class.php",
-		"/E/server/nginx/html/thinkcmfx/application/Admin/Controller/UserController.class.php",
-		"/E/server/nginx/html/thinkcmfx/tpl_admin/simpleboot/Admin/Main/index.html",
-		"/E/server/nginx/html/thinkcmfx/application/Common/Model/UsersModel.class.php",
-		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Sensor/content.html",
-		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Sensor/contentdouble.html",
-		"/E/server/nginx/html/thinkcmfx/application/Profile/Controller/RemarkController.class.php",
-		"/E/server/nginx/html/thinkcmfx/tpl_admin/simpleboot/Link/Indexadmin/index.html",
-		"/E/server/nginx/html/thinkcmfx/statics/js/ueditor/lang/zh-cn/zh-cn.js",
-		"/E/server/nginx/html/thinkcmfx/statics/js/ueditor/ueditor.config.js",
-		"/E/server/nginx/html/thinkcmfx/tpl_admin/simpleboot/Todo/Indexadmin/index.html",
-		"/E/server/nginx/html/thinkcmfx/tpl/simplebootx/Profile/pjcontent.html",
-		"/E/server/nginx/html/jqueryplug/remark-develop/boilerplate-local.html",
-		"/E/server/nginx/html/thinkcmfx/application/Link/Controller/IndexadminController.class.php"
+		"/E/server/nginx/html/thinkcmfx/application/Common/Controller/AdminbaseController.class.php"
 	],
 	"find":
 	{
@@ -497,6 +499,9 @@
 		"height": 120.0,
 		"where_history":
 		[
+			"E:\\server\\nginx\\html\\thinkcmfx",
+			"E:\\server\\nginx\\html\\thinkcmfx\\application",
+			"E:\\server\\nginx\\html\\thinkcmfx",
 			"E:\\server\\nginx\\html\\thinkcmfx\\application",
 			"E:\\server\\nginx\\html\\thinkcmfx",
 			"E:\\server\\nginx\\html\\thinkcmfx\\application\\User\\Controller",
@@ -558,6 +563,12 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"sp_send_email",
+			"comment_submit",
+			"holi",
+			"56e778974df92",
+			"red",
+			"# Background ",
 			"Model",
 			"echo",
 			"addEvent",
@@ -679,18 +690,12 @@
 			"avgslp",
 			"avgstp",
 			"avgdp",
-			"avglt",
-			"bmi",
-			"lastweight",
-			"ip",
-			"$ip",
-			"{$ip",
-			"where"
+			"avglt"
 		],
 		"highlight": true,
 		"in_selection": false,
 		"preserve_case": false,
-		"regex": true,
+		"regex": false,
 		"replace_history":
 		[
 			"...",
@@ -802,49 +807,145 @@
 			[
 				{
 					"buffer": 0,
-					"file": "application/Sensor/Controller/IndexadminController.class.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 715,
+						"buffer_size": 7482,
 						"regions":
 						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										439,
+										452
+									],
+									[
+										682,
+										695
+									],
+									[
+										894,
+										907
+									],
+									[
+										1224,
+										1237
+									],
+									[
+										1515,
+										1528
+									],
+									[
+										1933,
+										1946
+									],
+									[
+										2367,
+										2380
+									],
+									[
+										2934,
+										2947
+									],
+									[
+										3177,
+										3190
+									],
+									[
+										3389,
+										3402
+									],
+									[
+										3719,
+										3732
+									],
+									[
+										4010,
+										4023
+									],
+									[
+										4428,
+										4441
+									],
+									[
+										4862,
+										4875
+									],
+									[
+										5429,
+										5442
+									],
+									[
+										5672,
+										5685
+									],
+									[
+										5884,
+										5897
+									],
+									[
+										6214,
+										6227
+									],
+									[
+										6505,
+										6518
+									],
+									[
+										6923,
+										6936
+									],
+									[
+										7357,
+										7370
+									]
+								],
+								"scope": ""
+							}
 						},
 						"selection":
 						[
 							[
-								710,
-								710
+								5909,
+								5909
 							]
 						],
 						"settings":
 						{
-							"encoding_helper_encoding": "UTF-8",
-							"origin_encoding": "UTF-8",
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"detect_indentation": false,
+							"encoding_helper_encoding": "",
+							"line_numbers": false,
+							"output_tag": 3,
+							"result_base_dir": "",
+							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2645.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "application/Sensor/Controller/IndexController.class.php",
+					"file": "application/Common/Common/function.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7254,
+						"buffer_size": 35986,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2932,
-								2937
+								15175,
+								15175
 							]
 						],
 						"settings":
@@ -855,26 +956,26 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1518.0,
+						"translation.y": 13306.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "application/Common/Model/LinksModel.class.php",
-					"semi_transient": true,
+					"file": "application/Comment/Controller/CommentController.class.php",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 398,
+						"buffer_size": 4083,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								3281,
+								3969
 							]
 						],
 						"settings":
@@ -885,7 +986,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2277.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

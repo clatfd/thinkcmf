@@ -80,7 +80,14 @@ class CommentController extends MemberbaseController{
 					
 					$post_table_model->create(array("last_comment"=>time()));
 					$post_table_model->where(array($pk=>intval($_POST['post_id'])))->save();
-					
+					if($_POST['to_uid']){
+						$users_model=M("Users");
+						$find_user=$users_model->where(array("id"=>$_POST["to_uid"]))->find();
+						$receiver=$find_user["user_email"];
+						$content="Dear ".$find_user["user_nicename"].", <br/>Your comment posted on <a href='http://clatfd.cn/thinkcmfx/".$_POST["url"]."'>http://clatfd.cn/thinkcmfx/".$_POST["url"]. "</a> is replied.";
+						$this->sendmail($receiver, "Comment Reply from clatfd.cn", $content);
+						// sp_send_email($receiver, "Comment Reply from clatfd.cn", $content);
+					}
 					$this->ajaxReturn(sp_ajax_return(array("id"=>$result),"评论成功！",1));
 				} else {
 					$this->error("评论失败！");
@@ -90,5 +97,41 @@ class CommentController extends MemberbaseController{
 			}
 		}
 		
+	}
+
+	function sendmail($address,$subject,$message){
+	 	//sp_send_email($receiver, $title, $content);
+	 	import("PHPMailer");
+		$mail=new \PHPMailer();
+		// 设置PHPMailer使用SMTP服务器发送Email
+		$mail->IsSMTP();
+		//Set the SMTP port number - likely to be 25, 465 or 587
+		$mail->Port = 25;
+		$mail->IsHTML(true);
+		// 设置邮件的字符编码，若不指定，则为'UTF-8'
+		$mail->CharSet='UTF-8';
+		// 添加收件人地址，可以多次使用来添加多个收件人
+		$mail->addAddress($address, '');
+		// 设置邮件正文
+		$mail->Body=$message;
+		// 设置邮件头的From字段。
+		$mail->From=C('SP_MAIL_ADDRESS');
+		// 设置发件人名字
+		$mail->FromName=C('SP_MAIL_SENDER');;
+		// 设置邮件标题
+		$mail->Subject=$subject;
+		// 设置SMTP服务器。
+		$mail->Host=C('SP_MAIL_SMTP');
+		// 设置为"需要验证"
+		$mail->SMTPAuth=true;
+		// 设置用户名和密码。
+		$mail->Username=C('SP_MAIL_LOGINNAME');
+		$mail->Password=C('SP_MAIL_PASSWORD');
+		// 发送邮件。
+		if(!$mail->Send()) {
+	 		//$this->error('邮件发送失败！');
+		}else{
+	 		//$this->success('邮件发送！');
+		}
 	}
 }

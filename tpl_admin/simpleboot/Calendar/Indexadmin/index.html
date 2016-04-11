@@ -86,7 +86,7 @@
 
 $(document).ready(function() {
 	$("#dtBox").DateTimePicker();
-	var holiday = [ ["2015-10-01","2015-10-07"],["2015-12-28","2016-02-25"]];  
+	var holiday = [ ["2015-10-01","2015-10-07"],["2015-12-28","2016-02-25"],"2016-04-04"];  
 	var workday = [ "2015-10-10"];  
 
 	 	$.getJSON("http://clatfd.cn/thinkcmfx/index.php?g=calendar&m=indexadmin&a=query&callback=?",
@@ -155,8 +155,14 @@ $(document).ready(function() {
 				    		if(date.getDay()<6){
 						    	for(var i=0;i<holiday.length;i++){
 						    		var curdate=new Date(vdate);
-						    		var startdate=new Date(holiday[i][0]);
-						    		var enddate=new Date(holiday[i][1]);
+						    		if(typeof holiday[i]=="object"){
+						    			var startdate=new Date(holiday[i][0]);
+						    			var enddate=new Date(holiday[i][1]);
+						    		}
+						    		else{
+						    			var startdate=new Date(holiday[i]);
+						    			var enddate=new Date(holiday[i]);
+						    		}
 						    		if(curdate>=startdate&&curdate<=enddate){
 						    	 		$("td.fc-day[data-date="+vdate+"]").css("backgroundColor","#F6FFFF");
 						    	 		break;
